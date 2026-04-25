@@ -5,7 +5,7 @@ const episodes = [
   { ep: 1, ytId: '8oGp61dIBHc', title: 'Kiran Hajare on Sales Funnel, Meta Ads & Attention Monetization', duration: '48 min', desc: '🎙 NEW PODCAST EPISODE WITH KIRAN HAJARE | Funnels, Monetization & Business Growth Revealed' },
   { ep: 2, ytId: 'nEmvI-Z81rw', title: 'मार्केटिंग करून छोटा बिझनेस "मोठा" करण्याचा फॉर्म्युला', duration: '42 min', desc: 'बहुतेक छोटे छोटे बिझनेस मोठे होऊ शकत नाहीत - कारण एकच - त्यांना मार्केटिंगचं तंत्र अवगत झालेलं नसतं!' },
   { ep: 3, ytId: 'o5bmttwprE8', title: 'Mastering Facebook & Instagram Ads: Boost Your Business Growth', duration: '55 min', desc: 'Learn how to run successful Facebook and Instagram ads. In-depth strategies and tips to optimize your ad campaigns and grow your business.' },
-  { ep: 4, title: 'AI Funnels: The Future of Admissions', duration: '38 min', desc: 'A deep dive into how AI is replacing manual lead nurturing and what every institute owner needs to set up before 2025.' },
+  { ep: 4, ytId: 'qgpN24cTIDY', title: 'Digital Marketing (डिजिटल मार्केटिंग) for Business | Kiran Hajare', duration: '38 min', desc: 'In this episode, Kiran Hajare — a leading expert in Facebook and Instagram Meta Ads — shares deep insights on digital marketing for business growth.' },
   { ep: 5, title: '₹47 Lakh Case Study Breakdown', duration: '61 min', desc: 'The actual campaign data, targeting strategy, and copy breakdown from the campaign that generated ₹47 Lakh in collected admissions.' },
   { ep: 6, title: 'Building a Brand That Sells for You', duration: '44 min', desc: 'Authority positioning, content leverage, and why institutes with strong brands pay less per lead and close more admissions.' },
 ];
