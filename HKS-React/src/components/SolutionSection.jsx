@@ -96,24 +96,12 @@ export default function SolutionSection() {
           ))}
         </div>
 
-        {/* What Will You Learn — redesigned */}
-        <div style={{
-          background: '#0f0f0f',
-          border: '1px solid #2a2a2a',
-          borderRadius: '20px',
-          overflow: 'hidden',
-          marginTop: '48px',
-        }}>
+        {/* What Will You Learn — Highly Animated */}
+        <div className="learn-container">
           {/* Header bar */}
-          <div style={{
-            background: 'linear-gradient(135deg, #cf9d45 0%, #e8b85a 100%)',
-            padding: '20px 40px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '14px',
-          }}>
-            <i className="fas fa-graduation-cap" style={{ color: '#000', fontSize: '1.4rem' }} />
-            <div>
+          <div className="learn-header">
+            <i className="fas fa-graduation-cap" style={{ color: '#000', fontSize: '1.4rem', zIndex: 2 }} />
+            <div style={{ zIndex: 2 }}>
               <p style={{ color: '#000', fontWeight: 900, fontSize: '1.15rem', margin: 0, fontFamily: 'var(--font-headline)' }}>
                 What Will You Actually Learn?
               </p>
@@ -124,39 +112,12 @@ export default function SolutionSection() {
           </div>
 
           {/* Outcome Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1px',
-            background: '#222',
-          }}>
+          <div className="learn-grid">
             {outcomes.map((o, i) => (
-              <div
-                key={i}
-                style={{
-                  background: '#111',
-                  padding: '28px 32px',
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '16px',
-                  transition: 'background 0.2s',
-                }}
-                onMouseEnter={e => e.currentTarget.style.background = '#161616'}
-                onMouseLeave={e => e.currentTarget.style.background = '#111'}
-              >
+              <div className="learn-card" key={i}>
                 {/* Icon circle */}
-                <div style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: '50%',
-                  background: 'rgba(207,157,69,0.12)',
-                  border: '1px solid rgba(207,157,69,0.3)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                }}>
-                  <i className={o.icon} style={{ color: '#cf9d45', fontSize: '1rem' }} />
+                <div className="learn-icon-wrap">
+                  <i className={o.icon} style={{ color: '#cf9d45', fontSize: '1rem', transition: 'color 0.3s' }} />
                 </div>
 
                 {/* Text */}
@@ -199,6 +160,109 @@ export default function SolutionSection() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .learn-container {
+          background: #0f0f0f;
+          border: 1px solid #2a2a2a;
+          border-radius: 20px;
+          overflow: hidden;
+          margin-top: 48px;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+          position: relative;
+        }
+
+        .learn-header {
+          background: linear-gradient(135deg, #cf9d45 0%, #e8b85a 100%);
+          padding: 20px 40px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .learn-header::after {
+          content: '';
+          position: absolute;
+          top: 0; left: -150%; width: 50%; height: 100%;
+          background: linear-gradient(to right, transparent, rgba(255,255,255,0.6), transparent);
+          transform: skewX(-25deg);
+          animation: gold-shimmer 4s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes gold-shimmer {
+          0% { left: -150%; }
+          100% { left: 250%; }
+        }
+
+        .learn-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1px;
+          background: #222;
+        }
+
+        .learn-card {
+          background: #111;
+          padding: 28px 32px;
+          display: flex;
+          align-items: flex-start;
+          gap: 16px;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          position: relative;
+          overflow: hidden;
+          z-index: 1;
+        }
+
+        .learn-card::before {
+          content: '';
+          position: absolute;
+          top: -50%; left: -50%;
+          width: 200%; height: 200%;
+          background: radial-gradient(circle, rgba(207,157,69,0.15) 0%, transparent 60%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          z-index: -1;
+          pointer-events: none;
+        }
+
+        .learn-card:hover {
+          background: #181818;
+          transform: scale(1.02);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+          z-index: 10;
+          border-radius: 12px;
+          border: 1px solid rgba(207,157,69,0.3);
+        }
+
+        .learn-card:hover::before {
+          opacity: 1;
+        }
+
+        .learn-icon-wrap {
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(207,157,69,0.12);
+          border: 1px solid rgba(207,157,69,0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .learn-card:hover .learn-icon-wrap {
+          background: #cf9d45;
+          box-shadow: 0 0 20px rgba(207,157,69,0.7);
+          transform: scale(1.15) rotate(10deg);
+        }
+
+        .learn-card:hover .learn-icon-wrap i {
+          color: #000 !important;
+        }
+      `}</style>
     </section>
   );
 }
