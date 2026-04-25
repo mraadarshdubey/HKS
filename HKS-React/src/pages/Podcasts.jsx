@@ -126,7 +126,7 @@ export default function Podcasts() {
           </div>
         </div>
 
-        {/* Subscribe CTA */}
+        {/* Subscribe CTA
         <div style={{
           background: '#111', border: '1px solid #222', borderRadius: 20,
           padding: '48px', textAlign: 'center', marginTop: 64
@@ -141,6 +141,7 @@ export default function Podcasts() {
             <button style={{ background: 'transparent', color: '#cf9d45', fontWeight: 700, fontSize: '0.9rem', padding: '13px 28px', border: '1px solid #cf9d4555', borderRadius: 8, cursor: 'pointer' }}>Apple Podcasts</button>
           </div>
         </div>
+        */}
       </div>
       {/* Video Popup Modal */}
       {activeVideo && (
