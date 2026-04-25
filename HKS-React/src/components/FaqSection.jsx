@@ -54,6 +54,34 @@ export default function FaqSection() {
           ))}
         </div>
       </div>
+      <style>{`
+        .faq-item {
+          transition: all 0.4s ease;
+          border-left: 2px solid transparent;
+        }
+        .faq-item:hover {
+          background: rgba(207,157,69,0.03);
+          border-left: 2px solid #cf9d45;
+          transform: translateX(5px);
+          box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .faq-item.open {
+          border-left: 4px solid #cf9d45;
+          background: rgba(207,157,69,0.05);
+          box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        .faq-toggle {
+          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .faq-item:hover .faq-toggle {
+          transform: scale(1.1);
+          color: #cf9d45;
+        }
+        .faq-item.open .faq-toggle {
+          transform: rotate(45deg) scale(1.1);
+          color: #cf9d45;
+        }
+      `}</style>
     </section>
   );
 }

@@ -78,6 +78,63 @@ export default function OfferSection() {
           </p>
         </div>
       </div>
+      <style>{`
+        .offer-box {
+          position: relative;
+          overflow: hidden;
+          transition: all 0.5s ease;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .offer-box:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 60px rgba(207,157,69,0.25);
+          border-color: rgba(207,157,69,0.5);
+        }
+        .offer-box::before {
+          content: '';
+          position: absolute;
+          top: -100%; left: -100%;
+          width: 300%; height: 300%;
+          background: radial-gradient(circle, rgba(207,157,69,0.1) 0%, transparent 40%);
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          pointer-events: none;
+          z-index: 0;
+        }
+        .offer-box:hover::before {
+          opacity: 1;
+        }
+        .offer-item {
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          border-radius: 12px;
+          padding: 8px;
+          border: 1px solid transparent;
+        }
+        .offer-item:hover {
+          background: rgba(207,157,69,0.05);
+          border-color: rgba(207,157,69,0.2);
+          transform: scale(1.03) translateX(5px);
+        }
+        .offer-item:hover .icon-wrap {
+          background: #cf9d45;
+          color: #000;
+          box-shadow: 0 0 15px rgba(207,157,69,0.6);
+          transform: scale(1.1) rotate(10deg);
+        }
+        .offer-item .icon-wrap i {
+          transition: color 0.3s;
+        }
+        .offer-item:hover .icon-wrap i {
+          color: #000;
+        }
+        .countdown-box {
+          animation: pulse-glow 3s infinite alternate;
+        }
+        @keyframes pulse-glow {
+          0% { box-shadow: 0 0 10px rgba(255,46,46,0.2); }
+          100% { box-shadow: 0 0 25px rgba(255,46,46,0.5); }
+        }
+      `}</style>
     </section>
   );
 }

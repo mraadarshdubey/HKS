@@ -86,15 +86,7 @@ export default function Articles() {
 
         {/* Featured Article */}
         {featured && active === 'All' && (
-          <div style={{
-            background: 'linear-gradient(135deg, #111 0%, rgba(207,157,69,0.06))',
-            border: '1px solid rgba(207,157,69,0.25)', borderRadius: 24,
-            padding: '48px', marginBottom: 64, cursor: 'pointer',
-            transition: 'transform 0.3s, box-shadow 0.3s',
-          }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 24px 56px rgba(0,0,0,0.4)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = 'none'; }}
-          >
+          <div className="featured-card">
             <div style={{ display: 'flex', gap: 16, marginBottom: 20, flexWrap: 'wrap', alignItems: 'center' }}>
               <span style={{ background: '#cf9d4518', color: '#cf9d45', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '4px 14px', borderRadius: 999, border: '1px solid #cf9d4433', display: 'flex', alignItems: 'center' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '1.2em', height: '1.2em', marginRight: '4px' }}>
@@ -114,13 +106,11 @@ export default function Articles() {
         {/* Category Tabs */}
         <div style={{ display: 'flex', gap: 10, marginBottom: 40, flexWrap: 'wrap' }}>
           {cats.map((cat, i) => (
-            <button key={i} onClick={() => setActive(cat)} style={{
-              padding: '8px 20px', borderRadius: 999, fontSize: '0.8rem', fontWeight: 700,
-              cursor: 'pointer', transition: 'all 0.2s',
-              background: active === cat ? '#cf9d45' : 'transparent',
-              color: active === cat ? '#000' : '#9ca3af',
-              border: active === cat ? 'none' : '1px solid #333',
-            }}>
+            <button 
+              key={i} 
+              onClick={() => setActive(cat)} 
+              className={`cat-tab ${active === cat ? 'active' : 'inactive'}`}
+            >
               {cat}
             </button>
           ))}
@@ -129,14 +119,7 @@ export default function Articles() {
         {/* Articles Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 80 }}>
           {(active === 'All' ? rest : filtered).map((a, i) => (
-            <div key={i} style={{
-              background: '#111', border: '1px solid #1a1a1a', borderRadius: 18,
-              padding: '32px', display: 'flex', flexDirection: 'column', gap: 14,
-              cursor: 'pointer', transition: 'transform 0.3s, border-color 0.3s',
-            }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#cf9d4433'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = '#1a1a1a'; }}
-            >
+            <div key={i} className="article-card">
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
                 <span style={{
                   background: (catColors[a.cat] || '#cf9d45') + '18',
@@ -157,11 +140,8 @@ export default function Articles() {
         </div>
 
         {/* Newsletter CTA */}
-        <div style={{
-          background: '#111', border: '1px solid #222', borderRadius: 20,
-          padding: '56px 48px', textAlign: 'center'
-        }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: 16 }}>
+        <div className="newsletter-cta">
+          <div className="newsletter-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '1em', height: '1em', color: '#cf9d45' }}>
               <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
               <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
@@ -173,19 +153,145 @@ export default function Articles() {
             <input
               type="email"
               placeholder="Enter your email"
-              style={{
-                flex: 1, padding: '13px 20px', background: '#1a1a1a', border: '1px solid #333',
-                borderRadius: 8, color: '#fff', fontSize: '0.95rem', outline: 'none',
-                minWidth: 200
-              }}
+              className="newsletter-input"
             />
-            <button style={{
-              background: '#cf9d45', color: '#000', fontWeight: 800, fontSize: '0.9rem',
-              padding: '13px 28px', border: 'none', borderRadius: 8, cursor: 'pointer', flexShrink: 0
-            }}>Subscribe →</button>
+            <button className="newsletter-btn">Subscribe →</button>
           </div>
         </div>
       </div>
+      <style>{`
+        .featured-card {
+          background: linear-gradient(135deg, #111 0%, rgba(207,157,69,0.06));
+          border: 1px solid rgba(207,157,69,0.25);
+          border-radius: 24px;
+          padding: 48px;
+          margin-bottom: 64px;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .featured-card:hover {
+          transform: translateY(-5px) scale(1.01);
+          box-shadow: 0 24px 56px rgba(207,157,69,0.15);
+          border-color: rgba(207,157,69,0.5);
+        }
+        .featured-card::before {
+          content: '';
+          position: absolute;
+          top: -100%; left: -100%;
+          width: 300%; height: 300%;
+          background: radial-gradient(circle, rgba(207,157,69,0.1) 0%, transparent 50%);
+          opacity: 0;
+          transition: opacity 0.5s;
+          pointer-events: none;
+        }
+        .featured-card:hover::before {
+          opacity: 1;
+        }
+
+        .cat-tab {
+          padding: 8px 20px;
+          border-radius: 999px;
+          font-size: 0.8rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+        .cat-tab:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(207,157,69,0.2);
+        }
+        .cat-tab.active {
+          background: #cf9d45;
+          color: #000;
+          border: none;
+        }
+        .cat-tab.inactive {
+          background: transparent;
+          color: #9ca3af;
+          border: 1px solid #333;
+        }
+        .cat-tab.inactive:hover {
+          border-color: #cf9d45;
+          color: #cf9d45;
+        }
+
+        .article-card {
+          background: #111;
+          border: 1px solid #1a1a1a;
+          border-radius: 18px;
+          padding: 32px;
+          display: flex;
+          flex-direction: column;
+          gap: 14px;
+          cursor: pointer;
+          transition: all 0.4s ease;
+          position: relative;
+        }
+        .article-card:hover {
+          transform: translateY(-5px);
+          border-color: rgba(207,157,69,0.4);
+          box-shadow: 0 10px 30px rgba(207,157,69,0.1);
+        }
+
+        .newsletter-cta {
+          background: #111;
+          border: 1px solid #222;
+          border-radius: 20px;
+          padding: 56px 48px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.5s;
+        }
+        .newsletter-cta:hover {
+          border-color: rgba(207,157,69,0.3);
+          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .newsletter-icon {
+          font-size: 2.5rem;
+          margin-bottom: 16px;
+          animation: float-icon 4s ease-in-out infinite;
+        }
+        @keyframes float-icon {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-8px); }
+        }
+        .newsletter-input {
+          flex: 1;
+          padding: 13px 20px;
+          background: #1a1a1a;
+          border: 1px solid #333;
+          border-radius: 8px;
+          color: #fff;
+          font-size: 0.95rem;
+          outline: none;
+          min-width: 200px;
+          transition: all 0.3s;
+        }
+        .newsletter-input:focus {
+          border-color: #cf9d45;
+          box-shadow: 0 0 10px rgba(207,157,69,0.2);
+        }
+        .newsletter-btn {
+          background: #cf9d45;
+          color: #000;
+          font-weight: 800;
+          font-size: 0.9rem;
+          padding: 13px 28px;
+          border: none;
+          border-radius: 8px;
+          cursor: pointer;
+          flex-shrink: 0;
+          transition: all 0.3s;
+        }
+        .newsletter-btn:hover {
+          background: #e6b75c;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(207,157,69,0.4);
+        }
+      `}</style>
     </div>
   );
 }

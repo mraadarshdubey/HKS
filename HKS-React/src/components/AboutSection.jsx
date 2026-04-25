@@ -57,6 +57,48 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
+      <style>{`
+        .about-img-wrap {
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+          transition: all 0.5s ease;
+        }
+        .about-img-wrap:hover {
+          transform: translateY(-5px) scale(1.02);
+          box-shadow: 0 20px 50px rgba(207,157,69,0.3);
+        }
+        .about-img-wrap::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%);
+          pointer-events: none;
+        }
+        .about-limit-badge {
+          animation: float-badge 4s ease-in-out infinite;
+          background: linear-gradient(135deg, #cf9d45, #b8860b);
+          color: #000;
+          border: none;
+          box-shadow: 0 10px 20px rgba(207,157,69,0.4);
+        }
+        @keyframes float-badge {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0); }
+        }
+        .about-stat-box {
+          transition: all 0.3s ease;
+          border-left: 3px solid #cf9d45;
+          background: linear-gradient(90deg, rgba(207,157,69,0.1), transparent);
+        }
+        .about-stat-box:hover {
+          transform: translateX(10px);
+          background: linear-gradient(90deg, rgba(207,157,69,0.15), transparent);
+          border-left-width: 6px;
+        }
+      `}</style>
     </section>
   );
 }
