@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 
 const channels = [
@@ -10,9 +10,13 @@ const channels = [
     focus: 'Meta Ads strategy, case studies, and admission funnel walkthroughs for coaching institutes.',
     color: '#ff2e2e',
     featured: [
-      'How I Generated ₹47L in Admissions with Meta Ads',
-      'The 3-Step Funnel That Fills Coaching Seats in 30 Days',
-      'AI Follow-Up Systems: Never Lose a Lead Again',
+      {
+        title: 'Kiran Hajare on Sales Funnel, Meta Ads & Attention Monetization',
+        desc: '🎙 NEW PODCAST EPISODE WITH KIRAN HAJARE | Funnels, Monetization & Business Growth Revealed. In this high-value episode, we sit down with Kiran Hajare an entrepreneur...',
+        videoId: '8oGp61dIBHc',
+      },
+      { title: 'The 3-Step Funnel That Fills Coaching Seats in 30 Days' },
+      { title: 'AI Follow-Up Systems: Never Lose a Lead Again' },
     ],
   },
   {
@@ -23,9 +27,9 @@ const channels = [
     focus: 'Marathi language digital marketing, entrepreneur mindset, and vernacular business strategy.',
     color: '#cf9d45',
     featured: [
-      'मराठी उद्योजकांसाठी Meta Ads कसे चालवावे',
-      'WhatsApp वरून Admissions कसे Generate करावे',
-      'Digital Marketing मध्ये Brand कसा बनवावा',
+      { title: 'मराठी उद्योजकांसाठी Meta Ads कसे चालवावे' },
+      { title: 'WhatsApp वरून Admissions कसे Generate करावे' },
+      { title: 'Digital Marketing मध्ये Brand कसा बनवावा' },
     ],
   },
 ];
@@ -38,8 +42,12 @@ const playlists = [
 ];
 
 export default function YouTube() {
+  const [activeVideo, setActiveVideo] = useState(null);
+
+  const closeVideo = () => setActiveVideo(null);
+
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db', position: 'relative' }}>
       <PageHeader
         title="YouTube Channels"
         subtitle="Visual blueprints, live campaign breakdowns, and strategic content to 10x your institute."
@@ -92,17 +100,47 @@ export default function YouTube() {
                 <div style={{ marginBottom: 24 }}>
                   <p style={{ color: '#6b7280', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 12 }}>Top Videos</p>
                   {ch.featured.map((f, j) => (
-                    <div key={j} style={{
-                      display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10,
-                      color: '#e5e7eb', fontSize: '0.88rem', lineHeight: 1.4
-                    }}>
-                      <span style={{ color: ch.color, flexShrink: 0, marginTop: 2 }}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
-                      </span> {f}
+                    <div key={j} 
+                         style={{
+                           display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 16,
+                           color: '#e5e7eb', fontSize: '0.88rem', lineHeight: 1.4,
+                           cursor: f.videoId ? 'pointer' : 'default',
+                           padding: f.videoId ? '8px' : '0',
+                           background: f.videoId ? 'rgba(255,255,255,0.03)' : 'transparent',
+                           borderRadius: '8px',
+                           border: f.videoId ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                           transition: 'all 0.2s',
+                         }}
+                         onMouseEnter={e => { if (f.videoId) { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = ch.color + '44'; } }}
+                         onMouseLeave={e => { if (f.videoId) { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.05)'; } }}
+                         onClick={() => { if (f.videoId) setActiveVideo(f); }}
+                    >
+                      <span style={{ color: ch.color, flexShrink: 0, marginTop: f.desc ? 4 : 2 }}>
+                        {f.videoId ? (
+                           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M8 5v14l11-7z"/></svg>
+                        ) : (
+                           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                        )}
+                      </span> 
+                      <div>
+                        <div style={{ fontWeight: f.videoId ? 700 : 500, color: f.videoId ? '#fff' : '#e5e7eb' }}>
+                          {f.title}
+                        </div>
+                        {f.desc && (
+                          <div style={{ color: '#9ca3af', fontSize: '0.8rem', marginTop: 6, lineHeight: 1.5 }}>
+                            {f.desc}
+                          </div>
+                        )}
+                        {f.videoId && (
+                           <div style={{ color: ch.color, fontSize: '0.75rem', fontWeight: 600, marginTop: 8, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                             ▶ Watch Video
+                           </div>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
-                <a href="#" style={{
+                <a href="https://www.youtube.com/@kiranhajare" target="_blank" rel="noopener noreferrer" style={{
                   display: 'block', textAlign: 'center', padding: '12px 24px',
                   background: ch.color, color: ch.color === '#cf9d45' ? '#000' : '#fff',
                   fontWeight: 800, fontSize: '0.9rem', borderRadius: 8,
@@ -145,13 +183,67 @@ export default function YouTube() {
           </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>Subscribe & Never Miss a Strategy Drop</h3>
           <p style={{ color: '#9ca3af', maxWidth: 500, margin: '0 auto 28px', lineHeight: 1.7 }}>New case studies, funnel walkthroughs, and Meta Ads deep dives every week. Hit subscribe and turn on notifications.</p>
-          <button style={{
+          <a href="https://www.youtube.com/@kiranhajare" target="_blank" rel="noopener noreferrer" style={{
+            display: 'inline-block',
             background: '#ff2e2e', color: '#fff', fontWeight: 800, fontSize: '1rem',
             padding: '14px 40px', border: 'none', borderRadius: 8, cursor: 'pointer',
-            boxShadow: '0 0 30px rgba(255,46,46,0.3)'
-          }}>Subscribe Now →</button>
+            boxShadow: '0 0 30px rgba(255,46,46,0.3)', textDecoration: 'none'
+          }}>Subscribe Now →</a>
         </div>
       </div>
+
+      {/* Video Popup Modal */}
+      {activeVideo && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 9999,
+          background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(10px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          padding: '24px'
+        }} onClick={closeVideo}>
+          
+          <div style={{
+            background: '#0a0a0a', border: '1px solid #333',
+            borderRadius: 24, width: '100%', maxWidth: 900,
+            overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+            position: 'relative'
+          }} onClick={e => e.stopPropagation()}>
+            
+            {/* Close Button */}
+            <button onClick={closeVideo} style={{
+              position: 'absolute', top: 16, right: 16, zIndex: 10,
+              background: 'rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)',
+              color: '#fff', width: 40, height: 40, borderRadius: '50%',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              cursor: 'pointer', transition: 'all 0.2s'
+            }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,0,0,0.8)'} onMouseLeave={e => e.currentTarget.style.background = 'rgba(0,0,0,0.5)'}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            {/* YouTube Embed */}
+            <div style={{ width: '100%', aspectRatio: '16/9', background: '#000' }}>
+              <iframe 
+                width="100%" 
+                height="100%" 
+                src={`https://www.youtube.com/embed/${activeVideo.videoId}?autoplay=1&rel=0`} 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </div>
+
+            {/* Video Details */}
+            <div style={{ padding: '24px 32px' }}>
+              <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.4rem', fontWeight: 800, color: '#fff', marginBottom: 12 }}>
+                {activeVideo.title}
+              </h3>
+              <p style={{ color: '#9ca3af', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+                {activeVideo.desc}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
