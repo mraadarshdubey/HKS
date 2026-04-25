@@ -60,14 +60,14 @@ export default function AboutSection() {
       <style>{`
         .about-img-wrap {
           position: relative;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 10px 40px rgba(0,0,0,0.6);
           transition: all 0.5s ease;
+          /* Removed overflow: hidden so the badge can be outside */
         }
         .about-img-wrap:hover {
           transform: translateY(-5px) scale(1.02);
-          box-shadow: 0 20px 50px rgba(207,157,69,0.3);
+        }
+        .about-img-wrap:hover img {
+          box-shadow: 0 20px 50px rgba(207,157,69,0.3) !important;
         }
 
         .about-limit-badge {
