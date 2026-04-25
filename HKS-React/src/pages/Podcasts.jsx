@@ -3,7 +3,7 @@ import PageHeader from '../components/PageHeader';
 
 const episodes = [
   { ep: 1, ytId: '8oGp61dIBHc', title: 'Kiran Hajare on Sales Funnel, Meta Ads & Attention Monetization', duration: '48 min', desc: '🎙 NEW PODCAST EPISODE WITH KIRAN HAJARE | Funnels, Monetization & Business Growth Revealed' },
-  { ep: 2, title: 'Why Your Ads Aren\'t Working (And What To Do)', duration: '42 min', desc: 'The 3 most common Meta Ads mistakes institute owners make and the precise fixes that turned losing campaigns into winners.' },
+  { ep: 2, ytId: 'nEmvI-Z81rw', title: 'मार्केटिंग करून छोटा बिझनेस "मोठा" करण्याचा फॉर्म्युला', duration: '42 min', desc: 'बहुतेक छोटे छोटे बिझनेस मोठे होऊ शकत नाहीत - कारण एकच - त्यांना मार्केटिंगचं तंत्र अवगत झालेलं नसतं!' },
   { ep: 3, title: 'The Marathi Business Code', duration: '55 min', desc: 'How to market in the language your audience thinks in — and why vernacular marketing delivers 2x the conversions of English-first campaigns.' },
   { ep: 4, title: 'AI Funnels: The Future of Admissions', duration: '38 min', desc: 'A deep dive into how AI is replacing manual lead nurturing and what every institute owner needs to set up before 2025.' },
   { ep: 5, title: '₹47 Lakh Case Study Breakdown', duration: '61 min', desc: 'The actual campaign data, targeting strategy, and copy breakdown from the campaign that generated ₹47 Lakh in collected admissions.' },
