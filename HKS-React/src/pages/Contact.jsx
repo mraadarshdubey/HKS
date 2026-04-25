@@ -2,22 +2,39 @@ import React, { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    institute: '',
-    revenue: '',
-    message: ''
+    name: '', email: '', phone: '', institute: '', revenue: '', message: ''
   });
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [msg, setMsg]       = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (status === 'error') { setStatus('idle'); setMsg(''); }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you! Your message has been received. We will get back to you shortly.");
-    setFormData({ name: '', email: '', phone: '', institute: '', revenue: '', message: '' });
+    setStatus('loading');
+    setMsg('');
+    try {
+      const res  = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setMsg(data.message || 'Your inquiry has been sent!');
+        setFormData({ name: '', email: '', phone: '', institute: '', revenue: '', message: '' });
+      } else {
+        setStatus('error');
+        setMsg(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setStatus('error');
+      setMsg('Network error. Please check your connection and try again.');
+    }
   };
 
   return (
@@ -80,9 +97,9 @@ export default function Contact() {
               <p style={{ color: '#9ca3af', fontSize: '0.95rem', marginBottom: '24px', position: 'relative', zIndex: 2 }}>
                 Skip the email queue and book a direct 1-on-1 strategy call with Kiran Hajare to map out your institute's growth plan immediately.
               </p>
-              <button className="book-btn">
+              <a href="https://rzp.io/rzp/IPZgTGU" target="_blank" rel="noopener noreferrer" className="book-btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                 Book a Strategy Call →
-              </button>
+              </a>
             </div>
           </div>
 
@@ -91,50 +108,89 @@ export default function Contact() {
             <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', color: '#fff', fontWeight: 800, marginBottom: '24px' }}>
               Send an Inquiry
             </h2>
-            <form onSubmit={handleSubmit} className="premium-form">
-              <div className="form-row">
-                <div className="input-group">
-                  <label htmlFor="name">Full Name *</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" />
-                </div>
-                <div className="input-group">
-                  <label htmlFor="email">Email Address *</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@institute.com" />
-                </div>
-              </div>
 
-              <div className="form-row">
-                <div className="input-group">
-                  <label htmlFor="phone">WhatsApp Number *</label>
-                  <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required placeholder="+91 98765 43210" />
+            {status === 'success' ? (
+              <div style={{
+                background: 'rgba(207,157,69,0.08)', border: '1px solid rgba(207,157,69,0.3)',
+                borderRadius: 16, padding: '48px 32px', textAlign: 'center',
+              }}>
+                <div style={{ fontSize: '3rem', marginBottom: 16 }}>🎉</div>
+                <h3 style={{ color: '#cf9d45', fontFamily: 'var(--font-headline)', fontSize: '1.4rem', fontWeight: 900, marginBottom: 12 }}>
+                  Inquiry Sent Successfully!
+                </h3>
+                <p style={{ color: '#9ca3af', lineHeight: 1.7, marginBottom: 24 }}>
+                  {msg}<br />We'll respond within 24 hours. Check your inbox for a confirmation email.
+                </p>
+                <button
+                  onClick={() => setStatus('idle')}
+                  style={{ background: 'transparent', border: '1px solid #cf9d45', color: '#cf9d45', fontWeight: 700, padding: '10px 28px', borderRadius: 8, cursor: 'pointer', fontSize: '0.9rem' }}
+                >
+                  Send Another →
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="premium-form">
+                <div className="form-row">
+                  <div className="input-group">
+                    <label htmlFor="name">Full Name *</label>
+                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" disabled={status === 'loading'} />
+                  </div>
+                  <div className="input-group">
+                    <label htmlFor="email">Email Address *</label>
+                    <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@institute.com" disabled={status === 'loading'} />
+                  </div>
                 </div>
-                <div className="input-group">
-                  <label htmlFor="institute">Institute Name</label>
-                  <input type="text" id="institute" name="institute" value={formData.institute} onChange={handleChange} placeholder="Excel Academy" />
+
+                <div className="form-row">
+                  <div className="input-group">
+                    <label htmlFor="phone">WhatsApp Number *</label>
+                    <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} required placeholder="+91 98765 43210" disabled={status === 'loading'} />
+                  </div>
+                  <div className="input-group">
+                    <label htmlFor="institute">Institute Name</label>
+                    <input type="text" id="institute" name="institute" value={formData.institute} onChange={handleChange} placeholder="Excel Academy" disabled={status === 'loading'} />
+                  </div>
                 </div>
-              </div>
 
-              <div className="input-group">
-                <label htmlFor="revenue">Current Monthly Revenue (Optional)</label>
-                <select id="revenue" name="revenue" value={formData.revenue} onChange={handleChange} className="custom-select">
-                  <option value="" disabled>Select a range</option>
-                  <option value="Under ₹1 Lakh">Under ₹1 Lakh</option>
-                  <option value="₹1 Lakh - ₹5 Lakhs">₹1 Lakh - ₹5 Lakhs</option>
-                  <option value="₹5 Lakhs - ₹15 Lakhs">₹5 Lakhs - ₹15 Lakhs</option>
-                  <option value="₹15 Lakhs+">₹15 Lakhs+</option>
-                </select>
-              </div>
+                <div className="input-group">
+                  <label htmlFor="revenue">Current Monthly Revenue (Optional)</label>
+                  <select id="revenue" name="revenue" value={formData.revenue} onChange={handleChange} className="custom-select" disabled={status === 'loading'}>
+                    <option value="" disabled>Select a range</option>
+                    <option value="Under ₹1 Lakh">Under ₹1 Lakh</option>
+                    <option value="₹1 Lakh - ₹5 Lakhs">₹1 Lakh - ₹5 Lakhs</option>
+                    <option value="₹5 Lakhs - ₹15 Lakhs">₹5 Lakhs - ₹15 Lakhs</option>
+                    <option value="₹15 Lakhs+">₹15 Lakhs+</option>
+                  </select>
+                </div>
 
-              <div className="input-group">
-                <label htmlFor="message">How can we help you? *</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Describe your current bottleneck or goals..." rows="5"></textarea>
-              </div>
+                <div className="input-group">
+                  <label htmlFor="message">How can we help you? *</label>
+                  <textarea id="message" name="message" value={formData.message} onChange={handleChange} required placeholder="Describe your current bottleneck or goals..." rows="5" disabled={status === 'loading'}></textarea>
+                </div>
 
-              <button type="submit" className="submit-btn">
-                <span>Submit Inquiry</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              </button>
-            </form>
+                {msg && status === 'error' && (
+                  <p style={{ color: '#ff6b6b', fontSize: '0.88rem', fontWeight: 600, marginBottom: 16, padding: '10px 16px', background: 'rgba(255,107,107,0.08)', borderRadius: 8, border: '1px solid rgba(255,107,107,0.2)' }}>
+                    ⚠️ {msg}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  className="submit-btn"
+                  disabled={status === 'loading'}
+                  style={{ opacity: status === 'loading' ? 0.75 : 1, cursor: status === 'loading' ? 'not-allowed' : 'pointer' }}
+                >
+                  {status === 'loading' ? (
+                    <span>Sending...</span>
+                  ) : (
+                    <>
+                      <span>Submit Inquiry</span>
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </>
+                  )}
+                </button>
+              </form>
+            )}
           </div>
 
         </div>
