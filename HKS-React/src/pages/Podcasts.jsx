@@ -21,7 +21,7 @@ export default function Podcasts() {
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 24px 100px' }}>
 
-        {/* Listen On Badges */}
+        {/* Listen On Badges 
         <div style={{ textAlign: 'center', marginBottom: 72 }}>
           <p style={{ color: '#6b7280', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 20 }}>Available On</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -47,14 +47,14 @@ export default function Podcasts() {
             ))}
           </div>
         </div>
+        */}
 
-        {/* Featured Episode */}
+        {/* Featured Episode 
         <div style={{
           background: 'linear-gradient(135deg, #111 0%, rgba(207,157,69,0.06))',
           border: '1px solid rgba(207,157,69,0.25)', borderRadius: 24,
           padding: '48px', marginBottom: 64, display: 'flex', gap: 36, alignItems: 'center', flexWrap: 'wrap'
         }}>
-          {/* Play Button */}
           <div style={{
             width: 100, height: 100, borderRadius: '50%', flexShrink: 0,
             background: '#cf9d45', display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -79,6 +79,7 @@ export default function Podcasts() {
             </p>
           </div>
         </div>
+        */}
 
         {/* All Episodes Grid */}
         <div style={{ marginBottom: 24 }}>
