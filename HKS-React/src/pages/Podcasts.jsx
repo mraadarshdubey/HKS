@@ -100,22 +100,41 @@ export default function Podcasts() {
               >
                 {/* Thumbnail */}
                 <div style={{
-                  background: 'linear-gradient(135deg, #1a1a1a, #0d0d0d)',
                   borderRadius: 12, aspectRatio: '16/9',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden'
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  position: 'relative', overflow: 'hidden', background: '#0d0d0d'
                 }}>
-                  <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at center, rgba(207,157,69,0.08), transparent)' }} />
+                  {ep.ytId ? (
+                    <img
+                      src={`https://img.youtube.com/vi/${ep.ytId}/maxresdefault.jpg`}
+                      alt={ep.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      onError={e => { e.currentTarget.src = `https://img.youtube.com/vi/${ep.ytId}/hqdefault.jpg`; }}
+                    />
+                  ) : (
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, #1a1a1a, #0d0d0d)' }} />
+                  )}
+                  {/* Dark overlay on hover */}
                   <div style={{
-                    width: 50, height: 50, borderRadius: '50%', background: '#cf9d45',
+                    position: 'absolute', inset: 0,
+                    background: 'rgba(0,0,0,0.35)',
+                    transition: 'background 0.3s'
+                  }} className="thumb-overlay" />
+                  {/* Play Button */}
+                  <div style={{
+                    position: 'absolute',
+                    width: 56, height: 56, borderRadius: '50%',
+                    background: '#cf9d45',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: '0 0 20px rgba(207,157,69,0.4)', zIndex: 1
+                    boxShadow: '0 0 24px rgba(207,157,69,0.6)', zIndex: 2,
+                    transition: 'transform 0.2s, box-shadow 0.2s'
                   }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M5 3l14 9-14 9V3z" /></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M5 3l14 9-14 9V3z" /></svg>
                   </div>
                   <span style={{
                     position: 'absolute', bottom: 10, right: 10,
-                    background: 'rgba(0,0,0,0.7)', color: '#fff', fontSize: '0.7rem',
-                    fontWeight: 700, padding: '3px 8px', borderRadius: 4
+                    background: 'rgba(0,0,0,0.75)', color: '#fff', fontSize: '0.7rem',
+                    fontWeight: 700, padding: '3px 8px', borderRadius: 4, zIndex: 3
                   }}>{ep.duration}</span>
                 </div>
                 <span style={{ color: '#cf9d45', fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.15em' }}>Episode {ep.ep}</span>
