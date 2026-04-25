@@ -118,11 +118,8 @@ export default function MyStory() {
           </div>
 
           <div style={{ position: 'relative', paddingLeft: 40 }}>
-            {/* Vertical line */}
-            <div style={{
-              position: 'absolute', left: 16, top: 0, bottom: 0,
-              width: 2, background: 'linear-gradient(to bottom, #cf9d45, #ff2e2e, transparent)'
-            }} />
+            {/* Animated Vertical line */}
+            <div className="animated-line" />
 
             {milestones.map((m, i) => (
               <div key={i} style={{ display: 'flex', gap: 32, marginBottom: 48, position: 'relative' }}>
@@ -132,13 +129,17 @@ export default function MyStory() {
                   width: 18, height: 18, borderRadius: '50%',
                   background: i % 2 === 0 ? '#cf9d45' : '#ff2e2e',
                   border: '3px solid #0a0a0a',
-                  boxShadow: `0 0 12px ${i % 2 === 0 ? 'rgba(207,157,69,0.5)' : 'rgba(255,46,46,0.5)'}`,
+                  boxShadow: `0 0 15px ${i % 2 === 0 ? 'rgba(207,157,69,0.8)' : 'rgba(255,46,46,0.8)'}`,
                   flexShrink: 0,
+                  zIndex: 2,
                 }} />
-                <div style={{
+                <div 
+                  className={`story-timeline-card ${i % 2 === 0 ? 'gold-sweep' : 'red-sweep'}`}
+                  style={{
                   background: '#111', border: '1px solid #222', borderRadius: 16,
                   padding: '28px 32px', flex: 1,
-                  transition: 'border-color 0.3s, transform 0.3s',
+                  transition: 'all 0.3s ease',
+                  position: 'relative', overflow: 'hidden'
                 }}>
                   <div style={{
                     display: 'inline-block', fontFamily: 'var(--font-headline)',
@@ -157,6 +158,49 @@ export default function MyStory() {
       <style>{`
         @media (max-width: 768px) {
           .story-intro-grid { grid-template-columns: 1fr !important; }
+        }
+
+        .story-timeline-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 2px;
+          animation: border-sweep 3s ease-in-out infinite;
+        }
+
+        .gold-sweep::before {
+          background: linear-gradient(90deg, transparent, #cf9d45, transparent);
+        }
+
+        .red-sweep::before {
+          background: linear-gradient(90deg, transparent, #ff2e2e, transparent);
+          animation-delay: 1.5s;
+        }
+
+        .story-timeline-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .gold-sweep:hover { border-color: rgba(207, 157, 69, 0.4); }
+        .red-sweep:hover { border-color: rgba(255, 46, 46, 0.4); }
+
+        .animated-line {
+          position: absolute;
+          left: 16px;
+          top: 0;
+          bottom: 0;
+          width: 2px;
+          background: linear-gradient(to bottom, rgba(207, 157, 69, 0.1), #cf9d45, #ff2e2e, #cf9d45, rgba(207, 157, 69, 0.1));
+          background-size: 100% 200%;
+          animation: line-flow 4s linear infinite;
+        }
+
+        @keyframes line-flow {
+          0% { background-position: 0 0; }
+          100% { background-position: 0 200%; }
         }
       `}</style>
     </div>
