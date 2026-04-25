@@ -4,7 +4,8 @@ import PageHeader from '../components/PageHeader';
 const channels = [
   {
     name: 'Kiran Hajare Official',
-    handle: '@KiranHajareOfficial',
+    handle: '@hellokiransheth',
+    url: 'https://www.youtube.com/@hellokiransheth',
     subs: '50K+',
     videos: '120+',
     focus: 'Meta Ads strategy, case studies, and admission funnel walkthroughs for coaching institutes.',
@@ -17,7 +18,8 @@ const channels = [
   },
   {
     name: 'Marathi Business Tribe',
-    handle: '@MarathiBusinessTribe',
+    handle: '@hellokiransheth',
+    url: 'https://www.youtube.com/@hellokiransheth',
     subs: '25K+',
     videos: '80+',
     focus: 'Marathi language digital marketing, entrepreneur mindset, and vernacular business strategy.',
@@ -102,7 +104,7 @@ export default function YouTube() {
                     </div>
                   ))}
                 </div>
-                <a href="#" style={{
+                <a href={ch.url} target="_blank" rel="noopener noreferrer" style={{
                   display: 'block', textAlign: 'center', padding: '12px 24px',
                   background: ch.color, color: ch.color === '#cf9d45' ? '#000' : '#fff',
                   fontWeight: 800, fontSize: '0.9rem', borderRadius: 8,

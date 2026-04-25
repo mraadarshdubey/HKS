@@ -4,24 +4,24 @@ import PageHeader from '../components/PageHeader';
 const socials = [
   {
     platform: 'Facebook',
-    handle: '@KiranHajareOfficial',
+    handle: '@hellokiransheth',
     followers: '15K+',
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>,
     desc: 'Daily tips, live sessions, and the go-to hub for the Marathi Business Tribe community. Join 15,000+ entrepreneurs.',
     color: '#1877f2',
     cta: 'Follow on Facebook',
-    url: '#',
+    url: 'https://www.facebook.com/hellokiransheth/',
     badge: 'Most Active',
   },
   {
     platform: 'Instagram',
-    handle: '@kiran_hajare',
+    handle: '@hellokiransheth',
     followers: '28K+',
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>,
     desc: 'Visual strategy breakdowns, behind-the-scenes of live campaigns, reels on Meta Ads tactics that actually work.',
     color: '#e1306c',
     cta: 'Follow on Instagram',
-    url: '#',
+    url: 'https://www.instagram.com/hellokiransheth/',
     badge: 'Top Reels',
   },
   {
@@ -32,18 +32,18 @@ const socials = [
     desc: 'Long-form insights, professional case studies, and deep dives into educational marketing strategy for serious entrepreneurs.',
     color: '#0077b5',
     cta: 'Connect on LinkedIn',
-    url: '#',
+    url: 'https://www.linkedin.com/in/kiranhajare/',
     badge: 'Thought Leadership',
   },
   {
     platform: 'X (Twitter)',
-    handle: '@KiranHajare_',
+    handle: '@hellokiransheth',
     followers: '5K+',
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>,
     desc: 'Raw unfiltered thoughts on digital marketing, business, and the Marathi entrepreneur ecosystem. Real-time insights.',
     color: '#1a1a1a',
     cta: 'Follow on X',
-    url: '#',
+    url: 'https://x.com/hellokiransheth',
     badge: null,
   },
   {
@@ -58,6 +58,17 @@ const socials = [
     badge: 'Free Access',
   },
   {
+    platform: 'YouTube',
+    handle: '@hellokiransheth',
+    followers: '50K+',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.13 1 12 1 12s0 3.87.46 5.58a2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.42a2.78 2.78 0 0 0 1.94-2C23 15.87 23 12 23 12s0-3.87-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon></svg>,
+    desc: 'Deep-dive strategies, case studies, and complete blueprints to scale your admissions. Updated weekly.',
+    color: '#ff0000',
+    cta: 'Subscribe on YouTube',
+    url: 'https://www.youtube.com/@hellokiransheth',
+    badge: 'Masterclasses',
+  },
+  {
     platform: 'Telegram',
     handle: '@HelloKiranSheth',
     followers: '6K+',
@@ -65,7 +76,7 @@ const socials = [
     desc: 'Exclusive resources, frameworks, and campaign templates shared only with Telegram subscribers. No spam. Just value.',
     color: '#0088cc',
     cta: 'Join Channel',
-    url: '#',
+    url: 'https://t.me/hellokiransheth',
     badge: 'Exclusive Resources',
   },
 ];
@@ -147,7 +158,7 @@ export default function Socials() {
         </div>
 
         {/* WhatsApp Tribe CTA */}
-        <div style={{
+        {/* <div style={{
           background: 'linear-gradient(135deg, rgba(37,211,102,0.12), rgba(37,211,102,0.04))',
           border: '1px solid rgba(37,211,102,0.25)', borderRadius: 20,
           padding: '56px 48px', textAlign: 'center'
@@ -166,7 +177,7 @@ export default function Socials() {
             padding: '14px 40px', border: 'none', borderRadius: 8, cursor: 'pointer',
             boxShadow: '0 0 30px rgba(37,211,102,0.3)'
           }}>Join WhatsApp Community →</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
