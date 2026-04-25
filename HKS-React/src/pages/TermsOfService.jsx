@@ -1,6 +1,13 @@
+import SEO from '../components/SEO';
+
 export default function TermsOfService() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Terms & Conditions — hellokiransheth"
+        description="Read the terms and conditions for using hellokiransheth services. Outlines rules, regulations, and agreements for our digital marketing partnerships."
+        path="/terms-of-service"
+      />
       {/* Hero Banner */}
       <div style={{
         background: '#111', borderBottom: '1px solid #222',

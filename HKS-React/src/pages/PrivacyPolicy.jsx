@@ -1,6 +1,13 @@
+import SEO from '../components/SEO';
+
 export default function PrivacyPolicy() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Privacy Policy — hellokiransheth"
+        description="Learn how hellokiransheth collects, uses, and protects your personal information. We are committed to your privacy and data security."
+        path="/privacy-policy"
+      />
       {/* Hero Banner */}
       <div style={{
         background: '#111', borderBottom: '1px solid #222',

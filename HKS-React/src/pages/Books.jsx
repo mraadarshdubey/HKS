@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const books = [
   {
@@ -31,6 +32,11 @@ const books = [
 export default function Books() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Books — Digital Marketing & Growth Strategy Playbooks"
+        description="Discover Kiran Hajare's books on Meta Ads funnels, paid traffic for education institutes, and growing businesses in the Marathi-speaking economy."
+        path="/books"
+      />
       <PageHeader
         title="Kiran's Books"
         subtitle="Distilled frameworks — from years of scaling institutes — condensed into actionable playbooks."

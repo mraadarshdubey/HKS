@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const platforms = [
   {
@@ -37,6 +38,11 @@ const platforms = [
 export default function Platforms() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Platforms — Kiran Hajare's Marketing Ecosystem"
+        description="Explore the complete digital ecosystem and growth tools built by Kiran Hajare — AdmissionOS CRM, LeadPilot AI, and MarathiAds.io for coaching institutes."
+        path="/platforms"
+      />
       <PageHeader
         title="Software Platforms"
         subtitle="Purpose-built digital tools to give every institute an unfair advantage."

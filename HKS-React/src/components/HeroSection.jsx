@@ -105,7 +105,7 @@ export default function HeroSection() {
   return (
     <section className="hero-section fade-in-section">
       {/* Mobile-only: Image as full background */}
-      <img className="hero-mobile-img" src="/k1.png" alt="" aria-hidden="true" />
+      <img className="hero-mobile-img" src="/k1.webp" alt="" aria-hidden="true" />
       <div className="hero-mobile-gradient" />
 
       <div className="hero-map-bg" />
@@ -255,7 +255,7 @@ export default function HeroSection() {
         {/* RIGHT: Image Cutout (desktop only) */}
         <div className="hero-right">
           <img
-            src="/k1.png"
+            src="/k1.webp"
             alt="Kiran Hajare"
           />
         </div>

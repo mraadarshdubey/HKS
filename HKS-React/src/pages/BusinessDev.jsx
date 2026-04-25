@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const services = [
   {
@@ -44,6 +45,11 @@ const faqs = [
 export default function BusinessDev() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Business Development — Growth Strategies by Kiran Hajare"
+        description="Work with Kiran Hajare — free clarity call, step-by-step training, or done-for-you Meta ads management. Data-driven growth systems for coaching institutes."
+        path="/business-development"
+      />
       <PageHeader
         title="Work With Kiran"
         subtitle="Free clarity call, step-by-step training, or done-for-you ad management — choose your path."

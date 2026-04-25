@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const channels = [
   {
@@ -42,6 +43,11 @@ const playlists = [
 export default function YouTube() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="YouTube — @hellokiransheth Marketing Masterclasses"
+        description="Watch Kiran Hajare's deep-dive strategies, case studies, and complete marketing blueprints on YouTube. Subscribe to @hellokiransheth for weekly growth content."
+        path="/youtube"
+      />
       <PageHeader
         title="YouTube Channels"
         subtitle="Visual blueprints, live campaign breakdowns, and strategic content to 10x your institute."

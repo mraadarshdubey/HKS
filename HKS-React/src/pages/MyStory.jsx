@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const milestones = [
   { year: '2016', title: 'The Beginning — Small Business Struggle', desc: 'Started with a small business. Log kehte the — "Instagram pe daalo, ads chalao, customers aayenge." Sab try kiya. Paise gaye, time gaya, customers nahi aaye. Yahi se journey shuru hui.' },
@@ -13,6 +14,11 @@ const milestones = [
 export default function MyStory() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="My Story — From Struggle to ₹1Cr+ Ad Spend Expert"
+        description="Read Kiran Hajare's journey from struggling small business owner to training 50,000+ people in digital marketing. ₹1Cr+ real ad spend, proven systems, and the Marathi Business Tribe."
+        path="/my-story"
+      />
       <PageHeader
         title="My Story"
         subtitle="From small business struggles to training 50,000+ people — the unfiltered truth."
@@ -38,7 +44,7 @@ export default function MyStory() {
                 aspectRatio: '4/5',
               }}>
                 <img
-                  src="/k1.png"
+                  src="/k1.webp"
                   alt="Kiran Hajare"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top center', filter: 'brightness(0.95) contrast(1.05)' }}
                 />

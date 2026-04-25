@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const socials = [
   {
@@ -88,6 +89,11 @@ const socials = [
 export default function Socials() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Social Media — Follow @hellokiransheth"
+        description="Connect with Kiran Hajare on Facebook, Instagram, LinkedIn, and YouTube. Get daily marketing tips, live sessions, and strategic insights for your coaching institute."
+        path="/socials"
+      />
       <PageHeader
         title="Connect With Kiran"
         subtitle="Every platform has a different lens. Find the one that speaks to you and plug in."

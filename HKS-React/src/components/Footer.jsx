@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="footer-brand">
           <Link to="/" className="inline-block mb-4">
-            <img src="/LOGO.png" alt="KIRAN HAJARE" style={{ height: '160px', width: 'auto', objectFit: 'contain', transform: 'scale(1.96)', transformOrigin: 'left center' }} />
+            <img src="/LOGO.webp" alt="KIRAN HAJARE" style={{ height: '160px', width: 'auto', objectFit: 'contain', transform: 'scale(1.96)', transformOrigin: 'left center' }} />
           </Link>
           <p className="footer-desc">
             More Admissions. Better Conversions. Predictable Growth. Building powerful educational institutes that impact millions across the globe.

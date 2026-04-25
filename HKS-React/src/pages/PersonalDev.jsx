@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const mindsetPillars = [
   { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>, title: 'Identity Shift', desc: 'You cannot out-earn your self-concept. Kiran\'s personal development work starts with rewiring the beliefs that are capping your growth.' },
@@ -30,6 +31,11 @@ const programs = [
 export default function PersonalDev() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Personal Development — Mindset & Identity by Kiran Hajare"
+        description="Transform your entrepreneurial mindset with Kiran Hajare. Identity shifts, decision architecture, resilience protocols, and peak performance for business builders."
+        path="/personal-development"
+      />
       <PageHeader
         title="Personal Development"
         subtitle="The inner game of entrepreneurship — mindset, identity, and peak performance built for business builders."

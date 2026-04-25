@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const episodes = [
   { ep: 1, ytId: '8oGp61dIBHc', title: 'Kiran Hajare on Sales Funnel, Meta Ads & Attention Monetization', duration: '48 min', desc: '🎙 NEW PODCAST EPISODE WITH KIRAN HAJARE | Funnels, Monetization & Business Growth Revealed' },
@@ -15,6 +16,11 @@ export default function Podcasts() {
 
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Podcasts — Marketing Strategy & Growth Conversations"
+        description="Listen to Kiran Hajare's in-depth podcast episodes on Facebook & Instagram ads, coaching institute marketing, sales funnels, and business growth strategies."
+        path="/podcasts"
+      />
       <PageHeader
         title="Podcasts"
         subtitle="Deep strategic audio sessions for institute owners who want to grow faster and smarter."

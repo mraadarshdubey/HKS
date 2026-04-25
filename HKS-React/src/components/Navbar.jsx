@@ -59,7 +59,7 @@ export default function Navbar() {
         <div className="navbar-inner">
           {/* Logo */}
           <Link to="/" className="navbar-logo">
-            <img src="/LOGO.png" alt="KIRAN HK" style={{ height: '120px', width: 'auto', objectFit: 'contain', transform: 'scale(1.6)', transformOrigin: 'left center' }} />
+            <img src="/LOGO.webp" alt="KIRAN HK" style={{ height: '120px', width: 'auto', objectFit: 'contain', transform: 'scale(1.6)', transformOrigin: 'left center' }} />
           </Link>
 
           {/* Desktop Links */}

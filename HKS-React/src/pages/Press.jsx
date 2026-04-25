@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const mentions = [
   { outlet: 'Marathi Business Weekly', type: 'Feature Article', title: 'The Man Behind Marathi Digital Marketing', desc: 'An in-depth profile on how Kiran Hajare built a community of 10,000+ Marathi entrepreneurs from the ground up.', date: 'March 2024' },
@@ -13,6 +14,11 @@ const mentions = [
 export default function Press() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Press & Media — Kiran Hajare in the News"
+        description="Media features, interviews, keynotes, and press coverage of Kiran Hajare. Read about his work in scaling coaching institutes across India."
+        path="/press"
+      />
       <PageHeader
         title="Press & Media"
         subtitle="Features, interviews, keynotes and media mentions that document the journey."

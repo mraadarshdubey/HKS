@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SEO from '../components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,11 @@ export default function Contact() {
 
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db', paddingBottom: '100px' }}>
+      <SEO
+        title="Contact Kiran Hajare — Book a Free Strategy Call"
+        description="Ready to scale your coaching institute? Send an inquiry or book a 1-on-1 strategy call with Kiran Hajare. Get a custom growth plan for your institute."
+        path="/contact"
+      />
       
       {/* Hero Banner */}
       <div style={{

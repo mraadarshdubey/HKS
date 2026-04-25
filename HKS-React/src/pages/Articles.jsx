@@ -1,5 +1,6 @@
 import React from 'react';
 import PageHeader from '../components/PageHeader';
+import SEO from '../components/SEO';
 
 const articles = [
   {
@@ -109,6 +110,11 @@ export default function Articles() {
 
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+      <SEO
+        title="Articles — Digital Marketing Insights & Case Studies"
+        description="Read Kiran Hajare's case studies, proven frameworks, and unfiltered insights on Meta Ads, coaching institute growth, and admission funnels. Updated weekly."
+        path="/articles"
+      />
       <PageHeader
         title="Articles"
         subtitle="Written case studies, proven frameworks, and unfiltered insights from the field."

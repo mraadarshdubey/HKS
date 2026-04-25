@@ -6,7 +6,7 @@ export default function AboutSection() {
           {/* Image */}
           <div className="about-img-wrap">
             <img
-              src="/k1.png"
+              src="/k1.webp"
               alt="Kiran Hajare — Digital Marketing Expert"
             />
             <div className="about-limit-badge">
