@@ -5,6 +5,7 @@ import SolutionSection from '../components/SolutionSection';
 import ProofSection from '../components/ProofSection';
 import OfferSection from '../components/OfferSection';
 import AboutSection from '../components/AboutSection';
+import TribeSection from '../components/TribeSection';
 import FaqSection from '../components/FaqSection';
 import FinalCTA from '../components/FinalCTA';
 import MobileStickyCTA from '../components/MobileStickyCTA';
@@ -21,6 +22,7 @@ export default function Home() {
       <ProofSection />
       {/* <OfferSection /> */}
       <AboutSection />
+      <TribeSection />
       <FaqSection />
       {/* <FinalCTA /> */}
       <MobileStickyCTA />

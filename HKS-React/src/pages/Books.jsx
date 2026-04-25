@@ -44,7 +44,9 @@ export default function Books() {
           border: '1px solid #222', borderRadius: 20, padding: '40px 48px',
           marginBottom: 72, display: 'flex', alignItems: 'center', gap: 28, flexWrap: 'wrap'
         }}>
-          <div style={{ fontSize: '3.5rem' }}>📖</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: '#cf9d45' }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+          </div>
           <div>
             <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.5rem', color: '#fff', fontWeight: 900, marginBottom: 8 }}>
               Knowledge You Won't Find on YouTube
@@ -132,7 +134,9 @@ export default function Books() {
           border: '1px solid rgba(207,157,69,0.25)', borderRadius: 20,
           padding: '48px', textAlign: 'center'
         }}>
-          <div style={{ fontSize: '2rem', marginBottom: 16 }}>✍️</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: '#cf9d45' }}>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>Currently Writing</h3>
           <p style={{ color: '#9ca3af', maxWidth: 540, margin: '0 auto', lineHeight: 1.7 }}>
             Kiran is actively documenting battle-tested frameworks into these playbooks. Want early access? Join the waitlist and get notified first.

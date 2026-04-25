@@ -472,9 +472,8 @@ body {
   .video-hover-popup {
     width: 320px;
     max-width: calc(100vw - 48px);
-    left: 0;
   }
-  
+
   .video-sound-badge {
     top: 8px;
     right: 8px;
@@ -2432,4 +2431,201 @@ body {
   background: rgba(0, 0, 0, 0.2);
   padding: 2px 10px;
   border-radius: 999px;
+} 
+@keyframes shine { 100% { transform: translateX(100%); } } 
+.animate-shine { animation: shine 2s infinite; } 
+@keyframes spin-slow { 100% { transform: rotate(360deg); } } 
+.animate-spin-slow { animation: spin-slow 12s linear infinite; }
+/* --- Tribe Section --- */
+.tribe-section {
+  position: relative;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.tribe-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 60%;
+  background: rgba(207, 157, 69, 0.08);
+  filter: blur(100px);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.tribe-card {
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: border-color 0.4s ease;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+}
+
+.tribe-card:hover {
+  border-color: rgba(207, 157, 69, 0.3);
+}
+
+.tribe-content {
+  flex: 1;
+}
+
+.tribe-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(207, 157, 69, 0.4);
+  background: rgba(207, 157, 69, 0.05);
+  color: var(--brand-gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.tribe-desc {
+  color: #a0a0a0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 35px;
+  max-width: 600px;
+}
+
+.tribe-desc .white {
+  color: #fff;
+  font-weight: 600;
+}
+
+.tribe-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+}
+
+.tribe-visual {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.tribe-orb {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.orb-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed rgba(207, 157, 69, 0.2);
+  border-radius: 50%;
+  animation: spin-slow 15s linear infinite;
+}
+
+.orb-inner {
+  position: absolute;
+  inset: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(207, 157, 69, 0.1) inset;
+}
+
+.orb-text {
+  color: var(--brand-gold);
+  font-size: 3rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.orb-sub {
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .tribe-card {
+    flex-direction: column;
+    padding: 40px 25px;
+    text-align: center;
+    gap: 40px;
+  }
+  .tribe-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tribe-visual {
+    width: 100%;
+  }
+  .tribe-orb {
+    width: 200px;
+    height: 200px;
+  }
+  .orb-text {
+    font-size: 2.5rem;
+  }
+}
+.tribe-socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20px;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+.social-icon:hover {
+  background: rgba(207, 157, 69, 0.1);
+  border-color: rgba(207, 157, 69, 0.5);
+  color: var(--brand-gold);
+  transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+  .tribe-socials {
+    margin-left: 0;
+    border-left: none;
+    padding-left: 0;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    width: 100%;
+    justify-content: center;
+  }
 }

@@ -31,10 +31,10 @@ const channels = [
 ];
 
 const playlists = [
-  { icon: '🎯', title: 'Meta Ads Masterclass', count: '24 Videos', desc: 'Complete A-Z guide to running profitable Meta Ads for educational institutes.' },
-  { icon: '📈', title: 'Case Studies', count: '18 Videos', desc: 'Real campaign breakdowns with actual data, numbers, and results.' },
-  { icon: '🤖', title: 'AI & Automation', count: '12 Videos', desc: 'How to set up AI-powered lead follow-ups that convert while you sleep.' },
-  { icon: '🧠', title: 'Mindset for Business', count: '16 Videos', desc: 'The mental frameworks that separate top-performing institute owners.' },
+  { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>, title: 'Meta Ads Masterclass', count: '24 Videos', desc: 'Complete A-Z guide to running profitable Meta Ads for educational institutes.' },
+  { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>, title: 'Case Studies', count: '18 Videos', desc: 'Real campaign breakdowns with actual data, numbers, and results.' },
+  { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"></rect><circle cx="12" cy="5" r="2"></circle><path d="M12 7v4"></path><line x1="8" y1="16" x2="8" y2="16"></line><line x1="16" y1="16" x2="16" y2="16"></line></svg>, title: 'AI & Automation', count: '12 Videos', desc: 'How to set up AI-powered lead follow-ups that convert while you sleep.' },
+  { icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>, title: 'Mindset for Business', count: '16 Videos', desc: 'The mental frameworks that separate top-performing institute owners.' },
 ];
 
 export default function YouTube() {
@@ -69,9 +69,11 @@ export default function YouTube() {
                 <div style={{
                   width: 64, height: 64, borderRadius: '50%',
                   background: ch.color, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.8rem', marginBottom: 16, boxShadow: `0 0 24px ${ch.color}44`,
+                  marginBottom: 16, boxShadow: `0 0 24px ${ch.color}44`, color: ch.color === '#cf9d45' ? '#000' : '#fff',
                   zIndex: 1, position: 'relative'
-                }}>📺</div>
+                }}>
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect><polyline points="17 2 12 7 7 2"></polyline></svg>
+                </div>
                 <div style={{ color: '#6b7280', fontSize: '0.75rem', fontWeight: 600, marginBottom: 6 }}>{ch.handle}</div>
                 <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.4rem', fontWeight: 900, color: '#fff', zIndex: 1, position: 'relative' }}>{ch.name}</h2>
                 <div style={{ display: 'flex', gap: 24, marginTop: 16, zIndex: 1, position: 'relative' }}>
@@ -94,7 +96,9 @@ export default function YouTube() {
                       display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 10,
                       color: '#e5e7eb', fontSize: '0.88rem', lineHeight: 1.4
                     }}>
-                      <span style={{ color: ch.color, flexShrink: 0, marginTop: 2 }}>▶</span> {f}
+                      <span style={{ color: ch.color, flexShrink: 0, marginTop: 2 }}>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      </span> {f}
                     </div>
                   ))}
                 </div>
@@ -136,7 +140,9 @@ export default function YouTube() {
           border: '1px solid rgba(255,46,46,0.2)', borderRadius: 20,
           padding: '56px 48px', textAlign: 'center'
         }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: 16 }}>🔔</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: '#ff2e2e' }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>Subscribe & Never Miss a Strategy Drop</h3>
           <p style={{ color: '#9ca3af', maxWidth: 500, margin: '0 auto 28px', lineHeight: 1.7 }}>New case studies, funnel walkthroughs, and Meta Ads deep dives every week. Hit subscribe and turn on notifications.</p>
           <button style={{

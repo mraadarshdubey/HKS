@@ -25,7 +25,12 @@ export default function Podcasts() {
         <div style={{ textAlign: 'center', marginBottom: 72 }}>
           <p style={{ color: '#6b7280', fontSize: '0.8rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 20 }}>Available On</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            {['🎵 Spotify', '🎙️ Apple Podcasts', '▶️ YouTube', '🎤 Google Podcasts'].map((p, i) => (
+            {[
+              { label: 'Spotify', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg> },
+              { label: 'Apple Podcasts', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg> },
+              { label: 'YouTube', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg> },
+              { label: 'Google Podcasts', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg> }
+            ].map((p, i) => (
               <button key={i} style={{
                 background: '#111', border: '1px solid #333', color: '#fff',
                 padding: '10px 24px', borderRadius: 999, fontSize: '0.85rem', fontWeight: 600,
@@ -33,7 +38,12 @@ export default function Podcasts() {
               }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = '#cf9d4566'; e.currentTarget.style.color = '#cf9d45'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = '#333'; e.currentTarget.style.color = '#fff'; }}
-              >{p}</button>
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  {p.icon}
+                  {p.label}
+                </div>
+              </button>
             ))}
           </div>
         </div>
@@ -117,7 +127,9 @@ export default function Podcasts() {
           background: '#111', border: '1px solid #222', borderRadius: 20,
           padding: '48px', textAlign: 'center', marginTop: 64
         }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: 16 }}>🎙️</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: '#cf9d45' }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+          </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>Never Miss an Episode</h3>
           <p style={{ color: '#9ca3af', maxWidth: 480, margin: '0 auto 28px', lineHeight: 1.7 }}>New episodes drop every Monday. Strategic, tactical, and rooted in real campaign data. Subscribe and get notified instantly.</p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>

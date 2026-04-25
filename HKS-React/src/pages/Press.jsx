@@ -93,7 +93,9 @@ export default function Press() {
           background: '#111', border: '1px solid #222', borderRadius: 20,
           padding: '56px 48px', textAlign: 'center'
         }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: 16 }}>🎙️</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: '#cf9d45' }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+          </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>Book Kiran for Your Show or Event</h3>
           <p style={{ color: '#9ca3af', maxWidth: 540, margin: '0 auto 28px', lineHeight: 1.7 }}>
             Podcasts, summits, keynotes, or panel discussions — Kiran brings sharp insight, actionable frameworks, and real-world impact to every stage.

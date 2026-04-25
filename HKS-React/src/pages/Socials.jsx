@@ -6,7 +6,7 @@ const socials = [
     platform: 'Facebook',
     handle: '@KiranHajareOfficial',
     followers: '15K+',
-    icon: '📘',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>,
     desc: 'Daily tips, live sessions, and the go-to hub for the Marathi Business Tribe community. Join 15,000+ entrepreneurs.',
     color: '#1877f2',
     cta: 'Follow on Facebook',
@@ -17,7 +17,7 @@ const socials = [
     platform: 'Instagram',
     handle: '@kiran_hajare',
     followers: '28K+',
-    icon: '📸',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>,
     desc: 'Visual strategy breakdowns, behind-the-scenes of live campaigns, reels on Meta Ads tactics that actually work.',
     color: '#e1306c',
     cta: 'Follow on Instagram',
@@ -28,7 +28,7 @@ const socials = [
     platform: 'LinkedIn',
     handle: 'Kiran Hajare',
     followers: '8K+',
-    icon: '💼',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>,
     desc: 'Long-form insights, professional case studies, and deep dives into educational marketing strategy for serious entrepreneurs.',
     color: '#0077b5',
     cta: 'Connect on LinkedIn',
@@ -39,7 +39,7 @@ const socials = [
     platform: 'X (Twitter)',
     handle: '@KiranHajare_',
     followers: '5K+',
-    icon: '✖',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>,
     desc: 'Raw unfiltered thoughts on digital marketing, business, and the Marathi entrepreneur ecosystem. Real-time insights.',
     color: '#1a1a1a',
     cta: 'Follow on X',
@@ -50,7 +50,7 @@ const socials = [
     platform: 'WhatsApp Community',
     handle: 'Marathi Business Tribe',
     followers: '10K+',
-    icon: '💬',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>,
     desc: 'The inner circle. Direct access to tips, tools, strategies, and Kiran\'s personal recommendations — straight to your phone.',
     color: '#25d366',
     cta: 'Join Community',
@@ -61,7 +61,7 @@ const socials = [
     platform: 'Telegram',
     handle: '@HelloKiranSheth',
     followers: '6K+',
-    icon: '✈️',
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>,
     desc: 'Exclusive resources, frameworks, and campaign templates shared only with Telegram subscribers. No spam. Just value.',
     color: '#0088cc',
     cta: 'Join Channel',
@@ -152,7 +152,9 @@ export default function Socials() {
           border: '1px solid rgba(37,211,102,0.25)', borderRadius: 20,
           padding: '56px 48px', textAlign: 'center'
         }}>
-          <div style={{ fontSize: '3rem', marginBottom: 16 }}>💬</div>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16, color: '#25d366' }}>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>
             Join the Marathi Business Tribe
           </h3>

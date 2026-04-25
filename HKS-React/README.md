@@ -68,5 +68,5 @@ Our UI/UX philosophy is centered around **Trust, Authority, and Action**.
 
 <div align="center">
   <i>Crafted with precision, premium aesthetics, and high-conversion strategy.</i><br>
-  <b>© 2026 Kiran Hajare. All Rights Reserved.</b>
+  <b>© 2026 Adarsh Dubey. All Rights Reserved.</b>
 </div>
