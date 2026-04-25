@@ -122,23 +122,24 @@ export default function Socials() {
               {/* Top color accent */}
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: s.color }} />
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 14, minWidth: 0 }}>
                   <div style={{
                     width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
                     background: s.color + '18', border: `1px solid ${s.color}33`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.6rem'
                   }}>{s.icon}</div>
-                  <div>
-                    <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.05rem', fontWeight: 900, color: '#fff' }}>{s.platform}</h3>
-                    <p style={{ color: '#6b7280', fontSize: '0.78rem', fontWeight: 600 }}>{s.handle}</p>
+                  <div style={{ minWidth: 0 }}>
+                    <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.05rem', fontWeight: 900, color: '#fff', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{s.platform}</h3>
+                    <p style={{ color: '#6b7280', fontSize: '0.78rem', fontWeight: 600, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{s.handle}</p>
                   </div>
                 </div>
                 {s.badge && (
                   <span style={{
                     background: '#cf9d4518', color: '#cf9d45', border: '1px solid #cf9d4433',
-                    fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.12em',
-                    textTransform: 'uppercase', padding: '3px 10px', borderRadius: 999, flexShrink: 0
+                    fontSize: '0.55rem', fontWeight: 800, letterSpacing: '0.05em',
+                    textTransform: 'uppercase', padding: '4px 10px', borderRadius: 999, flexShrink: 0,
+                    whiteSpace: 'nowrap'
                   }}>{s.badge}</span>
                 )}
               </div>
