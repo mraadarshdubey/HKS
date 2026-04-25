@@ -15,6 +15,7 @@ import Podcasts from './pages/Podcasts';
 import YouTube from './pages/YouTube';
 import Socials from './pages/Socials';
 import Articles from './pages/Articles';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 // Premium SimplePage for Contact/Terms/Privacy
 const SimplePage = ({ title }) => (
@@ -64,7 +65,7 @@ export default function App() {
             <Route path="/youtube" element={<PageWrapper><YouTube /></PageWrapper>} />
             <Route path="/socials" element={<PageWrapper><Socials /></PageWrapper>} />
             <Route path="/articles" element={<PageWrapper><Articles /></PageWrapper>} />
-            <Route path="/privacy-policy" element={<PageWrapper><SimplePage title="Privacy Policy" /></PageWrapper>} />
+            <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
             <Route path="/terms-of-service" element={<PageWrapper><SimplePage title="Terms of Service" /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><SimplePage title="Contact" /></PageWrapper>} />
           </Routes>
