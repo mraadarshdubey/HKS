@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/LOGO.png" alt="KIRAN HAJARE" width="250" />
+  <img src="LOGO.png" alt="KIRAN HAJARE" width="250" />
   <br/>
   <h3>More Admissions. Better Conversions. Predictable Growth.</h3>
   <p><i>Building powerful educational institutes that impact millions across the globe.</i></p>
