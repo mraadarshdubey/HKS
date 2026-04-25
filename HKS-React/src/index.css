@@ -1814,30 +1814,6 @@ body {
   position: relative;
 }
 
-.about-img-wrap::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 100px;
-  height: 100px;
-  background: #f3f4f6;
-  border-radius: 50%;
-  z-index: 0;
-}
-
-.about-img-wrap::after {
-  content: '';
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  width: 160px;
-  height: 160px;
-  background: #f3f4f6;
-  border-radius: 50%;
-  z-index: 0;
-}
-
 .about-img-wrap img {
   width: 100%;
   border-radius: 28px;
