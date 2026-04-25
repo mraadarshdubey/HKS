@@ -35,6 +35,7 @@ const socials = [
     url: 'https://in.linkedin.com/in/hellokiransheth',
     badge: 'Thought Leadership',
   },
+  /*
   {
     platform: 'X (Twitter)',
     handle: '@hellokiransheth',
@@ -57,6 +58,7 @@ const socials = [
     url: '#',
     badge: 'Free Access',
   },
+  */
   {
     platform: 'YouTube',
     handle: '@hellokiransheth',
@@ -68,6 +70,7 @@ const socials = [
     url: 'https://www.youtube.com/@hellokiransheth',
     badge: 'Masterclasses',
   },
+  /*
   {
     platform: 'Telegram',
     handle: '@HelloKiranSheth',
@@ -79,6 +82,7 @@ const socials = [
     url: 'https://t.me/hellokiransheth',
     badge: 'Exclusive Resources',
   },
+  */
 ];
 
 export default function Socials() {
