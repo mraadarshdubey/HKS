@@ -1,0 +1,8 @@
+# robots.txt for hellokiransheth.com
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://hellokiransheth.com/sitemap.xml
