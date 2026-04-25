@@ -134,7 +134,7 @@ export default function YouTube() {
           </div>
         </div>
 
-        {/* Subscribe Banner */}
+        {/* Subscribe Banner 
         <div style={{
           background: 'linear-gradient(135deg, rgba(255,46,46,0.12), rgba(207,157,69,0.08))',
           border: '1px solid rgba(255,46,46,0.2)', borderRadius: 20,
@@ -151,6 +151,7 @@ export default function YouTube() {
             boxShadow: '0 0 30px rgba(255,46,46,0.3)'
           }}>Subscribe Now →</button>
         </div>
+        */}
       </div>
     </div>
   );
