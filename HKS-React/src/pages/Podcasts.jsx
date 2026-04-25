@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 
 const episodes = [
-  { ep: 1, title: 'The Admission Machine Blueprint', duration: '48 min', desc: 'Kiran breaks down the exact 5-step funnel framework that takes a coaching institute from zero digital presence to full capacity.' },
+  { ep: 1, ytId: '8oGp61dIBHc', title: 'Kiran Hajare on Sales Funnel, Meta Ads & Attention Monetization', duration: '48 min', desc: '🎙 NEW PODCAST EPISODE WITH KIRAN HAJARE | Funnels, Monetization & Business Growth Revealed' },
   { ep: 2, title: 'Why Your Ads Aren\'t Working (And What To Do)', duration: '42 min', desc: 'The 3 most common Meta Ads mistakes institute owners make and the precise fixes that turned losing campaigns into winners.' },
   { ep: 3, title: 'The Marathi Business Code', duration: '55 min', desc: 'How to market in the language your audience thinks in — and why vernacular marketing delivers 2x the conversions of English-first campaigns.' },
   { ep: 4, title: 'AI Funnels: The Future of Admissions', duration: '38 min', desc: 'A deep dive into how AI is replacing manual lead nurturing and what every institute owner needs to set up before 2025.' },
@@ -11,6 +11,8 @@ const episodes = [
 ];
 
 export default function Podcasts() {
+  const [activeVideo, setActiveVideo] = useState(null);
+
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <PageHeader
@@ -92,6 +94,7 @@ export default function Podcasts() {
                 transition: 'transform 0.3s, border-color 0.3s',
                 cursor: 'pointer',
               }}
+                onClick={() => ep.ytId && setActiveVideo(ep.ytId)}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = '#cf9d4433'; }}
                 onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = '#1a1a1a'; }}
               >
@@ -139,6 +142,37 @@ export default function Podcasts() {
           </div>
         </div>
       </div>
+      {/* Video Popup Modal */}
+      {activeVideo && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(0,0,0,0.9)', backdropFilter: 'blur(10px)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px'
+        }} onClick={() => setActiveVideo(null)}>
+          <div style={{
+            position: 'relative', width: '100%', maxWidth: '1000px', aspectRatio: '16/9',
+            background: '#000', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 30px 80px rgba(0,0,0,0.6)',
+            border: '1px solid rgba(207,157,69,0.3)'
+          }} onClick={e => e.stopPropagation()}>
+            <button onClick={() => setActiveVideo(null)} style={{
+              position: 'absolute', top: '16px', right: '16px', background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)',
+              color: '#fff', width: '40px', height: '40px', borderRadius: '50%', fontSize: '1.5rem', cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'all 0.2s', zIndex: 10
+            }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#cf9d45'; e.currentTarget.style.color = '#000'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.6)'; e.currentTarget.style.color = '#fff'; }}
+            >&times;</button>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`} 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
