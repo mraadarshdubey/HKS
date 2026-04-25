@@ -69,13 +69,7 @@ export default function AboutSection() {
           transform: translateY(-5px) scale(1.02);
           box-shadow: 0 20px 50px rgba(207,157,69,0.3);
         }
-        .about-img-wrap::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.8) 100%);
-          pointer-events: none;
-        }
+
         .about-limit-badge {
           animation: float-badge 4s ease-in-out infinite;
           background: linear-gradient(135deg, #cf9d45, #b8860b);
