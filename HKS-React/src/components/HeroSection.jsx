@@ -115,7 +115,7 @@ export default function HeroSection() {
         {/* LEFT: Video + Copy */}
         <div className="hero-left">
           {/* Mobile-only: Gold accent label */}
-          <div className="hero-accent-line">Digital Marketing Expert & Growth Strategist</div>
+          <div className="hero-accent-line">Digital Marketing Expert &amp; Growth Strategist</div>
 
           {/* Hero Copy Wrapper for Hover */}
           <div>
@@ -215,7 +215,7 @@ export default function HeroSection() {
               </div>
 
               <h1 className="hero-h1">
-                Running Ads But <span className="gold">Not Getting Customers?</span>
+                Who is <span className="gold">Kiran Hajare?</span>
               </h1>
             </div>
 
@@ -237,12 +237,17 @@ export default function HeroSection() {
 
             <p className="hero-bio" style={{ marginTop: '16px' }}>
               I've spent ₹1 Crore+ on ads and built a simple system that helps small business owners
-              get real results. Trained 50,000+ people. 30,000+ are using my system right now.
-              Let me show you exactly how to go from running ads to getting real customers.
+              get real results. Trained 50,000+ people. 30,000+ are already using my system to get
+              daily enquiries and real customers — without wasting money on ads.
             </p>
-            <div style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <i className="fas fa-arrow-down" style={{ color: '#cf9d45', fontSize: '0.8rem', animation: 'bounce 2s infinite' }} />
-              <span style={{ color: '#6b7280', fontSize: '0.85rem' }}>Scroll to learn more about the system</span>
+            <div style={{ marginTop: '28px' }}>
+              <a
+                href="/my-story"
+                className="hero-cta-btn"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
+              >
+                Full Story <i className="fas fa-arrow-right" />
+              </a>
             </div>
           </div>
         </div>
