@@ -2,28 +2,28 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    q: 'Will this work for a small coaching institute?',
-    a: "Yes — in fact, small institutes benefit most. You're more flexible, you can move fast, and there's more room to grow. We've built systems for institutes with 3-person teams and scaled them.",
+    q: 'Main ek chota business owner hoon — kya yeh mujhe kaam karega?',
+    a: "Haan, bilkul! Main specifically chote aur medium business owners ke liye kaam karta hoon. Jo bhi small budget mein ads chalate hain aur customers nahi aa rahe — unke liye hi yeh system banaya gaya hai. 30,000+ log already use kar rahe hain.",
   },
   {
-    q: 'How fast will I see results?',
-    a: 'Most clients see a measurable improvement in inquiry-to-admission conversion within 30–45 days of the system going live. The full system takes 60–90 days to mature.',
+    q: 'Mujhe ads ke baare mein kuch nahi pata — kya main seekh sakta hoon?',
+    a: "Haan, 100%. Main sab kuch ekdam basic se sikhata hoon. Simple Hinglish mein, step-by-step. Koi technical knowledge ki zaroorat nahi. Agar aap phone use kar sakte hain, toh aap yeh seekh sakte hain.",
   },
   {
-    q: "What's the investment?",
-    a: "We'll discuss this on the free call based on your current setup and goals. There's no fixed package — we don't believe in one-size-fits-all pricing. We design around your ROI.",
+    q: 'Kitna budget chahiye ads chalane ke liye?',
+    a: "Main low-budget ads pe focus karta hoon. ₹200–₹500 per day se bhi shuruat ho sakti hai. Main tumhe sikhata hoon ki chhote budget mein bhi maximum result kaise milega. Budget bada hone ke baad kaise scale karna hai — yeh bhi sikhata hoon.",
   },
   {
-    q: 'Is this just another digital marketing agency?',
-    a: 'No. Agencies deliver leads. We deliver admissions. We build the entire pipeline — leads, follow-up, conversion, tracking — and measure success only by final admissions, not clicks.',
+    q: 'Kiran sir se seedha baat ho sakti hai?',
+    a: "Haan! Free Clarity Call book karo. Main personally tumse baat karoonga, tumhara situation samjhoonga, aur bataoonga ki aapke business ke liye exactly kya karna chahiye. Zero sales pitch — sirf real help.",
   },
   {
-    q: 'What if I already have an in-house team?',
-    a: "Even better. We work with your team, not against them. We bring the system, the tools, and the strategy. Your team executes with more clarity and less guesswork.",
+    q: 'Meta Ads aur simple post boosting mein kya fark hai?',
+    a: "Post boost karna paisa waste karna hai. Meta Ads mein aap target karte ho — sahi log, sahi jagah, sahi time pe. Main tumhe proper Meta Ads Manager use karna sikhata hoon jahan se real leads aate hain, not just likes.",
   },
   {
-    q: 'Do you guarantee results?',
-    a: "We guarantee our work and our process. If the system is implemented correctly and you don't see improvement, we'll keep working — no extra charge — until you do.",
+    q: 'Results kitne time mein dikhenge?',
+    a: "Jo log mera system properly follow karte hain, unhe 15–30 din mein pehle results dikhne lagte hain. Kuch logo ko 1 hafte mein hi pehla customer milta hai. Consistency sabse important cheez hai.",
   },
 ];
 
@@ -37,7 +37,7 @@ export default function FaqSection() {
       <div className="section-inner" style={{ maxWidth: '800px' }}>
         <div style={{ textAlign: 'center', marginBottom: '0' }}>
           <span className="section-label">Got Questions?</span>
-          <h2 className="section-h2" style={{ color: '#0a0a0a' }}>Straight Answers. No Vague Replies.</h2>
+          <h2 className="section-h2" style={{ color: '#0a0a0a' }}>Simple Answers. No Complicated Jargon.</h2>
         </div>
 
         <div className="faq-list">

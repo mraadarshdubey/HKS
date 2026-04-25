@@ -4,24 +4,24 @@ import PageHeader from '../components/PageHeader';
 const services = [
   {
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>,
-    title: '1-on-1 Growth Consulting',
-    desc: 'Private monthly retainer. Kiran works directly with your institute to audit, rebuild, and optimize your entire admission system from top to bottom.',
-    price: '₹25,000/mo',
-    spots: '3 spots remaining',
+    title: '1-on-1 Free Clarity Call',
+    desc: 'Book a free 1-on-1 call with Kiran. Apni situation share karo. Main personally bataoonga ki exactly kya karna hai — step-by-step. No sales pitch, pure guidance.',
+    price: 'FREE',
+    spots: 'Limited Spots Daily',
     color: '#cf9d45',
   },
   {
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>,
-    title: 'Elite Mastermind (Group)',
-    desc: 'A closed cohort of 10 institute owners. Monthly intensive sessions, peer accountability, and direct access to Kiran\'s latest funnel systems.',
-    price: '₹12,000/mo',
-    spots: '5 spots remaining',
+    title: 'Meta Ads Training Program',
+    desc: 'A complete step-by-step Meta Ads training. Sab kuch sikhoge — account setup se lekar lead generation tak. Simple language mein. Real campaigns. Real results.',
+    price: 'Enquire Now',
+    spots: 'Next Batch Starting Soon',
     color: '#ff2e2e',
   },
   {
     icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>,
-    title: 'Done-For-You Ad Agency',
-    desc: 'We run your Meta Ads end-to-end. Creative, copy, targeting, testing, and optimization — fully managed so you can focus on teaching.',
+    title: 'Done-For-You Ad Management',
+    desc: 'Aapka business hai, hamara kaam hai ads chalana. Main aur meri team tumhare Meta Ads end-to-end manage karenge — targeting, copy, testing, optimization sab.',
     price: 'Custom Pricing',
     spots: 'Enquire Now',
     color: '#cf9d45',
@@ -29,25 +29,25 @@ const services = [
 ];
 
 const results = [
-  { metric: '₹47L+', label: 'Admissions Revenue Generated' },
-  { metric: '200+', label: 'Institutes Scaled' },
-  { metric: '3.8x', label: 'Average ROAS Achieved' },
-  { metric: '90 Days', label: 'To Full Capacity (Avg.)' },
+  { metric: '50,000+', label: 'People Trained' },
+  { metric: '30,000+', label: 'Using the System' },
+  { metric: 'Rs.1Cr+', label: 'Real Ad Spend' },
+  { metric: '30 Days', label: 'To First Results (Avg.)' },
 ];
 
 const faqs = [
-  { q: 'What kind of institutes do you work with?', a: 'Primarily coaching institutes focused on academics, competitive exams, skill development, and professional training. If you run a structured program and want more admissions, we can help.' },
-  { q: 'Do I need to already be running ads?', a: 'No. We work with institutes that have never run a single ad and those spending ₹5L/month. We meet you where you are and build from there.' },
-  { q: 'How long before I see results?', a: 'Most clients see qualified leads within the first 7-14 days. Significant revenue impact typically manifests within 30-60 days.' },
+  { q: 'Main ek beginner hoon — kya yeh mujhe kaam karega?', a: 'Haan, 100%. Main specifically beginners ke liye simple language mein sikhata hoon. Koi bhi technical knowledge zaroorat nahi. Agar phone chalana aata hai, toh yeh seekh sakte hain.' },
+  { q: 'Kitne budget se shuruat ho sakti hai?', a: 'Rs.200-500 per day se bhi shuruat ho sakti hai. Main tumhe low-budget mein maximum results kaise milein yeh sikhata hoon. Budget badhane ka idea bhi deta hoon.' },
+  { q: 'Results kitne time mein aate hain?', a: 'Jo log properly system follow karte hain unhe 15-30 din mein pehle results dikhte hain. Kuch logo ko 1 hafte mein pehla customer milta hai. Consistency key hai.' },
 ];
 
 export default function BusinessDev() {
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <PageHeader
-        title="Business Development"
-        subtitle="Elite consulting, masterminds, and done-for-you growth systems for coaching institutes."
-        label="My Companies"
+        title="Work With Kiran"
+        subtitle="Free clarity call, step-by-step training, or done-for-you ad management — choose your path."
+        label="Get Started"
       />
 
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 24px 100px' }}>

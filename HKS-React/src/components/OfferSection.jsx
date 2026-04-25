@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
 
 const includes = [
-  { item: 'Full funnel audit', icon: 'fas fa-search' },
-  { item: 'Lead quality analysis', icon: 'fas fa-filter' },
-  { item: 'Competitor gap report', icon: 'fas fa-binoculars' },
-  { item: 'Custom 90-day roadmap', icon: 'fas fa-map' },
+  { item: 'How to run Meta Ads properly', icon: 'fas fa-bullseye' },
+  { item: 'How to get leads on low budget', icon: 'fas fa-filter' },
+  { item: 'What kind of ads actually work', icon: 'fas fa-chart-line' },
+  { item: 'How to use AI to make ads faster', icon: 'fas fa-robot' },
+  { item: 'How to convert leads into customers', icon: 'fas fa-handshake' },
+  { item: 'A clear direction — what to do next', icon: 'fas fa-map' },
 ];
 
 export default function OfferSection() {
@@ -45,12 +47,12 @@ export default function OfferSection() {
   return (
     <section id="offer" className="offer-section fade-in-section">
       <div className="offer-box">
-        <div className="offer-badge">Free Offer</div>
+        <div className="offer-badge">Free Clarity Call</div>
 
-        <h2 className="offer-h2">Get Your Free Admission<br />Growth Plan</h2>
+        <h2 className="offer-h2">Book a Free Clarity Call<br />Let's Fix Your Ads — Step by Step</h2>
         <p className="offer-sub">
-          We'll audit your current process and show you{' '}
-          <strong>exactly</strong> where you're losing students.
+          I'll personally look at your situation and tell you{' '}
+          <strong>exactly</strong> what you need to do to start getting real customers.
         </p>
 
         <div className="offer-includes-grid">
@@ -65,15 +67,15 @@ export default function OfferSection() {
         </div>
 
         <div className="countdown-box">
-          <span className="countdown-label">Next available session fills in:</span>
+          <span className="countdown-label">Next free session closes in:</span>
           <div className="countdown-display" ref={displayRef}>23:59:59</div>
         </div>
 
         <a href="#" className="offer-cta-btn">
           <span className="main">
-            Claim Your Free Growth Plan <i className="fas fa-arrow-right" />
+            👉 Book a Free Clarity Call <i className="fas fa-arrow-right" />
           </span>
-          <span className="sub">Only 5 spots available this week. No credit card. No obligation.</span>
+          <span className="sub">Limited spots. Free. No obligation. 100% practical.</span>
         </a>
       </div>
     </section>

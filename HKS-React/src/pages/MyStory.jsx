@@ -2,12 +2,12 @@ import React from 'react';
 import PageHeader from '../components/PageHeader';
 
 const milestones = [
-  { year: '2019', title: 'The First Failure', desc: 'Started with zero blueprint. Launched ads that bombed. Lost money. Gained lessons no course could teach.' },
-  { year: '2020', title: 'The System Is Born', desc: 'Built the first admission funnel framework from scratch. Tested across 3 institutes. Results were undeniable.' },
-  { year: '2021', title: '₹47 Lakh Milestone', desc: 'Generated over ₹47 Lakh in collected admissions for private clients in a single year. Proof of concept became proof of scale.' },
-  { year: '2022', title: 'The Agency Launch', desc: 'Founded the growth agency. Brought in a team. Started serving coaching institutes across Maharashtra at scale.' },
-  { year: '2023', title: 'Marathi Business Tribe', desc: 'Built a community of 10,000+ Marathi entrepreneurs. Became the go-to Meta Ads expert for the Marathi business world.' },
-  { year: '2024+', title: 'AI Funnel Revolution', desc: 'Pioneered AI-powered funnels for educational institutes. Automating admissions, follow-ups, and conversions at scale.' },
+  { year: '2016', title: 'The Beginning — Small Business Struggle', desc: 'Started with a small business. Log kehte the — "Instagram pe daalo, ads chalao, customers aayenge." Sab try kiya. Paise gaye, time gaya, customers nahi aaye. Yahi se journey shuru hui.' },
+  { year: '2018', title: 'The System is Born', desc: 'Realized the problem was not the budget or the platform — it was the absence of a proper system. Spent months studying Meta Ads, building funnels, and testing everything from scratch.' },
+  { year: '2020', title: '₹1 Crore Ad Spend Milestone', desc: 'Crossed ₹1 Crore in total ad spend — for myself and clients. Every rupee taught something. Losses became lessons. A simple, repeatable system started emerging from all the data.' },
+  { year: '2021', title: 'Teaching the System', desc: 'Started training others. First 1,000 people trained. Then 5,000. Then 10,000. The system worked for coaches, shop owners, service providers, and entrepreneurs across India.' },
+  { year: '2022', title: 'Marathi Business Tribe', desc: 'Built the Marathi Business Tribe community. 10,000+ Marathi entrepreneurs joined. Realized the power of vernacular marketing — speaking in the language your audience thinks in.' },
+  { year: '2023+', title: '50,000+ People Trained', desc: 'Over 50,000 people trained. 30,000+ actively using the system. From zero sales to daily enquiries — real people getting real results with a simple, step-by-step approach.' },
 ];
 
 export default function MyStory() {
@@ -15,7 +15,7 @@ export default function MyStory() {
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <PageHeader
         title="My Story"
-        subtitle="From zero blueprint to ₹47 Lakh+ in admissions — the unfiltered truth."
+        subtitle="From small business struggles to training 50,000+ people — the unfiltered truth."
         label="The Founder's Journey"
       />
 
@@ -52,7 +52,7 @@ export default function MyStory() {
                   background: '#cf9d45', color: '#000',
                   fontWeight: 900, fontSize: '0.75rem', padding: '6px 16px',
                   borderRadius: 999, letterSpacing: '0.1em', textTransform: 'uppercase'
-                }}>5+ Years of Real Wins</div>
+                }}>50,000+ People Trained</div>
               </div>
             </div>
 
@@ -62,23 +62,26 @@ export default function MyStory() {
                 display: 'inline-block', background: 'rgba(207,157,69,0.1)', border: '1px solid rgba(207,157,69,0.3)',
                 color: '#cf9d45', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.2em',
                 textTransform: 'uppercase', padding: '4px 14px', borderRadius: 999, marginBottom: 24
-              }}>The Turning Point</div>
+              }}>I Was In The Same Situation As You</div>
               <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 900, color: '#fff', lineHeight: 1.1, marginBottom: 20 }}>
-                Growth is not <span style={{ color: '#cf9d45' }}>luck.</span><br />It is engineered.
+                Running ads.<br /><span style={{ color: '#cf9d45' }}>No customers.</span><br />Until I found the system.
               </h2>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 20 }}>
-                Every great transformation starts with a struggle. My journey wasn't handed to me. It required breaking down the exact formulas that were failing and rebuilding them from scratch into predictable systems.
+              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 16 }}>
+                Hi, I'm Kiran Hajare. There was a time when I was also running a small business. People told me — "Post on Instagram, run ads… customers will come."
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 16 }}>
+                I tried everything. <strong style={{ color: '#ff2e2e' }}>Money gone. Time gone. No customers.</strong>
+              </p>
+              <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 20 }}>
+                That's when I realized — the problem was not me. The problem was I didn't have a proper system. So I spent years learning, testing, spending over <strong style={{ color: '#cf9d45' }}>₹1 Crore on ads</strong> — and finally built a simple system that actually works.
               </p>
               <blockquote style={{
                 borderLeft: '4px solid #cf9d45', paddingLeft: 20,
                 color: '#cf9d45', fontStyle: 'italic', fontWeight: 600, fontSize: '1.1rem',
                 margin: '28px 0', lineHeight: 1.6
               }}>
-                "The institutes I work with don't hope for admissions. They engineer them."
+                "Now I teach the same system to people like you — in a very simple, step-by-step way."
               </blockquote>
-              <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af' }}>
-                Today, our framework powers some of the most dynamic educational institutes in Maharashtra. We focus on true scaling — more admissions, better conversions, and absolute market dominance.
-              </p>
             </div>
           </div>
         </div>
@@ -90,9 +93,9 @@ export default function MyStory() {
           overflow: 'hidden', margin: '72px 0', border: '1px solid #222'
         }}>
           {[
-            { num: '₹47L+', label: 'Admissions Generated' },
-            { num: '200+', label: 'Institutes Served' },
-            { num: '5+', label: 'Years in the Game' },
+            { num: '50,000+', label: 'People Trained' },
+            { num: '30,000+', label: 'Using My System' },
+            { num: '₹1Cr+', label: 'Real Ad Spend Experience' },
           ].map((stat, i) => (
             <div key={i} style={{
               background: '#111', padding: '36px 24px', textAlign: 'center',

@@ -115,7 +115,7 @@ export default function HeroSection() {
         {/* LEFT: Video + Copy */}
         <div className="hero-left">
           {/* Mobile-only: Gold accent label */}
-          <div className="hero-accent-line">Growth Partner &amp; Founder</div>
+          <div className="hero-accent-line">Digital Marketing Expert & Growth Strategist</div>
 
           {/* Hero Copy Wrapper for Hover */}
           <div>
@@ -215,36 +215,37 @@ export default function HeroSection() {
               </div>
 
               <h1 className="hero-h1">
-                Who is <span className="gold">Kiran Hajare?</span>
+                Running Ads But <span className="gold">Not Getting Customers?</span>
               </h1>
             </div>
 
             {/* Mobile-only: Stats Strip */}
             <div className="hero-stats-strip">
               <div className="hero-stat">
-                <span className="hero-stat-num">₹47L+</span>
-                <span className="hero-stat-label">Admissions</span>
+                <span className="hero-stat-num">50K+</span>
+                <span className="hero-stat-label">People Trained</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-num">5+</span>
-                <span className="hero-stat-label">Years</span>
+                <span className="hero-stat-num">30K+</span>
+                <span className="hero-stat-label">Using My System</span>
               </div>
               <div className="hero-stat">
-                <span className="hero-stat-num">200+</span>
-                <span className="hero-stat-label">Institutes</span>
+                <span className="hero-stat-num">₹1Cr+</span>
+                <span className="hero-stat-label">Ad Spend Experience</span>
               </div>
             </div>
 
             <p className="hero-bio" style={{ marginTop: '16px' }}>
-              Over the past 5+ years, Kiran Hajare has built a following of entrepreneurs, generated over ₹47 Lakh
-              in collected admissions for his private clients, popularized the concept of automated follow-up funnels,
-              and founded a growth agency that helps coaching institute owners predictably get their message out into
-              the marketplace.
+              I've spent ₹1 Crore+ on ads and built a simple system that helps small business owners
+              get real results. Trained 50,000+ people. 30,000+ are using my system right now.
+              Let me show you exactly how to go from running ads to getting real customers.
             </p>
-            <div style={{ marginTop: '24px' }}>
-              <Link to="/my-story" className="hero-cta-btn" style={{ display: 'inline-block', textDecoration: 'none' }}>
-                Full Story <i className="fas fa-arrow-right" />
-              </Link>
+            <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <a href="#offer" className="hero-cta-btn" style={{ display: 'inline-block', textDecoration: 'none' }}
+                onClick={e => { e.preventDefault(); document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                👉 Book a Free Clarity Call
+              </a>
             </div>
           </div>
         </div>
