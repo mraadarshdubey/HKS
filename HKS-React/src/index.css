@@ -1077,10 +1077,17 @@ body {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: -100%;
+  width: 100%;
   height: 2px;
-  background: linear-gradient(to right, transparent, var(--brand-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
+  animation: border-sweep 3s ease-in-out infinite;
+}
+
+@keyframes border-sweep {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: -100%; }
 }
 
 .case-card .case-icon {
