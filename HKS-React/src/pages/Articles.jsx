@@ -69,10 +69,43 @@ const catColors = {
 
 export default function Articles() {
   const [active, setActive] = React.useState('All');
+  const [email, setEmail]   = React.useState('');
+  const [status, setStatus] = React.useState('idle'); // idle | loading | success | error
+  const [msg, setMsg]       = React.useState('');
+
   const cats = ['All', 'Meta Ads', 'Case Study', 'AI & Automation', 'Vernacular Marketing', 'Mindset', 'Strategy'];
   const filtered = active === 'All' ? articles : articles.filter(a => a.cat === active);
   const featured = articles.find(a => a.featured);
   const rest = filtered.filter(a => !a.featured);
+
+  const handleSubscribe = async () => {
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setStatus('error');
+      setMsg('Please enter a valid email address.');
+      return;
+    }
+    setStatus('loading');
+    setMsg('');
+    try {
+      const res = await fetch('/subscribe.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus('success');
+        setMsg('🎉 You\'re subscribed! Check your inbox for a confirmation.');
+        setEmail('');
+      } else {
+        setStatus('error');
+        setMsg(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      setStatus('error');
+      setMsg('Network error. Please try again later.');
+    }
+  };
 
   return (
     <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
@@ -149,14 +182,46 @@ export default function Articles() {
           </div>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>Get Articles Straight to Your Inbox</h3>
           <p style={{ color: '#9ca3af', maxWidth: 500, margin: '0 auto 28px', lineHeight: 1.7 }}>Join 5,000+ institute owners who read Kiran's weekly strategic breakdown every Friday. No fluff. Just high-signal insights.</p>
-          <div style={{ display: 'flex', gap: 12, maxWidth: 460, margin: '0 auto', flexWrap: 'wrap' }}>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="newsletter-input"
-            />
-            <button className="newsletter-btn">Subscribe →</button>
-          </div>
+
+          {status !== 'success' ? (
+            <>
+              <div style={{ display: 'flex', gap: 12, maxWidth: 460, margin: '0 auto', flexWrap: 'wrap' }}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="newsletter-input"
+                  value={email}
+                  onChange={e => { setEmail(e.target.value); setStatus('idle'); setMsg(''); }}
+                  onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                  disabled={status === 'loading'}
+                />
+                <button
+                  className="newsletter-btn"
+                  onClick={handleSubscribe}
+                  disabled={status === 'loading'}
+                  style={{ opacity: status === 'loading' ? 0.7 : 1, cursor: status === 'loading' ? 'not-allowed' : 'pointer' }}
+                >
+                  {status === 'loading' ? 'Subscribing...' : 'Subscribe →'}
+                </button>
+              </div>
+              {msg && (
+                <p style={{
+                  marginTop: 16, fontSize: '0.88rem', fontWeight: 600,
+                  color: status === 'error' ? '#ff6b6b' : '#cf9d45',
+                }}>
+                  {msg}
+                </p>
+              )}
+            </>
+          ) : (
+            <div style={{
+              background: 'rgba(207,157,69,0.1)', border: '1px solid rgba(207,157,69,0.3)',
+              borderRadius: 12, padding: '20px 32px', maxWidth: 460, margin: '0 auto',
+              color: '#cf9d45', fontWeight: 700, fontSize: '1rem',
+            }}>
+              {msg}
+            </div>
+          )}
         </div>
       </div>
       <style>{`
