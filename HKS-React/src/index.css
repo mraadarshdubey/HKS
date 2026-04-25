@@ -2490,14 +2490,16 @@ body {
   align-items: center;
   gap: 50px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: border-color 0.4s ease;
+  transition: all 0.4s ease;
   overflow: hidden;
-  background: rgba(10, 10, 10, 0.6);
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.8) 0%, rgba(5, 5, 5, 0.95) 100%);
   backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.05);
 }
 
 .tribe-card:hover {
-  border-color: rgba(207, 157, 69, 0.3);
+  border-color: rgba(207, 157, 69, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(207, 157, 69, 0.1), inset 0 1px 2px rgba(255, 255, 255, 0.1);
 }
 
 .tribe-content {
@@ -2509,13 +2511,14 @@ body {
   padding: 6px 16px;
   border-radius: 999px;
   border: 1px solid rgba(207, 157, 69, 0.4);
-  background: rgba(207, 157, 69, 0.05);
+  background: rgba(207, 157, 69, 0.1);
   color: var(--brand-gold);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 24px;
+  box-shadow: 0 0 15px rgba(207, 157, 69, 0.2);
 }
 
 .tribe-desc {
@@ -2544,56 +2547,129 @@ body {
   justify-content: center;
 }
 
+.tribe-orb-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .tribe-orb {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
+  z-index: 2;
 }
 
 .orb-ring {
   position: absolute;
-  inset: 0;
-  border: 2px dashed rgba(207, 157, 69, 0.2);
+  inset: -15px;
   border-radius: 50%;
-  animation: spin-slow 15s linear infinite;
+  border: 2px solid transparent;
+}
+
+.ring-1 {
+  border-top-color: rgba(207, 157, 69, 0.6);
+  border-right-color: rgba(207, 157, 69, 0.2);
+  animation: spin-slow 12s linear infinite;
+}
+
+.ring-2 {
+  inset: -35px;
+  border-bottom-color: rgba(207, 157, 69, 0.5);
+  border-left-color: rgba(207, 157, 69, 0.1);
+  animation: spin-slow 18s linear infinite reverse;
+}
+
+.ring-3 {
+  inset: -55px;
+  border: 1px dashed rgba(207, 157, 69, 0.3);
+  animation: spin-slow 25s linear infinite;
 }
 
 .orb-inner {
   position: absolute;
-  inset: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.6);
+  background: radial-gradient(circle at top right, rgba(207, 157, 69, 0.2), rgba(0, 0, 0, 0.8));
   backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 0 30px rgba(207, 157, 69, 0.1) inset;
+  box-shadow: 0 0 40px rgba(207, 157, 69, 0.25) inset, 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tribe-orb-container:hover .orb-inner {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(207, 157, 69, 0.4) inset, 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
 .orb-text {
   color: var(--brand-gold);
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-family: var(--font-heading);
   font-weight: 900;
   line-height: 1;
   margin-bottom: 5px;
+  text-shadow: 0 0 20px rgba(207, 157, 69, 0.5);
 }
 
 .orb-sub {
   color: #fff;
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  opacity: 0.7;
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+/* Floating Members */
+.floating-member {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: var(--brand-black);
+  border: 2px solid rgba(207, 157, 69, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-gold);
+  font-size: 1.2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(207, 157, 69, 0.1);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.floating-member:hover {
+  border-color: var(--brand-gold);
+  color: #fff;
+  transform: scale(1.15) !important;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8), 0 0 20px rgba(207, 157, 69, 0.4);
+  background: rgba(207, 157, 69, 0.2);
+}
+
+.member-1 { top: 5%; left: 10%; animation: float 4s ease-in-out infinite; }
+.member-2 { top: 15%; right: 0%; animation: float 5s ease-in-out infinite 1s; }
+.member-3 { bottom: 10%; right: 10%; animation: float 6s ease-in-out infinite 2s; }
+.member-4 { bottom: 20%; left: -5%; animation: float 4.5s ease-in-out infinite 0.5s; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
 @media (max-width: 768px) {
   .tribe-card {
     flex-direction: column;
-    padding: 40px 25px;
+    padding: 40px 20px;
     text-align: center;
     gap: 40px;
   }
@@ -2606,11 +2682,17 @@ body {
 
   .tribe-visual {
     width: 100%;
+    margin-top: 20px;
+  }
+
+  .tribe-orb-container {
+    width: 280px;
+    height: 280px;
   }
 
   .tribe-orb {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
   }
 
   .orb-text {
