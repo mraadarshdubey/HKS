@@ -71,12 +71,12 @@ export default function OfferSection() {
           <div className="countdown-display" ref={displayRef}>23:59:59</div>
         </div>
 
-        <a href="#" className="offer-cta-btn">
-          <span className="main">
-            👉 Book a Free Clarity Call <i className="fas fa-arrow-right" />
-          </span>
-          <span className="sub">Limited spots. Free. No obligation. 100% practical.</span>
-        </a>
+        <div style={{ textAlign: 'center', marginTop: '12px' }}>
+          <p style={{ color: '#6b7280', fontSize: '0.82rem' }}>
+            <i className="fas fa-arrow-up" style={{ color: '#cf9d45', marginRight: 6 }} />
+            Use the <strong style={{ color: '#cf9d45' }}>Book Free Call</strong> button in the top navigation to get started.
+          </p>
+        </div>
       </div>
     </section>
   );

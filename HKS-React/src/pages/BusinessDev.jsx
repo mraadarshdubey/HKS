@@ -133,13 +133,9 @@ export default function BusinessDev() {
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '2rem', fontWeight: 900, color: '#fff', marginBottom: 12 }}>
             Ready to Engineer Your Growth?
           </h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: 480, margin: '0 auto 28px', lineHeight: 1.7 }}>
-            Limited spots. No fluff. Just results. Book a free 30-minute strategy call to see if we're the right fit.
+          <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
+            Use the <strong style={{ color: '#fff', textDecoration: 'underline' }}>Book Free Call</strong> button in the top navigation — free, private, no obligation.
           </p>
-          <button style={{
-            background: '#fff', color: '#cc0000', fontWeight: 900, fontSize: '1rem',
-            padding: '14px 40px', border: 'none', borderRadius: 8, cursor: 'pointer'
-          }}>Book Your Free Strategy Call →</button>
         </div>
       </div>
 

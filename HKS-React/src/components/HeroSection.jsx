@@ -240,12 +240,9 @@ export default function HeroSection() {
               get real results. Trained 50,000+ people. 30,000+ are using my system right now.
               Let me show you exactly how to go from running ads to getting real customers.
             </p>
-            <div style={{ marginTop: '24px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <a href="#offer" className="hero-cta-btn" style={{ display: 'inline-block', textDecoration: 'none' }}
-                onClick={e => { e.preventDefault(); document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' }); }}
-              >
-                👉 Book a Free Clarity Call
-              </a>
+            <div style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <i className="fas fa-arrow-down" style={{ color: '#cf9d45', fontSize: '0.8rem', animation: 'bounce 2s infinite' }} />
+              <span style={{ color: '#6b7280', fontSize: '0.85rem' }}>Scroll to learn more about the system</span>
             </div>
           </div>
         </div>

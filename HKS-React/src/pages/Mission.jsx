@@ -102,10 +102,9 @@ export default function Mission() {
 
         <div style={{ background: 'linear-gradient(135deg, #ff2e2e 0%, #cc0000 100%)', borderRadius: 20, padding: '56px 48px', textAlign: 'center', boxShadow: '0 32px 64px rgba(255,46,46,0.25)' }}>
           <h3 style={{ fontFamily: 'var(--font-headline)', fontSize: '2rem', fontWeight: 900, color: '#fff', marginBottom: 14 }}>Book a Free Clarity Call</h3>
-          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', maxWidth: 500, margin: '0 auto 28px', lineHeight: 1.7 }}>
-            Let's fix your ads step-by-step. I'll personally tell you exactly what you need to do to get real customers.
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1rem', maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>
+            Use the <strong style={{ color: '#fff', textDecoration: 'underline' }}>Book Free Call</strong> button in the top navigation to get started — free, private, step-by-step guidance.
           </p>
-          <button style={{ background: '#fff', color: '#cc0000', fontWeight: 900, fontSize: '1rem', padding: '14px 40px', border: 'none', borderRadius: 8, cursor: 'pointer' }}>Book Your Free Clarity Call</button>
         </div>
       </div>
     </div>
