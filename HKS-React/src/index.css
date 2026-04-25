@@ -2539,6 +2539,20 @@ body {
   align-items: center;
   gap: 12px;
   font-size: 1.1rem;
+  background: linear-gradient(90deg, #cf9d45, #b8860b);
+  color: #000;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(207, 157, 69, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tribe-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(207, 157, 69, 0.5);
+  color: #000;
 }
 
 .tribe-visual {
