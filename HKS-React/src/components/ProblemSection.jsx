@@ -1,22 +1,32 @@
 const problems = [
   {
     title: 'Running ads but no enquiry',
-    desc: 'You are spending money on ads but your phone is not ringing. Leads are not coming.',
+    desc: 'You are spending money on ads but your phone is not ringing. Leads are not coming at all.',
     icon: 'fas fa-times-circle',
   },
   {
     title: 'Boosting posts but wasting money',
-    desc: 'Boost button pe click karte ho, paise jaate hain, but koi result nahi aata.',
+    desc: 'Boost button pe click karte ho, paise jaate hain, but koi result nahi aata. Sirf balance khatam hota hai.',
     icon: 'fas fa-times-circle',
   },
   {
     title: 'Posting content but no response',
-    desc: 'Roz content daalte ho Instagram aur Facebook pe — but engagement zero, leads zero.',
+    desc: 'Roz content daalte ho Instagram aur Facebook pe — but engagement zero, leads zero, sales zero.',
     icon: 'fas fa-times-circle',
   },
   {
     title: 'Getting leads but no conversion',
-    desc: 'Kuch leads aate hain but wo customer nahi bante. Follow-up karo toh response nahi.',
+    desc: 'Kuch leads aate hain but wo customer nahi bante. Follow-up karo toh response nahi milta.',
+    icon: 'fas fa-times-circle',
+  },
+  {
+    title: 'Don\'t know what\'s actually working',
+    desc: 'Paise kharch ho rahe hain ads pe — but kaunsa ad kaam kar raha hai, kaunsa nahi, kuch pata nahi.',
+    icon: 'fas fa-times-circle',
+  },
+  {
+    title: 'Tried everything but nothing sticks',
+    desc: 'YouTube dekha, courses kiye, agencies hire ki — but koi permanent result nahi mila. Business wahi ka wahi.',
     icon: 'fas fa-times-circle',
   },
 ];
