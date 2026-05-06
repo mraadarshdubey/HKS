@@ -37,11 +37,12 @@ const platforms = [
 
 export default function Platforms() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Platforms — Kiran Hajare's Marketing Ecosystem"
         description="Explore the complete digital ecosystem and growth tools built by Kiran Hajare — AdmissionOS CRM, LeadPilot AI, and MarathiAds.io for coaching institutes."
         path="/platforms"
+        keywords="Kiran Hajare platforms, AdmissionOS CRM, coaching institute software, MarathiAds, digital marketing tools India"
       />
       <PageHeader
         title="Software Platforms"
@@ -162,6 +163,6 @@ export default function Platforms() {
           .platform-card { grid-template-columns: 1fr !important; }
         }
       `}</style>
-    </div>
+    </main>
   );
 }

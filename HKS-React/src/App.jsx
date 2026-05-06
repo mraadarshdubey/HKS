@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
+import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
 import AnnouncementBar from './components/AnnouncementBar';
 import Navbar from './components/Navbar';
@@ -50,6 +51,7 @@ const PageWrapper = ({ children }) => (
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <AnnouncementBar />
         <Navbar />

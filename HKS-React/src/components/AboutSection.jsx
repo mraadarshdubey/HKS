@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function AboutSection() {
   return (
     <section className="section-wrapper about-section fade-in-section">
@@ -22,25 +24,16 @@ export default function AboutSection() {
 
             <div className="paras">
               <p>
-                There was a time when I was also running a small business. People told me —
-                <em>"Post on Instagram, run ads… customers will come."</em>
+                Sach kahun toh, kuch saal pehle main bhi bilkul wahin tha jahan aaj shayad aap hain. Ek chhota business, bade sapne, aur har koi keh raha tha — 
+                <em>"Sirf Instagram pe daalo, ads chalao, customers ki line lag jayegi."</em>
               </p>
-              <p>I tried everything. But what happened?</p>
+              <p>Maine wahi kiya. Par customers ki line nahi lagi, bas mere paise aur waqt khatam hote gaye.</p>
               <p>
-                <strong style={{ color: '#ff2e2e' }}>❌ Money gone &nbsp;❌ Time gone &nbsp;❌ No customers</strong>
-              </p>
-              <p>
-                That's when I realized — the problem was not me… the problem was
-                I didn't have a <strong>proper system.</strong>
+                Tab mujhe samajh aaya ki galti mujhme nahi, balki us <strong>system</strong> mein thi jo mere paas tha hi nahi. 
+                Pichle kuch saalon mein maine ₹1 Crore se zyada ads pe kharch kiye hain — thokar kha kar, seekh kar, aur finally ek aisa raasta dhund kar jo har baar result deta hai.
               </p>
               <p>
-                So I decided to understand this properly. Till today, I've spent more than
-                <strong> ₹1 crore on ads</strong> — for myself and for my clients. After all the
-                mistakes and learning, I built a simple system that actually works.
-              </p>
-              <p>
-                Now I teach the same system to people like you —
-                in a very <strong>simple, step-by-step way.</strong>
+                Aaj wahi simple, step-by-step raasta main aap jaise entrepreneurs ko sikhata hoon taaki aapko meri tarah saalon tak struggle na karna pade. <Link to="/my-story" style={{ color: '#cf9d45', textDecoration: 'underline' }}>Meri poori kahani yahan padhein</Link>.
               </p>
             </div>
 

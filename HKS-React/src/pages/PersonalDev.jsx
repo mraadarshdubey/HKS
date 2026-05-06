@@ -30,11 +30,12 @@ const programs = [
 
 export default function PersonalDev() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Personal Development — Mindset & Identity by Kiran Hajare"
         description="Transform your entrepreneurial mindset with Kiran Hajare. Identity shifts, decision architecture, resilience protocols, and peak performance for business builders."
         path="/personal-development"
+        keywords="Kiran Hajare mindset coaching, entrepreneur personal development, business mindset India, identity shift coaching, Kiran Hajare training"
       />
       <PageHeader
         title="Personal Development"
@@ -139,6 +140,6 @@ export default function PersonalDev() {
           }}>Book Discovery Session →</button>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

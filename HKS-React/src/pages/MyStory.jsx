@@ -3,21 +3,30 @@ import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 
 const milestones = [
-  { year: '2016', title: 'The Beginning — Small Business Struggle', desc: 'Started with a small business. Log kehte the — "Instagram pe daalo, ads chalao, customers aayenge." Sab try kiya. Paise gaye, time gaya, customers nahi aaye. Yahi se journey shuru hui.' },
-  { year: '2018', title: 'The System is Born', desc: 'Realized the problem was not the budget or the platform — it was the absence of a proper system. Spent months studying Meta Ads, building funnels, and testing everything from scratch.' },
-  { year: '2020', title: '₹1 Crore Ad Spend Milestone', desc: 'Crossed ₹1 Crore in total ad spend — for myself and clients. Every rupee taught something. Losses became lessons. A simple, repeatable system started emerging from all the data.' },
-  { year: '2021', title: 'Teaching the System', desc: 'Started training others. First 1,000 people trained. Then 5,000. Then 10,000. The system worked for coaches, shop owners, service providers, and entrepreneurs across India.' },
-  { year: '2022', title: 'Marathi Business Tribe', desc: 'Built the Marathi Business Tribe community. 10,000+ Marathi entrepreneurs joined. Realized the power of vernacular marketing — speaking in the language your audience thinks in.' },
-  { year: '2023+', title: '50,000+ People Trained', desc: 'Over 50,000 people trained. 30,000+ actively using the system. From zero sales to daily enquiries — real people getting real results with a simple, step-by-step approach.' },
+  { year: '2016', title: 'Shuruat aur Nakamyabi', desc: 'Maine apna chhota business shuru kiya. Sab kehte the — "Ads chalao, customers khud aayenge." Maine wahi kiya, par sirf paise gaye, customers nahi. Wo saal mere liye ek bahut badi seekh tha.' },
+  { year: '2018', title: 'System ki Khoj', desc: 'Mujhe samajh aaya ki problem budget ya platform mein nahi, balki ek sahi "System" ki kami mein hai. Maine mahino tak data dekha, funnels banaye, aur Meta Ads ko root level se samajhna shuru kiya.' },
+  { year: '2020', title: 'Ek Bada Milestone', desc: 'Ads pe ₹1 Crore kharch karne ka anubhav mila. Isme mere khud ke aur mere clients ke paise shamil the. Har thokar ne mujhe ek naya lesson sikhaya aur mera system aur majboot hota gaya.' },
+  { year: '2021', title: 'Pehla Kadam Training ki taraf', desc: 'Jab mere results dikhne lage, toh logon ne poochha ki main ye kaise karta hoon. Maine sikhana shuru kiya. Pehle 1,000 log, fir 5,000... aur karwan badhta gaya.' },
+  { year: '2022', title: 'Marathi Business Tribe', desc: 'Maine mehsus kiya ki apni bhasha mein baat karne ka asar hi alag hota hai. Marathi entrepreneurs ke liye ek community banayi jo aaj 10,000+ logon ka parivaar ban chuka hai.' },
+  { year: '2023+', title: 'Ek Nayi Zimmedari', desc: 'Aaj 50,000 se zyada logon ko train karne ke baad bhi mera maksad wahi hai — har chote business owner ko wo system dena jo maine saalon ki mehnat se banaya hai.' },
 ];
 
 export default function MyStory() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="My Story — From Struggle to ₹1Cr+ Ad Spend Expert"
         description="Read Kiran Hajare's journey from struggling small business owner to training 50,000+ people in digital marketing. ₹1Cr+ real ad spend, proven systems, and the Marathi Business Tribe."
         path="/my-story"
+        keywords="Kiran Hajare story, Kiran Hajare journey, who is Kiran Hajare, Kiran Hajare biography, Marathi Business Tribe founder"
+        schema={{
+          '@type': 'Article',
+          headline: 'Kiran Hajare — From Struggle to ₹1Cr+ Ad Spend Expert',
+          description: 'The full journey of Kiran Hajare from struggling small business owner to training 50,000+ people and managing ₹1Cr+ in real ad spend.',
+          image: 'https://hellokiransheth.in/k1.webp',
+          datePublished: '2024-01-15',
+          dateModified: '2026-05-06',
+        }}
       />
       <PageHeader
         title="My Story"
@@ -70,16 +79,16 @@ export default function MyStory() {
                 textTransform: 'uppercase', padding: '4px 14px', borderRadius: 999, marginBottom: 24
               }}>I Was In The Same Situation As You</div>
               <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 900, color: '#fff', lineHeight: 1.1, marginBottom: 20 }}>
-                Running ads.<br /><span style={{ color: '#cf9d45' }}>No customers.</span><br />Until I found the system.
+                Ads chal rahe the,<br /><span style={{ color: '#cf9d45' }}>par dhanda nahi tha.</span><br />Fir maine system ko samjha.
               </h2>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 16 }}>
-                Hi, I'm Kiran Hajare. There was a time when I was also running a small business. People told me — "Post on Instagram, run ads… customers will come."
+                Namaste, main Kiran Hajare hoon. Sach kahun toh ek waqt tha jab main bhi bilkul aapki tarah pareshan tha. Log kehte the — "Instagram pe dalo, ads chalao, sab theek ho jayega."
               </p>
               <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 16 }}>
-                I tried everything. <strong style={{ color: '#ff2e2e' }}>Money gone. Time gone. No customers.</strong>
+                Maine sab try kiya. <strong style={{ color: '#ff2e2e' }}>Paisa gaya, waqt gaya, par customers nahi aaye.</strong>
               </p>
               <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 20 }}>
-                That's when I realized — the problem was not me. The problem was I didn't have a proper system. So I spent years learning, testing, spending over <strong style={{ color: '#cf9d45' }}>₹1 Crore on ads</strong> — and finally built a simple system that actually works.
+                Tab mujhe mehsus hua ki galti mere business mein nahi, balki mere kaam karne ke tarike mein thi. Maine saalon tak seekha, ₹1 Crore se zyada ads pe kharch kiye, aur finally ek aisa system banaya jo sach mein kaam karta hai.
               </p>
               <blockquote style={{
                 borderLeft: '4px solid #cf9d45', paddingLeft: 20,
@@ -209,6 +218,6 @@ export default function MyStory() {
           100% { background-position: 0 200%; }
         }
       `}</style>
-    </div>
+    </main>
   );
 }

@@ -115,7 +115,7 @@ export default function HeroSection() {
         {/* LEFT: Video + Copy */}
         <div className="hero-left">
           {/* Mobile-only: Gold accent label */}
-          <div className="hero-accent-line">Digital Marketing Expert &amp; Growth Strategist</div>
+          <h2 className="hero-accent-line" style={{ fontSize: 'inherit', margin: 0 }}>Digital Marketing Expert & Growth Strategist</h2>
 
           {/* Hero Copy Wrapper for Hover */}
           <div>
@@ -215,7 +215,7 @@ export default function HeroSection() {
               </div>
 
               <h1 className="hero-h1">
-                Who is <span className="gold">Kiran Hajare?</span>
+                Meet <span className="gold">Kiran Hajare</span>
               </h1>
             </div>
 
@@ -236,18 +236,17 @@ export default function HeroSection() {
             </div>
 
             <p className="hero-bio" style={{ marginTop: '16px' }}>
-              I've spent ₹1 Crore+ on ads and built a simple system that helps small business owners
-              get real results. Trained 50,000+ people. 30,000+ are already using my system to get
-              daily enquiries and real customers — without wasting money on ads.
+              Ads pe ₹1 Crore se zyada kharch karne ke baad maine ek baat seekhi hai — marketing mushkil nahi hai, bas sahi raste ki zaroorat hai. Aaj 30,000+ log mera simple system use kar rahe hain taaki unhe bina wajah paise ganwaye, har roz real enquiry aur customers mil sakein.
             </p>
             <div style={{ marginTop: '28px' }}>
-              <a
-                href="/my-story"
+              <Link
+                to="/my-story"
                 className="hero-cta-btn"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}
+                title="Read Kiran Hajare's Full Story"
               >
                 Full Story <i className="fas fa-arrow-right" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

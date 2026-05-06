@@ -39,11 +39,12 @@ export default function Contact() {
   };
 
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db', paddingBottom: '100px' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db', paddingBottom: '100px' }}>
       <SEO
         title="Contact Kiran Hajare — Book a Free Strategy Call"
         description="Ready to scale your coaching institute? Send an inquiry or book a 1-on-1 strategy call with Kiran Hajare. Get a custom growth plan for your institute."
         path="/contact"
+        keywords="contact Kiran Hajare, Kiran Hajare consultation, book strategy call Kiran Hajare, coaching institute marketing consultation"
       />
       
       {/* Hero Banner */}
@@ -75,7 +76,7 @@ export default function Contact() {
               We value your time. Our team typically responds within 24 hours during standard business days. Reach out directly or fill the form.
             </p>
 
-            <div className="contact-card">
+            <article className="contact-card">
               <div className="contact-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
@@ -83,9 +84,9 @@ export default function Contact() {
                 <h3 style={{ color: '#cf9d45', fontWeight: 700, fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '4px' }}>Email Us</h3>
                 <a href="mailto:hajarekiran210@gmail.com" style={{ color: '#fff', fontSize: '1.1rem', textDecoration: 'none', fontWeight: 500 }} className="hover-gold">hajarekiran210@gmail.com</a>
               </div>
-            </div>
+            </article>
 
-            <div className="contact-card">
+            <article className="contact-card">
               <div className="contact-icon">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
               </div>
@@ -94,10 +95,10 @@ export default function Contact() {
                 <p style={{ color: '#fff', fontSize: '1.1rem', margin: 0, fontWeight: 500 }}>Maharashtra, India</p>
                 <p style={{ color: '#6b7280', fontSize: '0.85rem', margin: '4px 0 0 0' }}>Serving institutes globally.</p>
               </div>
-            </div>
+            </article>
 
             {/* Direct Booking CTA */}
-            <div className="booking-card">
+            <article className="booking-card">
               <div className="booking-glow"></div>
               <h3 style={{ color: '#fff', fontSize: '1.3rem', fontWeight: 800, marginBottom: '12px', position: 'relative', zIndex: 2 }}>Need Faster Results?</h3>
               <p style={{ color: '#9ca3af', fontSize: '0.95rem', marginBottom: '24px', position: 'relative', zIndex: 2 }}>
@@ -106,7 +107,7 @@ export default function Contact() {
               <a href="https://rzp.io/rzp/IPZgTGU" target="_blank" rel="noopener noreferrer" className="book-btn" style={{ display: 'block', textAlign: 'center', textDecoration: 'none' }}>
                 Book a Strategy Call →
               </a>
-            </div>
+            </article>
           </div>
 
           {/* Right Column: Premium Contact Form */}
@@ -382,6 +383,6 @@ export default function Contact() {
           transform: translate(4px, -4px);
         }
       `}</style>
-    </div>
+    </main>
   );
 }

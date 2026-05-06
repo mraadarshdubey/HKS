@@ -2,11 +2,12 @@ import SEO from '../components/SEO';
 
 export default function TermsOfService() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Terms & Conditions — hellokiransheth"
         description="Read the terms and conditions for using hellokiransheth services. Outlines rules, regulations, and agreements for our digital marketing partnerships."
         path="/terms-of-service"
+        noindex={true}
       />
       {/* Hero Banner */}
       <div style={{
@@ -78,6 +79,6 @@ export default function TermsOfService() {
         </section>
 
       </div>
-    </div>
+    </main>
   );
 }

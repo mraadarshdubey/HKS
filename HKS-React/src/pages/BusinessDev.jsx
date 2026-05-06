@@ -44,11 +44,12 @@ const faqs = [
 
 export default function BusinessDev() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Business Development — Growth Strategies by Kiran Hajare"
         description="Work with Kiran Hajare — free clarity call, step-by-step training, or done-for-you Meta ads management. Data-driven growth systems for coaching institutes."
         path="/business-development"
+        keywords="Kiran Hajare services, work with Kiran Hajare, Meta ads training, coaching institute ads management, free strategy call Kiran Hajare"
       />
       <PageHeader
         title="Work With Kiran"
@@ -150,6 +151,6 @@ export default function BusinessDev() {
           .results-bar { grid-template-columns: repeat(2, 1fr) !important; }
         }
       `}</style>
-    </div>
+    </main>
   );
 }

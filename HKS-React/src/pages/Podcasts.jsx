@@ -15,11 +15,12 @@ export default function Podcasts() {
   const [activeVideo, setActiveVideo] = useState(null);
 
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Podcasts — Marketing Strategy & Growth Conversations"
         description="Listen to Kiran Hajare's in-depth podcast episodes on Facebook & Instagram ads, coaching institute marketing, sales funnels, and business growth strategies."
         path="/podcasts"
+        keywords="Kiran Hajare podcast, hellokiransheth podcast, digital marketing podcast Hindi, Meta ads podcast, coaching growth podcast"
       />
       <PageHeader
         title="Podcasts"
@@ -199,6 +200,7 @@ export default function Podcasts() {
           </div>
         </div>
       )}
-    </div>
+    
+    </main>
   );
 }

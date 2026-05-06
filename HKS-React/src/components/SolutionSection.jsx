@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const steps = [
   {
     number: '01',
@@ -77,7 +79,7 @@ export default function SolutionSection() {
             A Simple System That Takes You<br />From Ads to Real Customers.
           </h2>
           <p className="section-sub">
-            Simple words — I help you stop wasting money on ads and start getting real customers. Step by step.
+            Simple words — I help you stop wasting money on Meta Ads and start getting real customers with tailored <Link to="/business-development" style={{ color: '#0a0a0a', textDecoration: 'underline' }}>digital marketing services for coaching institutes</Link>. Step by step.
           </p>
         </div>
 

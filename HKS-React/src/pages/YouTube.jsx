@@ -42,11 +42,12 @@ const playlists = [
 
 export default function YouTube() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="YouTube — @hellokiransheth Marketing Masterclasses"
         description="Watch Kiran Hajare's deep-dive strategies, case studies, and complete marketing blueprints on YouTube. Subscribe to @hellokiransheth for weekly growth content."
         path="/youtube"
+        keywords="Kiran Hajare YouTube, hellokiransheth YouTube, Meta ads tutorial, coaching marketing videos, digital marketing masterclass"
       />
       <PageHeader
         title="YouTube Channels"
@@ -161,6 +162,6 @@ export default function YouTube() {
         </div>
         */}
       </div>
-    </div>
+    </main>
   );
 }

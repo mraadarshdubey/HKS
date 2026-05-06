@@ -31,11 +31,12 @@ const books = [
 
 export default function Books() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Books — Digital Marketing & Growth Strategy Playbooks"
         description="Discover Kiran Hajare's books on Meta Ads funnels, paid traffic for education institutes, and growing businesses in the Marathi-speaking economy."
         path="/books"
+        keywords="Kiran Hajare books, Meta ads playbook, coaching institute marketing book, Marathi business growth, digital marketing guide India"
       />
       <PageHeader
         title="Kiran's Books"
@@ -62,7 +63,7 @@ export default function Books() {
         {/* Book Cards */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32, marginBottom: 80 }}>
           {books.map((book, i) => (
-            <div key={i} className="book-card" style={{ '--book-color': book.color }}>
+            <article key={i} className="book-card" style={{ '--book-color': book.color }}>
               {/* Book Cover Mock */}
               <div className="book-cover">
                 {/* Decorative lines */}
@@ -87,7 +88,7 @@ export default function Books() {
                   Notify Me on Launch →
                 </button>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
@@ -254,6 +255,6 @@ export default function Books() {
           background: #e6b75c;
         }
       `}</style>
-    </div>
+    </main>
   );
 }

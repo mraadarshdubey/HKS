@@ -31,11 +31,12 @@ const pillars = [
 
 export default function Mission() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Our Mission — Empowering 10,000+ Coaching Institutes"
         description="Our mission is to provide every small business owner a simple, step-by-step digital marketing system — from ads to customers. 50,000+ already trained."
         path="/mission"
+        keywords="Kiran Hajare mission, hellokiransheth mission, coaching institute digital marketing, Marathi Business Tribe mission"
       />
       <PageHeader
         title="Mission — Liberate & Educate"
@@ -113,6 +114,6 @@ export default function Mission() {
           </p>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

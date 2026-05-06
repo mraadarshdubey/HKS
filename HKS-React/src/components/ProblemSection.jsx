@@ -1,32 +1,32 @@
 const problems = [
   {
-    title: 'Running ads but no enquiry',
-    desc: 'You are spending money on ads but your phone is not ringing. Leads are not coming at all.',
+    title: 'Ads chal rahe hain par phone silent hai',
+    desc: 'Paise har roz kat rahe hain, dashboard pe "Reach" bhi dikh rahi hai, lekin enquiries zero hain.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Boosting posts but wasting money',
-    desc: 'Boost button pe click karte ho, paise jaate hain, but koi result nahi aata. Sirf balance khatam hota hai.',
+    title: 'Sirf "Boost" button pe bharosa',
+    desc: 'Bina soche samjhe Boost button dabate ho, likes toh mil jaate hain par dhanda nahi aata.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Posting content but no response',
-    desc: 'Roz content daalte ho Instagram aur Facebook pe — but engagement zero, leads zero, sales zero.',
+    title: 'Roz content daalne ki thakaan',
+    desc: 'Din bhar reel aur post banane mein nikal jata hai, par end of the day na koi lead hai na koi sale.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Getting leads but no conversion',
-    desc: 'Kuch leads aate hain but wo customer nahi bante. Follow-up karo toh response nahi milta.',
+    title: 'Leads toh aayi, par deal nahi hui',
+    desc: 'Log poonchte hain "Price kya hai?" aur uske baad gayab ho jaate hain. System hi nahi hai convert karne ka.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Don\'t know what\'s actually working',
-    desc: 'Paise kharch ho rahe hain ads pe — but kaunsa ad kaam kar raha hai, kaunsa nahi, kuch pata nahi.',
+    title: 'Pata hi nahi ki galti kahan ho rahi hai',
+    desc: 'Andhere mein teer chala rahe ho. Kaunsi ad result de rahi hai aur kaunsi paisa duba rahi hai, kuch clear nahi hai.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Tried everything but nothing sticks',
-    desc: 'YouTube dekha, courses kiye, agencies hire ki — but koi permanent result nahi mila. Business wahi ka wahi.',
+    title: 'Courses aur Agencies se umeed khatam',
+    desc: 'Sab try kar liya — YouTube video, saste courses, mehengi agencies. Result wahi ka wahi zero.',
     icon: 'fas fa-times-circle',
   },
 ];

@@ -13,11 +13,12 @@ const mentions = [
 
 export default function Press() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Press & Media — Kiran Hajare in the News"
         description="Media features, interviews, keynotes, and press coverage of Kiran Hajare. Read about his work in scaling coaching institutes across India."
         path="/press"
+        keywords="Kiran Hajare press, Kiran Hajare media, Kiran Hajare interview, Kiran Hajare news, hellokiransheth media coverage"
       />
       <PageHeader
         title="Press & Media"
@@ -118,6 +119,6 @@ export default function Press() {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

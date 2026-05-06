@@ -88,11 +88,12 @@ const socials = [
 
 export default function Socials() {
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Social Media — Follow @hellokiransheth"
         description="Connect with Kiran Hajare on Facebook, Instagram, LinkedIn, and YouTube. Get daily marketing tips, live sessions, and strategic insights for your coaching institute."
         path="/socials"
+        keywords="Kiran Hajare Instagram, Kiran Hajare Facebook, hellokiransheth social media, Kiran Hajare LinkedIn, Kiran Hajare YouTube channel"
       />
       <PageHeader
         title="Connect With Kiran"
@@ -190,6 +191,6 @@ export default function Socials() {
           }}>Join WhatsApp Community →</button>
         </div> */}
       </div>
-    </div>
+    </main>
   );
 }

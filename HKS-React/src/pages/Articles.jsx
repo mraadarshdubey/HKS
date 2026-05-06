@@ -109,11 +109,17 @@ export default function Articles() {
   };
 
   return (
-    <div style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
+    <main style={{ background: 'transparent', minHeight: '100vh', color: '#d1d5db' }}>
       <SEO
         title="Articles — Digital Marketing Insights & Case Studies"
         description="Read Kiran Hajare's case studies, proven frameworks, and unfiltered insights on Meta Ads, coaching institute growth, and admission funnels. Updated weekly."
         path="/articles"
+        keywords="Kiran Hajare articles, Kiran Hajare blog, digital marketing case studies, Meta ads frameworks, coaching institute case study, admission funnel guide"
+        schema={{
+          '@type': 'CollectionPage',
+          name: 'Kiran Hajare — Articles & Case Studies',
+          description: 'A collection of articles, case studies, and proven frameworks by Kiran Hajare on digital marketing for coaching institutes.',
+        }}
       />
       <PageHeader
         title="Articles"
@@ -125,7 +131,7 @@ export default function Articles() {
 
         {/* Featured Article */}
         {featured && active === 'All' && (
-          <div className="featured-card">
+          <article className="featured-card">
             <div style={{ display: 'flex', gap: 16, marginBottom: 20, flexWrap: 'wrap', alignItems: 'center' }}>
               <span style={{ background: '#cf9d4518', color: '#cf9d45', fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.15em', textTransform: 'uppercase', padding: '4px 14px', borderRadius: 999, border: '1px solid #cf9d4433', display: 'flex', alignItems: 'center' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style={{ width: '1.2em', height: '1.2em', marginRight: '4px' }}>
@@ -139,7 +145,7 @@ export default function Articles() {
             <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(1.6rem,3vw,2.2rem)', fontWeight: 900, color: '#fff', marginBottom: 16, lineHeight: 1.2 }}>{featured.title}</h2>
             <p style={{ color: '#9ca3af', lineHeight: 1.8, maxWidth: 780, fontSize: '1rem', marginBottom: 24 }}>{featured.excerpt}</p>
             <div style={{ color: '#cf9d45', fontWeight: 700, display: 'flex', alignItems: 'center', gap: 6 }}>Read Full Article →</div>
-          </div>
+          </article>
         )}
 
         {/* Category Tabs */}
@@ -158,7 +164,7 @@ export default function Articles() {
         {/* Articles Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24, marginBottom: 80 }}>
           {(active === 'All' ? rest : filtered).map((a, i) => (
-            <div key={i} className="article-card">
+            <article key={i} className="article-card">
               <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center' }}>
                 <span style={{
                   background: (catColors[a.cat] || '#cf9d45') + '18',
@@ -174,7 +180,7 @@ export default function Articles() {
                 <span style={{ color: '#6b7280', fontSize: '0.75rem' }}>{a.date}</span>
                 <span style={{ color: '#cf9d45', fontWeight: 700, fontSize: '0.82rem' }}>Read →</span>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
@@ -363,6 +369,6 @@ export default function Articles() {
           box-shadow: 0 5px 15px rgba(207,157,69,0.4);
         }
       `}</style>
-    </div>
+    </main>
   );
 }

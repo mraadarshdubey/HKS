@@ -21,16 +21,19 @@ export default function Home() {
         title="Digital Marketing Expert & Growth Strategist"
         description="Kiran Hajare is India's leading digital marketing expert & growth strategist for coaching institutes. ₹1Cr+ real ad spend, 50,000+ people trained. Book a free strategy call today."
         path="/"
+        keywords="Kiran Hajare digital marketing expert, coaching institute growth, admission growth system India, Kiran Hajare Maharashtra, Meta ads for coaching, hellokiransheth, Marathi Business Tribe"
       />
-      <HeroSection />
-      <ProblemSection />
-      <SolutionSection />
-      <ProofSection />
-      {/* <OfferSection /> */}
-      <AboutSection />
-      <TribeSection />
-      <FaqSection />
-      {/* <FinalCTA /> */}
+      <main>
+        <HeroSection />
+        <ProblemSection />
+        <SolutionSection />
+        <ProofSection />
+        {/* <OfferSection /> */}
+        <AboutSection />
+        <TribeSection />
+        <FaqSection />
+        {/* <FinalCTA /> */}
+      </main>
       <MobileStickyCTA />
     </>
   );
