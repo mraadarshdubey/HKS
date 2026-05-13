@@ -19,6 +19,7 @@ import Articles from './pages/Articles';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Contact from './pages/Contact';
+import PressArticle from './pages/PressArticle';
 
 // Premium SimplePage for Contact/Terms/Privacy
 const SimplePage = ({ title }) => (
@@ -62,6 +63,7 @@ export default function App() {
             <Route path="/books" element={<PageWrapper><Books /></PageWrapper>} />
             <Route path="/mission" element={<PageWrapper><Mission /></PageWrapper>} />
             <Route path="/press" element={<PageWrapper><Press /></PageWrapper>} />
+            <Route path="/press/:slug" element={<PageWrapper><PressArticle /></PageWrapper>} />
             <Route path="/platforms" element={<PageWrapper><Platforms /></PageWrapper>} />
             <Route path="/business-development" element={<PageWrapper><BusinessDev /></PageWrapper>} />
             <Route path="/personal-development" element={<PageWrapper><PersonalDev /></PageWrapper>} />

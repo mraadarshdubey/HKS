@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 
+import { Link } from 'react-router-dom';
+
 const mentions = [
-  { outlet: 'Ads To Impact', type: 'Official Agency', title: 'Data-Driven Performance Marketing', desc: 'Kiran Sir’s official performance marketing agency, helping businesses scale through advanced Meta Ads and AI-driven systems.', date: 'Founded 2020', link: 'https://adstoimpact.com/' },
-  { outlet: 'Marathi Business Tribe', type: 'Community Platform', title: 'Empowering Marathi Entrepreneurs', desc: 'The ultimate ecosystem for Marathi business owners to learn, network, and grow their ventures using proven frameworks.', date: 'Founded 2022', link: 'https://marathibusinesstribe.com/' },
-  { outlet: 'Digital Maharashtra', type: 'Case Study', title: '₹47 Lakh in Admissions Using Meta Ads Alone', desc: 'A full breakdown of the exact campaign structure that generated ₹47 Lakh in collected admissions.', date: 'November 2023', link: '#' },
-  { outlet: 'Startup Grind Pune', type: 'Podcast Feature', title: 'Scaling Education: The Kiran Hajare Way', desc: 'A candid conversation about the Marathi business ecosystem and why vernacular marketing is the most underutilized growth lever.', date: 'August 2023', link: '#' },
+  { slug: 'marathi-business-weekly', outlet: 'Marathi Business Weekly', type: 'Feature Article', title: 'The Man Behind Marathi Digital Marketing', desc: 'An in-depth profile on how Kiran Hajare built a community of 10,000+ Marathi entrepreneurs from the ground up.', date: 'March 2024' },
+  { slug: 'edtech-insider', outlet: 'EdTech Insider', type: 'Interview', title: 'AI Funnels Are the Future of Admission Marketing', desc: 'Kiran breaks down his proprietary AI-powered funnel system that has helped 200+ institutes automate their pipelines.', date: 'January 2024' },
+  { slug: 'digital-maharashtra', outlet: 'Digital Maharashtra', type: 'Case Study', title: '₹47 Lakh in Admissions Using Meta Ads Alone', desc: 'A full breakdown of the exact campaign structure that generated ₹47 Lakh in collected admissions.', date: 'November 2023' },
+  { slug: 'startup-grind-pune', outlet: 'Startup Grind Pune', type: 'Podcast Feature', title: 'Scaling Education: The Kiran Hajare Way', desc: 'A candid conversation about the Marathi business ecosystem and why vernacular marketing is the most underutilized growth lever.', date: 'August 2023' },
+  { slug: 'ads-to-impact', outlet: 'AdsToImpact.com', type: 'Platform Feature', title: 'AdsToImpact — Where Creative Meets Conversion', desc: 'A deep dive into Kiran\'s performance marketing agency — the done-for-you arm that runs Meta Ads campaigns for coaching institutes and local businesses across India.', date: 'April 2024' },
+  { slug: 'marathi-business-tribe', outlet: 'Marathi Business Tribe', type: 'Platform Feature', title: 'Marathi Business Tribe — India\'s Largest Marathi Business Community', desc: '70,000+ Marathi entrepreneurs trust Kiran Hajare\'s platform to grow their business using Meta Ads & AI Funnel Systems. Here\'s the full story behind the tribe.', date: 'May 2024' },
 ];
 
 const logos = [
@@ -216,7 +220,7 @@ export default function Press() {
           </div>
           <div className="pm-mentions-grid">
             {mentions.map((m, i) => (
-              <a key={i} href={m.link} target="_blank" rel="noopener noreferrer" className="pm-mention-card" style={{ textDecoration: 'none' }}>
+              <div key={i} className="pm-mention-card">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 14 }}>
                   <span className="pm-mention-type">{m.type}</span>
                   <span style={{ color: '#6b7280', fontSize: '0.75rem' }}>{m.date}</span>
@@ -224,8 +228,8 @@ export default function Press() {
                 <div className="pm-mention-outlet">{m.outlet}</div>
                 <h3 className="pm-mention-title">{m.title}</h3>
                 <p className="pm-mention-desc">{m.desc}</p>
-                <div className="pm-mention-cta">Read Full Feature →</div>
-              </a>
+                <Link to={`/press/${m.slug}`} className="pm-mention-cta-link">Read Full Feature →</Link>
+              </div>
             ))}
           </div>
         </section>
@@ -409,7 +413,8 @@ export default function Press() {
         .pm-mention-outlet { color: #cf9d45; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
         .pm-mention-title { font-family: var(--font-headline); font-size: 1.1rem; font-weight: 900; color: #fff; line-height: 1.3; }
         .pm-mention-desc { color: #9ca3af; font-size: 0.92rem; line-height: 1.65; flex: 1; }
-        .pm-mention-cta { color: #cf9d45; font-size: 0.82rem; font-weight: 700; }
+        .pm-mention-cta-link { color: #cf9d45; font-size: 0.82rem; font-weight: 700; text-decoration: none; transition: letter-spacing 0.2s; }
+        .pm-mention-cta-link:hover { letter-spacing: 0.03em; }
 
         /* ── Booking Banner ── */
         .pm-booking-banner {
