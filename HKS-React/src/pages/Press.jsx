@@ -152,11 +152,11 @@ export default function Press() {
             ))}
             <div className="pm-logo-card pm-logo-card-dark">
               <div className="pm-logo-img-wrap" style={{ background: '#000' }}>
-                <img src="/favicon.svg" alt="Icon Mark" style={{ width: 60, height: 60, objectFit: 'contain' }} />
+                <img src="/MBT.PNG" alt="MBT Brand Asset" className="pm-logo-img" style={{ maxWidth: 220, maxHeight: 140 }} />
               </div>
               <div className="pm-logo-meta">
-                <span className="pm-logo-name">Icon Mark / Favicon</span>
-                <a href="/favicon.svg" download className="pm-logo-dl">↓ Download SVG</a>
+                <span className="pm-logo-name">Brand Asset — MBT</span>
+                <a href="/MBT.PNG" download className="pm-logo-dl">↓ Download</a>
               </div>
             </div>
           </div>
