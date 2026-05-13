@@ -52,17 +52,27 @@ export default function Press() {
             <span className="pm-label-dot"></span> Media Bio
           </div>
           <div className="pm-bio-card">
-            <div className="pm-bio-left">
-              <img src="/circle-kiran-sir.png" alt="Kiran Hajare" className="pm-bio-photo" />
+            {/* Top: Centered Photo + Glow */}
+            <div className="pm-bio-hero">
+              <div className="pm-bio-glow"></div>
+              <div className="pm-bio-photo-ring">
+                <img src="/circle-kiran-sir.png" alt="Kiran Hajare" className="pm-bio-photo" />
+              </div>
+              <div className="pm-bio-identity">
+                <h2 className="pm-bio-name">Kiran Hajare</h2>
+                <p className="pm-bio-role">Digital Marketing Strategist · Speaker · Educator</p>
+              </div>
+              {/* Stats row */}
               <div className="pm-bio-stats">
                 <div className="pm-stat"><span>200+</span><p>Institutes Scaled</p></div>
+                <div className="pm-stat-sep"></div>
                 <div className="pm-stat"><span>10K+</span><p>Entrepreneurs</p></div>
+                <div className="pm-stat-sep"></div>
                 <div className="pm-stat"><span>10+</span><p>Years Experience</p></div>
               </div>
             </div>
-            <div className="pm-bio-right">
-              <h2 className="pm-bio-name">Kiran Hajare</h2>
-              <p className="pm-bio-role">Digital Marketing Strategist · Speaker · Educator</p>
+            {/* Bottom: Bio text + actions */}
+            <div className="pm-bio-body">
               <div className="pm-bio-divider"></div>
               <p className="pm-bio-text">
                 Kiran Hajare is a digital marketing strategist, speaker, and educator who has spent over a decade helping coaching institutes and Marathi entrepreneurs scale through Meta Ads, AI-powered funnels, and systematic business development. He is the founder of HelloKiranSir and has worked with 200+ institutes across India, generating crores in admissions revenue.
@@ -86,29 +96,36 @@ export default function Press() {
             <span className="pm-label-dot"></span> Speaker Reel
           </div>
           <div className="pm-reel-card">
-            <div className="pm-reel-video">
+            {/* Centered Video */}
+            <div className="pm-reel-video-wrap">
+              <div className="pm-reel-video-glow"></div>
               <video
                 src="/KH.mp4"
                 controls
                 playsInline
                 poster="/k1.webp"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16 }}
+                className="pm-reel-video"
               />
             </div>
+            {/* Info below */}
             <div className="pm-reel-info">
               <h3 className="pm-reel-title">Kiran Hajare — Speaker Reel</h3>
               <p className="pm-reel-desc">
                 Watch Kiran in action — from keynotes to intimate workshops, he brings clarity, energy and frameworks that move audiences to implement immediately.
               </p>
-              <div className="pm-topics">
-                <p style={{ fontSize: '0.7rem', color: '#666', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 12 }}>Speaking Topics</p>
-                {['Meta Ads & Admission Funnels', 'AI in Education Marketing', 'Vernacular Business Growth', 'Workers to Business Leaders', 'Scaling Without Chaos'].map((t, i) => (
-                  <div key={i} className="pm-topic-item">
-                    <span className="pm-topic-dot"></span> {t}
-                  </div>
-                ))}
+              <div className="pm-topics-grid">
+                <p className="pm-topics-label">Speaking Topics</p>
+                <div className="pm-topics-list">
+                  {['Meta Ads & Admission Funnels', 'AI in Education Marketing', 'Vernacular Business Growth', 'Workers to Business Leaders', 'Scaling Without Chaos'].map((t, i) => (
+                    <div key={i} className="pm-topic-chip">
+                      <span className="pm-topic-dot"></span> {t}
+                    </div>
+                  ))}
+                </div>
               </div>
-              <button className="pm-btn-gold" style={{ marginTop: 28 }}>Book Kiran to Speak →</button>
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: 36 }}>
+                <button className="pm-btn-gold">Book Kiran to Speak →</button>
+              </div>
             </div>
           </div>
         </section>
@@ -251,38 +268,89 @@ export default function Press() {
 
         /* ── Media Bio ── */
         .pm-bio-card {
-          display: flex; gap: 60px; align-items: flex-start;
           background: #0a0a0a; border: 1px solid #1a1a1a;
-          border-radius: 32px; padding: 56px; flex-wrap: wrap;
+          border-radius: 32px; overflow: hidden;
         }
-        .pm-bio-left { display: flex; flex-direction: column; align-items: center; gap: 32px; flex-shrink: 0; }
+        .pm-bio-hero {
+          display: flex; flex-direction: column; align-items: center;
+          padding: 64px 48px 48px; text-align: center;
+          position: relative;
+          background: linear-gradient(to bottom, #0f0f0f, #0a0a0a);
+          border-bottom: 1px solid #1a1a1a;
+        }
+        .pm-bio-glow {
+          position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+          width: 500px; height: 300px;
+          background: radial-gradient(ellipse at top, rgba(207,157,69,0.12) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .pm-bio-photo-ring {
+          position: relative; z-index: 2;
+          width: 180px; height: 180px; border-radius: 50%;
+          padding: 4px;
+          background: linear-gradient(135deg, #cf9d45, #8b6914);
+          margin-bottom: 28px;
+          box-shadow: 0 0 60px rgba(207,157,69,0.2);
+        }
         .pm-bio-photo {
-          width: 180px; height: 180px; object-fit: cover; border-radius: 50%;
-          border: 3px solid rgba(207,157,69,0.3);
-          box-shadow: 0 0 40px rgba(207,157,69,0.15);
+          width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+          border: 3px solid #0a0a0a;
         }
-        .pm-bio-stats { display: flex; gap: 20px; }
-        .pm-stat { text-align: center; }
-        .pm-stat span { font-family: var(--font-headline); font-size: 1.4rem; font-weight: 900; color: #cf9d45; display: block; }
-        .pm-stat p { font-size: 0.7rem; color: #666; text-transform: uppercase; letter-spacing: 0.08em; margin: 4px 0 0; }
-        .pm-bio-right { flex: 1; min-width: 280px; }
-        .pm-bio-name { font-family: var(--font-headline); font-size: 2.4rem; font-weight: 900; color: #fff; margin-bottom: 6px; }
-        .pm-bio-role { color: #cf9d45; font-size: 0.9rem; font-weight: 600; margin-bottom: 24px; }
-        .pm-bio-divider { width: 48px; height: 2px; background: #cf9d45; margin-bottom: 24px; border-radius: 99px; }
-        .pm-bio-text { color: #9ca3af; line-height: 1.75; font-size: 0.97rem; }
-        .pm-bio-actions { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
+        .pm-bio-identity { position: relative; z-index: 2; margin-bottom: 36px; }
+        .pm-bio-name { font-family: var(--font-headline); font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 8px; }
+        .pm-bio-role { color: #cf9d45; font-size: 0.95rem; font-weight: 600; }
+        .pm-bio-stats {
+          display: flex; align-items: center; gap: 0;
+          position: relative; z-index: 2;
+          background: #111; border: 1px solid #1e1e1e;
+          border-radius: 16px; overflow: hidden;
+        }
+        .pm-stat { text-align: center; padding: 20px 40px; }
+        .pm-stat span { font-family: var(--font-headline); font-size: 1.8rem; font-weight: 900; color: #cf9d45; display: block; }
+        .pm-stat p { font-size: 0.65rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin: 4px 0 0; }
+        .pm-stat-sep { width: 1px; height: 50px; background: #1e1e1e; flex-shrink: 0; }
+        .pm-bio-body { padding: 48px; max-width: 800px; margin: 0 auto; text-align: center; }
+        .pm-bio-divider { width: 48px; height: 2px; background: #cf9d45; margin: 0 auto 28px; border-radius: 99px; }
+        .pm-bio-text { color: #9ca3af; line-height: 1.8; font-size: 0.98rem; }
+        .pm-bio-actions { display: flex; gap: 16px; margin-top: 36px; flex-wrap: wrap; justify-content: center; }
 
         /* ── Speaker Reel ── */
         .pm-reel-card {
-          display: flex; gap: 48px; align-items: flex-start; flex-wrap: wrap;
           background: #0a0a0a; border: 1px solid #1a1a1a;
-          border-radius: 32px; padding: 48px; overflow: hidden;
+          border-radius: 32px; overflow: hidden;
         }
-        .pm-reel-video { flex: 1; min-width: 280px; height: 320px; border-radius: 16px; overflow: hidden; background: #000; border: 1px solid #1a1a1a; }
-        .pm-reel-info { flex: 1; min-width: 260px; }
-        .pm-reel-title { font-family: var(--font-headline); font-size: 1.8rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
-        .pm-reel-desc { color: #9ca3af; line-height: 1.7; margin-bottom: 28px; }
-        .pm-topic-item { display: flex; align-items: center; gap: 10px; color: #d1d5db; font-size: 0.9rem; padding: 8px 0; border-bottom: 1px solid #111; }
+        .pm-reel-video-wrap {
+          position: relative;
+          padding: 48px 48px 0;
+          background: linear-gradient(to bottom, #0f0f0f, #0a0a0a);
+          border-bottom: 1px solid #1a1a1a;
+        }
+        .pm-reel-video-glow {
+          position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+          width: 600px; height: 200px;
+          background: radial-gradient(ellipse at top, rgba(207,157,69,0.1) 0%, transparent 70%);
+          pointer-events: none;
+        }
+        .pm-reel-video {
+          width: 100%; max-height: 480px;
+          border-radius: 16px 16px 0 0;
+          object-fit: cover; display: block;
+          border: 1px solid #1e1e1e; border-bottom: none;
+          position: relative; z-index: 2;
+        }
+        .pm-reel-info { padding: 48px; text-align: center; }
+        .pm-reel-title { font-family: var(--font-headline); font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
+        .pm-reel-desc { color: #9ca3af; line-height: 1.7; margin-bottom: 36px; max-width: 640px; margin-left: auto; margin-right: auto; }
+        .pm-topics-label { font-size: 0.65rem; color: #666; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 16px; }
+        .pm-topics-list { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .pm-topic-chip {
+          display: flex; align-items: center; gap: 8px;
+          background: #111; border: 1px solid #1e1e1e;
+          border-radius: 999px; padding: 8px 18px;
+          font-size: 0.85rem; color: #d1d5db;
+          transition: border-color 0.3s;
+        }
+        .pm-topic-chip:hover { border-color: rgba(207,157,69,0.4); color: #cf9d45; }
         .pm-topic-dot { width: 5px; height: 5px; border-radius: 50%; background: #cf9d45; flex-shrink: 0; }
 
         /* ── Logos ── */
@@ -376,8 +444,13 @@ export default function Press() {
 
         /* Responsive */
         @media (max-width: 768px) {
-          .pm-bio-card, .pm-reel-card { padding: 32px 24px; }
-          .pm-bio-stats { gap: 12px; }
+          .pm-bio-hero { padding: 48px 24px 36px; }
+          .pm-bio-body { padding: 32px 24px; }
+          .pm-bio-name { font-size: 2rem; }
+          .pm-bio-stats { flex-wrap: wrap; justify-content: center; }
+          .pm-stat { padding: 16px 24px; }
+          .pm-reel-video-wrap { padding: 32px 24px 0; }
+          .pm-reel-info { padding: 32px 24px; }
           .pm-guidelines-grid { grid-template-columns: 1fr; }
           .pm-booking-banner { padding: 48px 24px; }
           .pm-booking-title { font-size: 1.6rem; }
