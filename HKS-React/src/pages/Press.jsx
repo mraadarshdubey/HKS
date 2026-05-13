@@ -113,7 +113,7 @@ export default function Press() {
                 src="/KH.mp4"
                 controls
                 playsInline
-                poster="/k1.webp"
+                poster="/speaker-reel-thumb.png"
                 className="pm-reel-video"
               />
             </div>
