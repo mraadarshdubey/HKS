@@ -7,8 +7,8 @@ const channels = [
     name: 'Kiran Hajare Official',
     handle: '@hellokiransheth',
     url: 'https://www.youtube.com/@hellokiransheth',
-    subs: '50K+',
-    videos: '120+',
+    subs: '2.6K+',
+    videos: '458+',
     focus: 'Meta Ads strategy, case studies, and admission funnel walkthroughs for coaching institutes.',
     color: '#ff2e2e',
     featured: [
