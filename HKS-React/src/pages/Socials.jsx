@@ -90,7 +90,7 @@ export default function Socials() {
               position: 'relative', overflow: 'hidden',
               transition: 'transform 0.3s, border-color 0.3s, box-shadow 0.3s',
             }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = s.color + '44'; e.currentTarget.style.boxShadow = \`0 20px 48px rgba(0,0,0,0.4)\`; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = s.color + '44'; e.currentTarget.style.boxShadow = '0 20px 48px rgba(0,0,0,0.4)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.borderColor = '#1a1a1a'; e.currentTarget.style.boxShadow = 'none'; }}
             >
               {/* Top color accent */}
@@ -100,7 +100,7 @@ export default function Socials() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 14, minWidth: 0 }}>
                   <div style={{
                     width: 52, height: 52, borderRadius: '50%', flexShrink: 0,
-                    background: s.color + '18', border: \`1px solid \${s.color}33\`,
+                    background: s.color + '18', border: `1px solid ${s.color}33`,
                     display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.6rem'
                   }}>{s.icon}</div>
                   <div style={{ minWidth: 0 }}>
