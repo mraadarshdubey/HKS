@@ -3,10 +3,10 @@ import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 
 const mentions = [
-  { outlet: 'Marathi Business Weekly', type: 'Feature Article', title: 'The Man Behind Marathi Digital Marketing', desc: 'An in-depth profile on how Kiran Hajare built a community of 10,000+ Marathi entrepreneurs from the ground up.', date: 'March 2024' },
-  { outlet: 'EdTech Insider', type: 'Interview', title: 'AI Funnels Are the Future of Admission Marketing', desc: 'Kiran breaks down his proprietary AI-powered funnel system that has helped 200+ institutes automate their pipelines.', date: 'January 2024' },
-  { outlet: 'Digital Maharashtra', type: 'Case Study', title: '₹47 Lakh in Admissions Using Meta Ads Alone', desc: 'A full breakdown of the exact campaign structure that generated ₹47 Lakh in collected admissions.', date: 'November 2023' },
-  { outlet: 'Startup Grind Pune', type: 'Podcast Feature', title: 'Scaling Education: The Kiran Hajare Way', desc: 'A candid conversation about the Marathi business ecosystem and why vernacular marketing is the most underutilized growth lever.', date: 'August 2023' },
+  { outlet: 'Ads To Impact', type: 'Official Agency', title: 'Data-Driven Performance Marketing', desc: 'Kiran Sir’s official performance marketing agency, helping businesses scale through advanced Meta Ads and AI-driven systems.', date: 'Founded 2020', link: 'https://adstoimpact.com/' },
+  { outlet: 'Marathi Business Tribe', type: 'Community Platform', title: 'Empowering Marathi Entrepreneurs', desc: 'The ultimate ecosystem for Marathi business owners to learn, network, and grow their ventures using proven frameworks.', date: 'Founded 2022', link: 'https://marathibusinesstribe.com/' },
+  { outlet: 'Digital Maharashtra', type: 'Case Study', title: '₹47 Lakh in Admissions Using Meta Ads Alone', desc: 'A full breakdown of the exact campaign structure that generated ₹47 Lakh in collected admissions.', date: 'November 2023', link: '#' },
+  { outlet: 'Startup Grind Pune', type: 'Podcast Feature', title: 'Scaling Education: The Kiran Hajare Way', desc: 'A candid conversation about the Marathi business ecosystem and why vernacular marketing is the most underutilized growth lever.', date: 'August 2023', link: '#' },
 ];
 
 const logos = [
@@ -216,7 +216,7 @@ export default function Press() {
           </div>
           <div className="pm-mentions-grid">
             {mentions.map((m, i) => (
-              <div key={i} className="pm-mention-card">
+              <a key={i} href={m.link} target="_blank" rel="noopener noreferrer" className="pm-mention-card" style={{ textDecoration: 'none' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, marginBottom: 14 }}>
                   <span className="pm-mention-type">{m.type}</span>
                   <span style={{ color: '#6b7280', fontSize: '0.75rem' }}>{m.date}</span>
@@ -225,7 +225,7 @@ export default function Press() {
                 <h3 className="pm-mention-title">{m.title}</h3>
                 <p className="pm-mention-desc">{m.desc}</p>
                 <div className="pm-mention-cta">Read Full Feature →</div>
-              </div>
+              </a>
             ))}
           </div>
         </section>
