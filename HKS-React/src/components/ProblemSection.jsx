@@ -1,32 +1,32 @@
 const problems = [
   {
-    title: 'Ads chal rahe hain par phone silent hai',
-    desc: 'Paise har roz kat rahe hain, dashboard pe "Reach" bhi dikh rahi hai, lekin enquiries zero hain.',
+    title: 'Ads are running, but the phone remains silent',
+    desc: 'Money is spent every day, and your dashboard shows "Reach," yet you\'re getting zero actual inquiries.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Sirf "Boost" button pe bharosa',
-    desc: 'Bina soche samjhe Boost button dabate ho, likes toh mil jaate hain par dhanda nahi aata.',
+    title: 'Relying solely on the "Boost" button',
+    desc: 'Clicking the Boost button without a strategy might get you likes, but it doesn\'t bring in real business.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Roz content daalne ki thakaan',
-    desc: 'Din bhar reel aur post banane mein nikal jata hai, par end of the day na koi lead hai na koi sale.',
+    title: 'The exhaustion of posting content daily',
+    desc: 'You spend your entire day creating reels and posts, only to end up with no leads or sales at the end of the day.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Leads toh aayi, par deal nahi hui',
-    desc: 'Log poonchte hain "Price kya hai?" aur uske baad gayab ho jaate hain. System hi nahi hai convert karne ka.',
+    title: 'Leads arrived, but no deals were closed',
+    desc: 'People ask "What\'s the price?" and then vanish. You lack a proper system to convert interest into sales.',
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Pata hi nahi ki galti kahan ho rahi hai',
-    desc: 'Andhere mein teer chala rahe ho. Kaunsi ad result de rahi hai aur kaunsi paisa duba rahi hai, kuch clear nahi hai.',
+    title: 'Unsure of where things are going wrong',
+    desc: "It feels like shooting in the dark. It's unclear which ads are performing and which ones are just wasting your budget.",
     icon: 'fas fa-times-circle',
   },
   {
-    title: 'Courses aur Agencies se umeed khatam',
-    desc: 'Sab try kar liya — YouTube video, saste courses, mehengi agencies. Result wahi ka wahi zero.',
+    title: 'Lost hope in courses and agencies',
+    desc: "You've tried everything—YouTube tutorials, cheap courses, and expensive agencies. Yet, the results remain stuck at zero.",
     icon: 'fas fa-times-circle',
   },
 ];
@@ -39,7 +39,7 @@ export default function ProblemSection() {
           <span className="section-label">Are You Facing This?</span>
           <h2 className="section-h2">You Are Not Doing It Wrong… You Just Don't Have a Clear System.</h2>
           <p className="section-sub">
-            Yeh sab problems sirf isliye hain kyunki ek proper system nahi hai. Let's fix that.
+            These problems persist only because you lack a proper system. Let's fix that together.
           </p>
         </div>
 

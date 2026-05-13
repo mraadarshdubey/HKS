@@ -24,16 +24,16 @@ export default function AboutSection() {
 
             <div className="paras">
               <p>
-                Sach kahun toh, kuch saal pehle main bhi bilkul wahin tha jahan aaj shayad aap hain. Ek chhota business, bade sapne, aur har koi keh raha tha — 
-                <em>"Sirf Instagram pe daalo, ads chalao, customers ki line lag jayegi."</em>
+                To be honest, a few years ago, I was exactly where you are today. Running a small business with big dreams, while everyone told me — 
+                <em> "Just post on Instagram, run some ads, and customers will line up."</em>
               </p>
-              <p>Maine wahi kiya. Par customers ki line nahi lagi, bas mere paise aur waqt khatam hote gaye.</p>
+              <p>I did exactly that. But instead of customers lining up, my money and time just kept draining away.</p>
               <p>
-                Tab mujhe samajh aaya ki galti mujhme nahi, balki us <strong>system</strong> mein thi jo mere paas tha hi nahi. 
-                Pichle kuch saalon mein maine ₹1 Crore se zyada ads pe kharch kiye hain — thokar kha kar, seekh kar, aur finally ek aisa raasta dhund kar jo har baar result deta hai.
+                That's when I realized the fault wasn't with me—it was the <strong>system</strong> I lacked. 
+                Over the last few years, I've spent more than ₹1 Crore on ads, learning through trial and error, until I finally discovered a path that delivers consistent results every single time.
               </p>
               <p>
-                Aaj wahi simple, step-by-step raasta main aap jaise entrepreneurs ko sikhata hoon taaki aapko meri tarah saalon tak struggle na karna pade. <Link to="/my-story" style={{ color: '#cf9d45', textDecoration: 'underline' }}>Meri poori kahani yahan padhein</Link>.
+                Today, I teach that same simple, step-by-step framework to entrepreneurs like you, so you don't have to spend years struggling as I did. <Link to="/my-story" style={{ color: '#cf9d45', textDecoration: 'underline' }}>Read my full story here</Link>.
               </p>
             </div>
 

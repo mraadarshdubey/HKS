@@ -2,28 +2,28 @@ import { useState } from 'react';
 
 const faqs = [
   {
-    q: 'Main ek chota business owner hoon — kya yeh mujhe kaam karega?',
-    a: "Haan, bilkul! Main specifically chote aur medium business owners ke liye kaam karta hoon. Jo bhi small budget mein ads chalate hain aur customers nahi aa rahe — unke liye hi yeh system banaya gaya hai. 30,000+ log already use kar rahe hain.",
+    q: "I'm a small business owner—will this system work for me?",
+    a: "Absolutely! I specialize in working with small and medium-sized business owners. This system was specifically designed for those who run ads on a small budget but aren't seeing customers yet. Over 30,000 people are already benefiting from it.",
   },
   {
-    q: 'Mujhe ads ke baare mein kuch nahi pata — kya main seekh sakta hoon?',
-    a: "Haan, 100%. Main sab kuch ekdam basic se sikhata hoon. Simple Hinglish mein, step-by-step. Koi technical knowledge ki zaroorat nahi. Agar aap phone use kar sakte hain, toh aap yeh seekh sakte hain.",
+    q: "I know nothing about ads—is it possible for me to learn?",
+    a: "Yes, 100%. I teach everything from the absolute basics. I explain things in simple language, step-by-step, with no technical knowledge required. If you can use a phone, you can master this system.",
   },
   {
-    q: 'Kitna budget chahiye ads chalane ke liye?',
-    a: "Main low-budget ads pe focus karta hoon. ₹200–₹500 per day se bhi shuruat ho sakti hai. Main tumhe sikhata hoon ki chhote budget mein bhi maximum result kaise milega. Budget bada hone ke baad kaise scale karna hai — yeh bhi sikhata hoon.",
+    q: "What kind of budget do I need to start running ads?",
+    a: "I focus on low-budget advertising. You can start with as little as ₹200–₹500 per day. I'll teach you how to achieve maximum results even on a tight budget and how to scale once your business grows.",
   },
   {
-    q: 'Kiran sir se seedha baat ho sakti hai?',
-    a: "Haan! Free Clarity Call book karo. Main personally tumse baat karoonga, tumhara situation samjhoonga, aur bataoonga ki aapke business ke liye exactly kya karna chahiye. Zero sales pitch — sirf real help.",
+    q: "Can I speak directly with Kiran?",
+    a: "Yes! Book a free Clarity Call. I will personally speak with you to understand your situation and provide specific guidance for your business. There's zero sales pitch—just genuine help.",
   },
   {
-    q: 'Meta Ads aur simple post boosting mein kya fark hai?',
-    a: "Post boost karna paisa waste karna hai. Meta Ads mein aap target karte ho — sahi log, sahi jagah, sahi time pe. Main tumhe proper Meta Ads Manager use karna sikhata hoon jahan se real leads aate hain, not just likes.",
+    q: "What's the difference between Meta Ads and simply boosting a post?",
+    a: "Boosting a post is often a waste of money. With Meta Ads, you target the right people in the right place at the right time. I'll teach you how to use Meta Ads Manager properly to generate real leads, not just likes.",
   },
   {
-    q: 'Results kitne time mein dikhenge?',
-    a: "Jo log mera system properly follow karte hain, unhe 15–30 din mein pehle results dikhne lagte hain. Kuch logo ko 1 hafte mein hi pehla customer milta hai. Consistency sabse important cheez hai.",
+    q: "How long will it take to see actual results?",
+    a: "Those who follow my system diligently usually start seeing results within 15–30 days. Some even get their first customer within the first week. The key is consistency.",
   },
 ];
 

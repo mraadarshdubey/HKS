@@ -3,12 +3,12 @@ import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 
 const milestones = [
-  { year: '2016', title: 'Shuruat aur Nakamyabi', desc: 'Maine apna chhota business shuru kiya. Sab kehte the — "Ads chalao, customers khud aayenge." Maine wahi kiya, par sirf paise gaye, customers nahi. Wo saal mere liye ek bahut badi seekh tha.' },
-  { year: '2018', title: 'System ki Khoj', desc: 'Mujhe samajh aaya ki problem budget ya platform mein nahi, balki ek sahi "System" ki kami mein hai. Maine mahino tak data dekha, funnels banaye, aur Meta Ads ko root level se samajhna shuru kiya.' },
-  { year: '2020', title: 'Ek Bada Milestone', desc: 'Ads pe ₹1 Crore kharch karne ka anubhav mila. Isme mere khud ke aur mere clients ke paise shamil the. Har thokar ne mujhe ek naya lesson sikhaya aur mera system aur majboot hota gaya.' },
-  { year: '2021', title: 'Pehla Kadam Training ki taraf', desc: 'Jab mere results dikhne lage, toh logon ne poochha ki main ye kaise karta hoon. Maine sikhana shuru kiya. Pehle 1,000 log, fir 5,000... aur karwan badhta gaya.' },
-  { year: '2022', title: 'Marathi Business Tribe', desc: 'Maine mehsus kiya ki apni bhasha mein baat karne ka asar hi alag hota hai. Marathi entrepreneurs ke liye ek community banayi jo aaj 10,000+ logon ka parivaar ban chuka hai.' },
-  { year: '2023+', title: 'Ek Nayi Zimmedari', desc: 'Aaj 50,000 se zyada logon ko train karne ke baad bhi mera maksad wahi hai — har chote business owner ko wo system dena jo maine saalon ki mehnat se banaya hai.' },
+  { year: '2016', title: 'The Beginning and the Setbacks', desc: 'I started my first small business. Everyone told me, "Just run some ads, and customers will come." I did exactly that, but instead of customers, I only saw my money disappear. That year was a profound learning experience for me.' },
+  { year: '2018', title: 'The Search for a System', desc: "I realized the problem wasn't the budget or the platform itself, but the lack of a proper system. I spent months analyzing data, building funnels, and understanding Meta Ads from the ground up." },
+  { year: '2020', title: 'A Major Milestone', desc: 'I achieved a significant milestone by managing over ₹1 Crore in ad spend for myself and my clients. Every setback taught me a new lesson, making my system more robust and reliable.' },
+  { year: '2021', title: 'The First Step Toward Training', desc: 'As my results became evident, people started asking how I did it. I began sharing my knowledge, teaching the first 1,000 people, then 5,000... and the community just kept growing.' },
+  { year: '2022', title: 'The Marathi Business Tribe', desc: "I realized that communicating in one's own language has a unique impact. I founded a community for Marathi entrepreneurs, which has now grown into a family of over 10,000 members." },
+  { year: '2023+', title: 'A New Responsibility', desc: 'After training more than 50,000 people, my mission remains the same: to provide every small business owner with the system I spent years perfecting.' },
 ];
 
 export default function MyStory() {
@@ -79,16 +79,16 @@ export default function MyStory() {
                 textTransform: 'uppercase', padding: '4px 14px', borderRadius: 999, marginBottom: 24
               }}>I Was In The Same Situation As You</div>
               <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: 'clamp(2rem,4vw,2.8rem)', fontWeight: 900, color: '#fff', lineHeight: 1.1, marginBottom: 20 }}>
-                Ads chal rahe the,<br /><span style={{ color: '#cf9d45' }}>par dhanda nahi tha.</span><br />Fir maine system ko samjha.
+                Ads were running,<br /><span style={{ color: '#cf9d45' }}>but business was stagnant.</span><br />Then, I mastered the system.
               </h2>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 16 }}>
-                Namaste, main Kiran Hajare hoon. Sach kahun toh ek waqt tha jab main bhi bilkul aapki tarah pareshan tha. Log kehte the — "Instagram pe dalo, ads chalao, sab theek ho jayega."
+                Hello, I'm Kiran Hajare. To be honest, there was a time when I was just as frustrated as you. People would say, "Just post on Instagram, run some ads, and everything will be fine."
               </p>
               <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 16 }}>
-                Maine sab try kiya. <strong style={{ color: '#ff2e2e' }}>Paisa gaya, waqt gaya, par customers nahi aaye.</strong>
+                I tried everything. <strong style={{ color: '#ff2e2e' }}>I lost money and time, but customers never arrived.</strong>
               </p>
               <p style={{ fontSize: '1rem', lineHeight: 1.8, color: '#9ca3af', marginBottom: 20 }}>
-                Tab mujhe mehsus hua ki galti mere business mein nahi, balki mere kaam karne ke tarike mein thi. Maine saalon tak seekha, ₹1 Crore se zyada ads pe kharch kiye, aur finally ek aisa system banaya jo sach mein kaam karta hai.
+                That's when I realized the fault wasn't with my business, but with my approach. I spent years learning, invested over ₹1 Crore in ads, and finally developed a system that actually works.
               </p>
               <blockquote style={{
                 borderLeft: '4px solid #cf9d45', paddingLeft: 20,

@@ -236,7 +236,7 @@ export default function HeroSection() {
             </div>
 
             <p className="hero-bio" style={{ marginTop: '16px' }}>
-              Ads pe ₹1 Crore se zyada kharch karne ke baad maine ek baat seekhi hai — marketing mushkil nahi hai, bas sahi raste ki zaroorat hai. Aaj 30,000+ log mera simple system use kar rahe hain taaki unhe bina wajah paise ganwaye, har roz real enquiry aur customers mil sakein.
+              After managing over ₹1 Crore in ad spend, I've realized one thing: marketing isn't complicated; it just requires the right direction. Today, 30,000+ people use my simplified system to generate consistent daily inquiries and customers without wasting a single rupee.
             </p>
             <div style={{ marginTop: '28px' }}>
               <Link
