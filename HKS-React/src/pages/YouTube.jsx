@@ -143,6 +143,48 @@ export default function YouTube() {
           </div>
         </div>
 
+        {/* Success Stories (YouTube Shorts) */}
+        <div style={{ marginBottom: 80 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
+            <span style={{ display: 'inline-block', width: 8, height: 8, borderRadius: '50%', background: '#cf9d45', boxShadow: '0 0 10px #cf9d45' }}></span>
+            <h2 style={{ fontFamily: 'var(--font-headline)', fontSize: '1.8rem', fontWeight: 900, color: '#fff', margin: 0 }}>Success Stories</h2>
+          </div>
+          <p style={{ color: '#9ca3af', marginBottom: 32, fontSize: '1.05rem', lineHeight: 1.6 }}>Real results from Marathi Business Tribe members who implemented our Meta Ads & AI strategies.</p>
+          
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', 
+            gap: '24px' 
+          }}>
+            {[
+              'LiYtyW_-sgs', 'ozGxL5ljTTY', '7317jK00SzM', 'E2DkRg46Dz8', 
+              'CnfqACM5O8Q', '-WByVOlNf-I', '75PbTi9pjgU', '2oRuRTeB1Ts', 
+              'ZL3SkCmuLjQ', 'tVyvX9akkyA'
+            ].map((id, i) => (
+              <div key={i} style={{ 
+                borderRadius: '20px', overflow: 'hidden', background: '#0a0a0a',
+                border: '1px solid rgba(255,255,255,0.08)',
+                aspectRatio: '9/16', position: 'relative',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+              }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.boxShadow = '0 15px 40px rgba(207,157,69,0.15)'; e.currentTarget.style.borderColor = 'rgba(207,157,69,0.3)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; }}
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${id}?rel=0&modestbranding=1`}
+                  title={`Success Story ${i+1}`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  loading="lazy"
+                ></iframe>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Subscribe Banner 
         <div style={{
           background: 'linear-gradient(135deg, rgba(255,46,46,0.12), rgba(207,157,69,0.08))',
