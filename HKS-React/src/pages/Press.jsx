@@ -21,6 +21,12 @@ const logos = [
 const photos = [
   { label: 'Professional Headshot', file: '/k1.webp' },
   { label: 'Circular Profile', file: '/circle-kiran-sir.png' },
+  { label: 'Kiran Hajare — Event Shot 1', file: '/press/DSC_0242.JPG' },
+  { label: 'Kiran Hajare — Event Shot 2', file: '/press/DSC_0260.JPG' },
+  { label: 'Kiran Hajare — Event Shot 3', file: '/press/DSC_0289.JPG' },
+  { label: 'Kiran Hajare — Keynote', file: '/press/DSC_0675.JPG' },
+  { label: 'Kiran Hajare — Panel Session', file: '/press/DSC_0677.JPG' },
+  { label: 'Kiran Hajare — Workshop', file: '/press/DSC_0680.JPG' },
 ];
 
 export default function Press() {
@@ -193,11 +199,18 @@ export default function Press() {
           </p>
           <div className="pm-photos-grid">
             {photos.map((photo, i) => (
-              <div key={i} className="pm-photo-card">
+              <div key={i} className="pm-photo-card pm-photo-protected" onContextMenu={(e) => e.preventDefault()}>
                 <div className="pm-photo-img-wrap">
-                  <img src={photo.file} alt={photo.label} className="pm-photo-img" />
+                  {/* Using background image to prevent easy 'Save Image As' */}
+                  <div 
+                    className="pm-photo-bg" 
+                    style={{ backgroundImage: `url(${photo.file})` }}
+                  />
+                  {/* Invisible overlay to block mouse interaction with image */}
+                  <div className="pm-photo-blocker"></div>
+                  
                   <div className="pm-photo-overlay">
-                    <a href={photo.file} download className="pm-photo-dl-btn">↓ Download</a>
+                    <span className="pm-protected-tag">Protected Asset</span>
                   </div>
                 </div>
                 <div className="pm-photo-label">{photo.label}</div>
@@ -206,8 +219,8 @@ export default function Press() {
             <div className="pm-photo-card pm-photo-request">
               <div className="pm-photo-request-inner">
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#cf9d45" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                <p>Need a specific photo or higher resolution? Contact the team.</p>
-                <a href="/contact" className="pm-btn-ghost" style={{ marginTop: 16, display: 'inline-block', textDecoration: 'none' }}>Request a Photo →</a>
+                <p>Need these assets for media or event use? Contact the team for official clearance.</p>
+                <a href="/contact" className="pm-btn-ghost" style={{ marginTop: 16, display: 'inline-block', textDecoration: 'none' }}>Request Access →</a>
               </div>
             </div>
           </div>
@@ -382,22 +395,31 @@ export default function Press() {
 
         /* ── Photos ── */
         .pm-photos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
-        .pm-photo-card { border-radius: 20px; overflow: hidden; background: #0a0a0a; border: 1px solid #1a1a1a; transition: border-color 0.3s; }
+        .pm-photo-card { border-radius: 20px; overflow: hidden; background: #0a0a0a; border: 1px solid #1a1a1a; transition: border-color 0.3s; position: relative; }
         .pm-photo-card:hover { border-color: rgba(207,157,69,0.3); }
         .pm-photo-img-wrap { position: relative; height: 320px; overflow: hidden; }
-        .pm-photo-img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.5s ease; }
-        .pm-photo-card:hover .pm-photo-img { transform: scale(1.04); }
+        .pm-photo-bg { 
+          width: 100%; height: 100%; 
+          background-size: cover; background-position: top center; 
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .pm-photo-card:hover .pm-photo-bg { transform: scale(1.08); }
+        .pm-photo-blocker {
+          position: absolute; inset: 0; z-index: 5;
+          background: transparent;
+        }
         .pm-photo-overlay {
-          position: absolute; inset: 0; background: rgba(0,0,0,0.5);
+          position: absolute; inset: 0; background: rgba(0,0,0,0.4);
           display: flex; align-items: center; justify-content: center;
-          opacity: 0; transition: opacity 0.3s;
+          opacity: 0; transition: opacity 0.3s; z-index: 6;
         }
         .pm-photo-card:hover .pm-photo-overlay { opacity: 1; }
-        .pm-photo-dl-btn {
-          background: #cf9d45; color: #000; font-weight: 800; font-size: 0.85rem;
-          padding: 12px 28px; border-radius: 8px; text-decoration: none;
+        .pm-protected-tag {
+          font-size: 0.65rem; font-weight: 800; text-transform: uppercase;
+          letter-spacing: 0.15em; color: #fff; background: rgba(0,0,0,0.6);
+          padding: 8px 16px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2);
         }
-        .pm-photo-label { padding: 16px 20px; font-size: 0.85rem; font-weight: 700; color: #9ca3af; }
+        .pm-photo-label { padding: 16px 20px; font-size: 0.85rem; font-weight: 700; color: #9ca3af; position: relative; z-index: 10; }
         .pm-photo-request { min-height: 320px; border: 1px dashed #222 !important; }
         .pm-photo-request-inner { height: 100%; min-height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 40px 24px; text-align: center; color: #6b7280; font-size: 0.95rem; line-height: 1.6; }
 
