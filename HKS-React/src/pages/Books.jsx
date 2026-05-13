@@ -4,8 +4,8 @@ import SEO from '../components/SEO';
 
 const books = [
   {
-    title: 'The Admission Machine',
-    subtitle: 'Engineering Predictable Enrollments',
+    title: 'Enquiry To Payment',
+    subtitle: 'The Ultimate Guide to Admission Funnels',
     desc: 'A step-by-step playbook that breaks down exactly how to set up a Meta Ads funnel that fills seats on autopilot — no guesswork, no wasted budget.',
     tag: 'Funnel Strategy',
     color: '#cf9d45',
@@ -15,8 +15,8 @@ const books = [
     num: '01',
   },
   {
-    title: 'Beyond Organic',
-    subtitle: 'Paid Traffic for Education Institutes',
+    title: 'Get More Customer',
+    subtitle: 'Mastering Paid Traffic for Growth',
     desc: 'The complete guide to moving past WhatsApp forwards and referrals into systematic paid acquisition that scales without you being in the room.',
     tag: 'Paid Ads Mastery',
     color: '#e05c5c',
@@ -26,8 +26,8 @@ const books = [
     num: '02',
   },
   {
-    title: 'Marathi Growth Code',
-    subtitle: 'Growing Businesses in the Vernacular Economy',
+    title: 'Workers To Business Leader',
+    subtitle: 'Scale Your Authority and Leadership',
     desc: 'How Marathi entrepreneurs can dominate local markets using digital systems built for the Marathi-speaking audience — in language, culture, and context.',
     tag: 'Local Business',
     color: '#cf9d45',
