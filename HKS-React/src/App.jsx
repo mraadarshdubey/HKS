@@ -20,6 +20,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 import Contact from './pages/Contact';
 import PressArticle from './pages/PressArticle';
+import DevSignature from './components/DevSignature';
 
 // Premium SimplePage for Contact/Terms/Privacy
 const SimplePage = ({ title }) => (
@@ -78,6 +79,7 @@ export default function App() {
         </div>
         <Footer />
       </div>
+      <DevSignature />
     </Router>
   );
 }
