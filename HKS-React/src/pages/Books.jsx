@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PageHeader from '../components/PageHeader';
 import SEO from '../components/SEO';
 
@@ -9,17 +9,21 @@ const books = [
     desc: 'A step-by-step playbook that breaks down exactly how to set up a Meta Ads funnel that fills seats on autopilot — no guesswork, no wasted budget.',
     tag: 'Funnel Strategy',
     color: '#cf9d45',
+    rgb: '207,157,69',
     status: 'Coming Soon',
     image: '/Enquiry To Payment.png',
+    num: '01',
   },
   {
     title: 'Beyond Organic',
     subtitle: 'Paid Traffic for Education Institutes',
     desc: 'The complete guide to moving past WhatsApp forwards and referrals into systematic paid acquisition that scales without you being in the room.',
     tag: 'Paid Ads Mastery',
-    color: '#ff2e2e',
+    color: '#e05c5c',
+    rgb: '224,92,92',
     status: 'Coming Soon',
     image: '/Get More Customer.png',
+    num: '02',
   },
   {
     title: 'Marathi Growth Code',
@@ -27,10 +31,84 @@ const books = [
     desc: 'How Marathi entrepreneurs can dominate local markets using digital systems built for the Marathi-speaking audience — in language, culture, and context.',
     tag: 'Local Business',
     color: '#cf9d45',
+    rgb: '207,157,69',
     status: 'Coming Soon',
     image: '/Workers To Business Leader.png',
+    num: '03',
   },
 ];
+
+function BookCard({ book, idx }) {
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+    const handleMove = (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.setProperty('--rx', `${-y * 6}deg`);
+      card.style.setProperty('--ry', `${x * 8}deg`);
+    };
+    const handleLeave = () => {
+      card.style.setProperty('--rx', '0deg');
+      card.style.setProperty('--ry', '0deg');
+    };
+    card.addEventListener('mousemove', handleMove);
+    card.addEventListener('mouseleave', handleLeave);
+    return () => {
+      card.removeEventListener('mousemove', handleMove);
+      card.removeEventListener('mouseleave', handleLeave);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className="bk-card"
+      style={{ '--c': book.color, '--rgb': book.rgb, animationDelay: `${idx * 0.15}s` }}
+    >
+      {/* Left - Cover Display */}
+      <div className="bk-visual">
+        <div className="bk-bg-glow"></div>
+        <div className="bk-grid-lines"></div>
+        <div className="bk-num">{book.num}</div>
+
+        <div className="bk-float">
+          {/* Actual 3D book */}
+          <div className="bk-book">
+            <div className="bk-face bk-face-front">
+              <img src={book.image} alt={book.title} />
+            </div>
+            <div className="bk-face bk-face-right"></div>
+            <div className="bk-face bk-face-top"></div>
+          </div>
+          <div className="bk-reflection">
+            <img src={book.image} alt="" />
+          </div>
+        </div>
+
+        <div className="bk-status-pill">{book.status}</div>
+      </div>
+
+      {/* Right - Content */}
+      <div className="bk-content">
+        <div className="bk-tag-wrap">
+          <span className="bk-tag">{book.tag}</span>
+        </div>
+        <h2 className="bk-title">{book.title}</h2>
+        <p className="bk-subtitle">{book.subtitle}</p>
+        <div className="bk-divider"></div>
+        <p className="bk-desc">{book.desc}</p>
+        <button className="bk-btn">
+          <span>Reserve Early Access</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Books() {
   return (
@@ -47,432 +125,395 @@ export default function Books() {
         label="Written Knowledge"
       />
 
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 24px 120px' }}>
-        
-        {/* Animated Intro Banner */}
-        <div className="book-hero-banner">
-          <div className="hero-glow"></div>
-          <div className="hero-content">
-            <div className="hero-icon-wrap">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
-            </div>
-            <div className="hero-text">
-              <h2 className="hero-title">Knowledge You Won't Find on YouTube</h2>
-              <p className="hero-desc">Each book is a distilled vault of real-world campaigns, client data, and battle-tested frameworks. No fluff. Just systems.</p>
-            </div>
-          </div>
+      <div className="bk-wrapper">
+
+        {/* Section Header */}
+        <div className="bk-header-strip">
+          <div className="strip-line"></div>
+          <span>3 Books · All Coming Soon</span>
+          <div className="strip-line"></div>
         </div>
 
-        {/* Premium Book Grid */}
-        <div className="books-grid">
+        {/* Book Stack */}
+        <div className="bk-stack">
           {books.map((book, i) => (
-            <article key={i} className="premium-book-card" style={{ '--accent': book.color }}>
-              
-              {/* Book Presentation Section */}
-              <div className="book-stage">
-                <div className="stage-lighting"></div>
-                <div className="stage-floor"></div>
-                
-                <div className="book-3d-wrapper">
-                  <div className="book-3d-object">
-                    <img src={book.image} alt={book.title} className="book-front-cover" />
-                    <div className="book-spine-3d"></div>
-                    <div className="book-pages-3d"></div>
-                  </div>
-                  <div className="book-shadow-3d"></div>
-                </div>
-
-                <div className="book-badge-premium">
-                  <span>{book.status}</span>
-                </div>
-              </div>
-
-              {/* Information Section */}
-              <div className="book-details">
-                <div className="detail-header">
-                  <span className="detail-tag">{book.tag}</span>
-                  <div className="detail-accent-line"></div>
-                </div>
-                
-                <h3 className="detail-title">{book.title}</h3>
-                <p className="detail-subtitle">{book.subtitle}</p>
-                
-                <div className="detail-body">
-                  <p>{book.desc}</p>
-                </div>
-
-                <div className="detail-footer">
-                  <button className="premium-cta">
-                    <span>Reserve Your Copy</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                  </button>
-                </div>
-              </div>
-            </article>
+            <BookCard key={i} book={book} idx={i} />
           ))}
         </div>
 
-        {/* Waitlist Section */}
-        <div className="waitlist-card-premium">
-          <div className="waitlist-glow"></div>
-          <div className="waitlist-inner">
-            <div className="waitlist-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-            </div>
-            <div className="waitlist-text">
-              <h3>Join the Inner Circle</h3>
-              <p>Be the first to get early access, exclusive bonus chapters, and launch-day discounts.</p>
-            </div>
-            <button className="waitlist-btn">Join the Waitlist</button>
+        {/* Waitlist */}
+        <div className="bk-waitlist">
+          <div className="wl-orbs">
+            <div className="wl-orb wl-orb-1"></div>
+            <div className="wl-orb wl-orb-2"></div>
+          </div>
+          <div className="wl-inner">
+            <span className="wl-eyebrow">Limited Early Access</span>
+            <h3 className="wl-title">Be First. Get More.</h3>
+            <p className="wl-sub">Exclusive chapters, launch bonuses, and a discount reserved only for the waitlist.</p>
+            <button className="wl-btn">Join the Waitlist →</button>
           </div>
         </div>
+
       </div>
 
       <style>{`
-        /* Global & Layout */
-        .books-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-          gap: 60px;
-          margin-bottom: 100px;
+        .bk-wrapper {
+          max-width: 1140px;
+          margin: 0 auto;
+          padding: 60px 24px 120px;
         }
 
-        /* Hero Banner */
-        .book-hero-banner {
-          position: relative;
+        /* Header Strip */
+        .bk-header-strip {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 64px;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: #555;
+        }
+        .strip-line {
+          flex: 1;
+          height: 1px;
+          background: #1e1e1e;
+        }
+
+        /* Card */
+        .bk-card {
+          display: flex;
+          gap: 0;
           background: #0a0a0a;
           border: 1px solid #1a1a1a;
           border-radius: 32px;
-          padding: 48px;
-          margin-bottom: 80px;
           overflow: hidden;
-          display: flex;
-          align-items: center;
+          margin-bottom: 40px;
+          transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+          transition: transform 0.15s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+          animation: fadeSlideUp 0.6s both;
         }
-        .hero-glow {
-          position: absolute;
-          top: -50%; left: -50%;
-          width: 200%; height: 200%;
-          background: radial-gradient(circle at center, rgba(207,157,69,0.05) 0%, transparent 40%);
-          pointer-events: none;
+        .bk-card:hover {
+          border-color: rgba(var(--rgb), 0.3);
+          box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 60px rgba(var(--rgb), 0.07);
         }
-        .hero-content {
-          position: relative;
-          z-index: 2;
-          display: flex;
-          align-items: center;
-          gap: 32px;
-        }
-        .hero-icon-wrap {
-          width: 80px; height: 80px;
-          border-radius: 20px;
-          background: rgba(207,157,69,0.1);
-          border: 1px solid rgba(207,157,69,0.2);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #cf9d45;
-          flex-shrink: 0;
-        }
-        .hero-title {
-          font-family: var(--font-headline);
-          font-size: 1.8rem;
-          font-weight: 900;
-          color: #fff;
-          margin-bottom: 8px;
-        }
-        .hero-desc {
-          color: #9ca3af;
-          max-width: 600px;
-          line-height: 1.6;
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: perspective(1200px) translateY(40px); }
+          to { opacity: 1; transform: perspective(1200px) translateY(0); }
         }
 
-        /* Premium Book Card */
-        .premium-book-card {
+        /* Visual Side */
+        .bk-visual {
+          flex: 0 0 380px;
+          height: 440px;
+          position: relative;
+          overflow: hidden;
           background: #080808;
-          border: 1px solid #1a1a1a;
-          border-radius: 40px;
-          overflow: hidden;
-          display: flex;
-          flex-direction: column;
-          transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-          position: relative;
-        }
-        .premium-book-card:hover {
-          transform: translateY(-12px);
-          border-color: rgba(255,255,255,0.1);
-          box-shadow: 0 40px 80px rgba(0,0,0,0.8);
-        }
-
-        /* Book Stage Area */
-        .book-stage {
-          height: 380px;
-          background: linear-gradient(to bottom, #111, #080808);
-          position: relative;
+          border-right: 1px solid #1a1a1a;
           display: flex;
           align-items: center;
           justify-content: center;
-          overflow: hidden;
-          border-bottom: 1px solid #1a1a1a;
         }
-        .stage-lighting {
+        .bk-bg-glow {
           position: absolute;
-          top: -20%; left: 50%;
-          width: 140%; height: 140%;
-          transform: translateX(-50%);
-          background: radial-gradient(circle at top center, var(--accent) 0%, transparent 60%);
-          opacity: 0.15;
-          transition: opacity 0.6s ease;
+          width: 300px; height: 300px;
+          background: radial-gradient(circle, rgba(var(--rgb), 0.15) 0%, transparent 70%);
+          top: 50%; left: 50%;
+          transform: translate(-50%, -50%);
+          transition: all 0.6s ease;
         }
-        .premium-book-card:hover .stage-lighting {
-          opacity: 0.25;
+        .bk-card:hover .bk-bg-glow {
+          width: 400px; height: 400px;
+          opacity: 1.2;
         }
-        .stage-floor {
+        .bk-grid-lines {
           position: absolute;
-          bottom: 0; left: 0; width: 100%; height: 60px;
-          background: linear-gradient(to bottom, rgba(255,255,255,0.02), transparent);
-          transform: perspective(100px) rotateX(40deg);
+          inset: 0;
+          background-image:
+            linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+          background-size: 40px 40px;
+        }
+        .bk-num {
+          position: absolute;
+          top: 24px; left: 28px;
+          font-size: 5rem;
+          font-weight: 900;
+          color: rgba(var(--rgb), 0.06);
+          font-family: var(--font-headline);
+          line-height: 1;
+          user-select: none;
         }
 
-        /* 3D Book Object */
-        .book-3d-wrapper {
+        /* 3D Floating Book */
+        .bk-float {
           position: relative;
           z-index: 5;
-          transform: translateY(10px);
-          transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
-        .premium-book-card:hover .book-3d-wrapper {
-          transform: translateY(-10px);
-        }
-        .book-3d-object {
-          position: relative;
-          width: 200px;
-          height: 280px;
+        .bk-book {
+          width: 160px;
+          height: 230px;
           transform-style: preserve-3d;
-          transform: rotateY(-20deg) rotateX(5deg);
+          transform: rotateY(-25deg) rotateX(5deg);
           transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .premium-book-card:hover .book-3d-object {
-          transform: rotateY(-5deg) rotateX(2deg);
-        }
-        .book-front-cover {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: 2px 8px 8px 2px;
-          box-shadow: 20px 20px 50px rgba(0,0,0,0.6);
           position: relative;
-          z-index: 10;
         }
-        .book-spine-3d {
+        .bk-card:hover .bk-book {
+          transform: rotateY(-10deg) rotateX(2deg) translateY(-16px);
+        }
+        .bk-face {
           position: absolute;
+          backface-visibility: hidden;
+        }
+        .bk-face-front {
+          width: 160px; height: 230px;
           top: 0; left: 0;
-          width: 32px; height: 100%;
-          background: #222;
-          transform: rotateY(-90deg) translateX(-16px) translateZ(-16px);
+          box-shadow: 20px 30px 50px rgba(0,0,0,0.7);
+          border-radius: 2px 6px 6px 2px;
+          overflow: hidden;
+        }
+        .bk-face-front img {
+          width: 100%; height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        .bk-face-right {
+          width: 36px; height: 230px;
+          top: 0; left: 160px;
           transform-origin: left;
-          box-shadow: inset -10px 0 20px rgba(0,0,0,0.4);
-        }
-        .book-pages-3d {
-          position: absolute;
-          top: 3px; right: -4px;
-          width: 20px; height: calc(100% - 6px);
-          background: #eee;
           transform: rotateY(90deg);
-          transform-origin: right;
-          background: repeating-linear-gradient(to bottom, #ddd, #ddd 1px, #fff 1px, #fff 2px);
+          background: linear-gradient(to right, #1a1a1a, #333);
+          box-shadow: inset -8px 0 16px rgba(0,0,0,0.5);
         }
-        .book-shadow-3d {
-          position: absolute;
-          bottom: -40px; left: 50%;
-          width: 110%; height: 20px;
-          background: rgba(0,0,0,0.6);
-          transform: translateX(-50%) perspective(100px) rotateX(60deg);
-          filter: blur(15px);
-          border-radius: 50%;
-          transition: transform 0.6s ease, opacity 0.6s ease;
+        .bk-face-top {
+          width: 160px; height: 36px;
+          top: -36px; left: 0;
+          transform-origin: bottom;
+          transform: rotateX(90deg);
+          background: linear-gradient(to bottom,
+            #f0f0f0 0%, #f0f0f0 10%,
+            #e8e8e8 10%, #e8e8e8 20%,
+            #f0f0f0 20%, #f0f0f0 30%,
+            #e8e8e8 30%, #e8e8e8 40%,
+            #f0f0f0 40%, #f0f0f0 50%,
+            #e0e0e0 50%, #e0e0e0 100%
+          );
         }
-        .premium-book-card:hover .book-shadow-3d {
-          transform: translateX(-50%) perspective(100px) rotateX(60deg) scale(1.1);
-          opacity: 0.8;
+        .bk-reflection {
+          width: 160px; height: 60px;
+          margin-top: 2px;
+          overflow: hidden;
+          transform: scaleY(-1);
+          opacity: 0.15;
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+          -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+          filter: blur(1px);
+          border-radius: 0 0 6px 6px;
+        }
+        .bk-reflection img {
+          width: 100%; height: 230px;
+          object-fit: cover;
+          object-position: bottom;
         }
 
-        /* Badge */
-        .book-badge-premium {
+        /* Status Pill */
+        .bk-status-pill {
           position: absolute;
           top: 24px; right: 24px;
-          padding: 8px 16px;
-          background: rgba(255,255,255,0.05);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.1);
+          padding: 6px 16px;
+          background: rgba(var(--rgb), 0.1);
+          border: 1px solid rgba(var(--rgb), 0.3);
           border-radius: 99px;
-          font-size: 0.65rem;
+          font-size: 0.6rem;
           font-weight: 800;
           text-transform: uppercase;
           letter-spacing: 0.15em;
-          color: var(--accent);
-          z-index: 20;
+          color: var(--c);
         }
 
-        /* Details */
-        .book-details {
-          padding: 40px;
-          background: linear-gradient(to bottom, rgba(255,255,255,0.01), transparent);
+        /* Content Side */
+        .bk-content {
           flex: 1;
+          padding: 52px 56px;
           display: flex;
           flex-direction: column;
+          justify-content: center;
         }
-        .detail-header {
-          display: flex;
-          align-items: center;
-          gap: 12px;
+        .bk-tag-wrap {
           margin-bottom: 20px;
         }
-        .detail-tag {
-          font-size: 0.7rem;
-          font-weight: 800;
+        .bk-tag {
+          font-size: 0.65rem;
+          font-weight: 700;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
-          letter-spacing: 0.1em;
-          color: #666;
+          color: var(--c);
+          padding-bottom: 6px;
+          border-bottom: 2px solid var(--c);
         }
-        .detail-accent-line {
-          height: 1px;
-          flex: 1;
-          background: linear-gradient(to right, #222, transparent);
-        }
-        .detail-title {
+        .bk-title {
           font-family: var(--font-headline);
-          font-size: 1.8rem;
+          font-size: 2.4rem;
           font-weight: 900;
           color: #fff;
-          line-height: 1.2;
-          margin-bottom: 8px;
+          line-height: 1.1;
+          margin-bottom: 10px;
         }
-        .detail-subtitle {
-          font-size: 0.95rem;
-          color: var(--accent);
-          font-weight: 600;
+        .bk-subtitle {
+          color: #9ca3af;
+          font-size: 1rem;
+          font-weight: 500;
           font-style: italic;
+          margin-bottom: 28px;
+        }
+        .bk-divider {
+          width: 48px;
+          height: 2px;
+          background: linear-gradient(to right, var(--c), transparent);
           margin-bottom: 24px;
         }
-        .detail-body {
-          color: #9ca3af;
-          line-height: 1.7;
-          font-size: 0.96rem;
-          margin-bottom: 32px;
-          flex: 1;
+        .bk-desc {
+          color: #6b7280;
+          font-size: 0.97rem;
+          line-height: 1.75;
+          margin-bottom: 40px;
+        }
+        .bk-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 16px 32px;
+          background: transparent;
+          border: 1px solid #252525;
+          border-radius: 14px;
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          align-self: flex-start;
+        }
+        .bk-btn:hover {
+          background: var(--c);
+          border-color: var(--c);
+          color: #000;
+          transform: translateX(6px);
+          box-shadow: -6px 0 30px rgba(var(--rgb), 0.3);
+        }
+        .bk-btn svg {
+          transition: transform 0.3s;
+        }
+        .bk-btn:hover svg {
+          transform: translateX(4px);
         }
 
-        /* CTA */
-        .premium-cta {
-          width: 100%;
-          background: #111;
-          border: 1px solid #222;
-          padding: 18px;
-          border-radius: 16px;
-          color: #fff;
-          font-weight: 800;
-          font-size: 0.9rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 12px;
-          cursor: pointer;
-          transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        /* Waitlist */
+        .bk-waitlist {
           position: relative;
+          margin-top: 20px;
+          border-radius: 32px;
+          background: #080808;
+          border: 1px solid #1a1a1a;
+          padding: 72px 80px;
+          text-align: center;
           overflow: hidden;
         }
-        .premium-cta::after {
-          content: '';
+        .wl-orbs {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, transparent, rgba(255,255,255,0.05), transparent);
-          transform: translateX(-100%);
-          transition: transform 0.6s ease;
+          pointer-events: none;
         }
-        .premium-cta:hover::after {
-          transform: translateX(100%);
-        }
-        .premium-cta:hover {
-          background: var(--accent);
-          border-color: var(--accent);
-          color: #000;
-          box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-          transform: translateY(-2px);
-        }
-
-        /* Waitlist Premium */
-        .waitlist-card-premium {
-          position: relative;
-          background: #0a0a0a;
-          border: 1px solid #cf9d4522;
-          border-radius: 32px;
-          padding: 60px;
-          overflow: hidden;
-          text-align: center;
-        }
-        .waitlist-glow {
+        .wl-orb {
           position: absolute;
-          top: 0; left: 0; width: 100%; height: 100%;
-          background: radial-gradient(circle at top center, rgba(207,157,69,0.08) 0%, transparent 70%);
+          border-radius: 50%;
+          filter: blur(80px);
         }
-        .waitlist-inner {
+        .wl-orb-1 {
+          width: 400px; height: 400px;
+          background: rgba(207,157,69,0.08);
+          top: -100px; left: -100px;
+        }
+        .wl-orb-2 {
+          width: 300px; height: 300px;
+          background: rgba(224,92,92,0.06);
+          bottom: -80px; right: -60px;
+        }
+        .wl-inner {
           position: relative;
           z-index: 2;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 24px;
+          gap: 16px;
         }
-        .waitlist-icon {
-          width: 64px; height: 64px;
-          background: #cf9d45;
-          color: #000;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          box-shadow: 0 0 30px rgba(207,157,69,0.3);
+        .wl-eyebrow {
+          font-size: 0.65rem;
+          font-weight: 800;
+          letter-spacing: 0.3em;
+          text-transform: uppercase;
+          color: #cf9d45;
+          background: rgba(207,157,69,0.1);
+          border: 1px solid rgba(207,157,69,0.2);
+          padding: 6px 18px;
+          border-radius: 99px;
         }
-        .waitlist-text h3 {
+        .wl-title {
           font-family: var(--font-headline);
-          font-size: 2rem;
+          font-size: 3rem;
           font-weight: 900;
           color: #fff;
-          margin-bottom: 8px;
+          margin: 0;
         }
-        .waitlist-text p {
-          color: #9ca3af;
-          font-size: 1.1rem;
+        .wl-sub {
+          color: #6b7280;
+          font-size: 1.05rem;
+          max-width: 480px;
         }
-        .waitlist-btn {
-          margin-top: 10px;
-          padding: 16px 48px;
-          background: #cf9d45;
+        .wl-btn {
+          margin-top: 8px;
+          padding: 18px 52px;
+          background: linear-gradient(135deg, #cf9d45, #e6b75c);
           color: #000;
           border: none;
-          border-radius: 12px;
+          border-radius: 14px;
           font-weight: 900;
-          font-size: 1.1rem;
+          font-size: 1.05rem;
           cursor: pointer;
           transition: all 0.3s;
+          box-shadow: 0 0 40px rgba(207,157,69,0.25);
         }
-        .waitlist-btn:hover {
-          transform: scale(1.05);
-          box-shadow: 0 15px 40px rgba(207,157,69,0.4);
+        .wl-btn:hover {
+          transform: scale(1.04);
+          box-shadow: 0 0 60px rgba(207,157,69,0.4);
         }
 
-        @media (max-width: 768px) {
-          .book-hero-banner {
-            padding: 32px 24px;
-            flex-direction: column;
-            text-align: center;
-          }
-          .hero-content {
+        /* Responsive */
+        @media (max-width: 900px) {
+          .bk-card {
             flex-direction: column;
           }
-          .waitlist-card-premium {
-            padding: 40px 24px;
+          .bk-visual {
+            flex: none;
+            height: 360px;
+            border-right: none;
+            border-bottom: 1px solid #1a1a1a;
+          }
+          .bk-content {
+            padding: 40px 32px;
+          }
+          .bk-title {
+            font-size: 1.8rem;
+          }
+          .bk-waitlist {
+            padding: 48px 28px;
+          }
+          .wl-title {
+            font-size: 2rem;
           }
         }
       `}</style>
